@@ -8,7 +8,7 @@ author:
 thanks: "Code and data are available at: https://github.com/dwz92/Analyzing-the-impact-of-social-class-on-authors-writings."
 date: today
 date-format: long
-abstract: "In this study, we explore the impact of the Great Recession on birth rates among young people in the United States, utilizing a comprehensive analysis of demographic and economic data. Our findings reveal a significant decline in birth rates within this group during and following the economic downturn, highlighting the intricate relationship between economic stability and reproductive decisions. This research contributes to our understanding of how macroeconomic factors can have profound effects on personal life choices, emphasizing the need for supportive policies targeting young individuals during economic crises."
+abstract: "In this study, we explore the influence of social class on lexical richness in the works of authors  after the Great Depression, utilizing a comprehensive analysis of lexical data from literary works and social context of authors. Our findings reveal upper-class authors exhibiting a higher Corrected Type-Token Ratio which indicates greater lexical richness, and reflecting their social milieu. This study employs a thorough lexical analysis, aiming to elucidate the complex interplay between class background and language use in literature. This research contributes to our understanding of how social class background shapes language use in literature, offering insights into the broader cultural forces that drive linguistic creativity."
 format: html
 toc: true
 number-sections: true
@@ -37,20 +37,24 @@ library(kableExtra)
 ```
 
 # Introduction {#sec-intro}
+The Great Depression was a major economic event of the 20th century that had a profound effect on the global economic situation and class divisions. The question of whether the writing styles of different authors are affected by their class of origin and the general economic climate deserves an in-depth discussion. The purpose of this paper is to gain a deeper understanding of how people lived and thought after the Great Depression by examining whether upper-class writers had a richer writing vocabulary to utilize in their essays than middle-class writers.
 
 
-The paper is structured to facilitate a comprehensive understanding of the study and its implications. Following @sec-intro, @sec-data presents the data, detailing the data sources, analytical techniques, and the rationale behind the chosen methods. @sec-result discusses the results, elaborating on the observed trends and patterns in birth rate data. @sec-discussion provides an in-depth discussion of these findings, exploring potential factors influencing these trends, drawing connections to broader socio-economic issues, and providing suggestions for future research in this area.
+Utilizing a combination of quantitative data analysis and authorship studies, we investigated the vocabulary richness of texts used by upper-class and middle-class authors after the Great Depression. Our findings suggest that works produced by upper-class authors during the period 1930-1990 will have a richer vocabulary compared to middle-class writers. This phenomenon suggests that different classes of writers have different writing styles, and that economic downturns and international instability have had an impact on writers' writing styles. It also had a profound effect on the writers' personal lives, including education, life and thought. These influences, brought about by the broader context of the times, affect not only the choice of vocabulary used in the essay, but also the expression of the central idea of the whole essay, which in turn affects the minds of many civilian readers.
+
+
+The paper is structured to facilitate a comprehensive understanding of the study and its implications. Following @sec-intro, @sec-data presents the data, detailing the data sources, analytical techniques, and the rationale behind the chosen methods. @sec-result discusses the results, elaborating on the observed trends and patterns in the authors writings. @sec-discussion provides an in-depth discussion of these findings, exploring potential factors influencing these trends, drawing connections to broader socio-economic issues, and providing suggestions for future research in this area.
+
+# Estimand
+In this study, our main object of estimation is the causal effect of different classes on the vocabulary use of writers' writing, i.e., changes that can be attributed to the writers' own class of origin, divorced from the economic factors of their times. This involves analyzing the richness of the writing vocabulary of authors from both the upper and middle classes, in order to understand how differences in education, life, and personal perceptions brought about by different class origins affect writers' ideas and writing styles.
 
 # Data {#sec-data}
 
-This section aims to offer an insightful understanding of the dataset utilized in our analysis. The dataset captures the birth rates across various demographics in the United States from 1980 to 2020. The data provide a broader context, allowing an analysis of trends over time and across different economic cycles, including the period of the Great Recession.
+# TODO: explain
 
 ## Source and Methodology
-Data on birth rates for women aged 15-44 were sourced from National Vital Statistics Reports covering 2015, 2019, and 2020 [@cite2015birth; @cite2019birth; @cite2020birth], compiled from birth certificates across the US and the District of Columbia. @citeoriginal provided aggregated birth data for six cohorts over five-year spans, derived from the NBER Natality Database [@citeNBER] and NCHS microdata [@citeNCHS] for 1980-2019. In this study, we simply used the replication data package provided by @citeoriginal for analysis.
 
-While there were alternative datasets available from other public and private sources, this dataset was chosen due to its comprehensive coverage, reliability, and the level of detail it offers. It includes data from the National Center for Health Statistics [@citeNCHS] and the U.S. Census Bureau, which are both reputable sources of demographic data.
-
-The data was processed and cleaned using R[@citeR], a powerful statistical programming language. For key operations, please refer to the [@sec-appendix]. 
+# TODO: explain
 
 ## Variables
 
@@ -182,6 +186,9 @@ The findings of this study offer a layered perspective on the decline in birth r
 
 
 ## Weaknesses and Future Research Directions
+One limitation of our study is the potential influence of unobserved variables that may affect the lexical richness in authors' works, such as individual educational background or specific life experiences, which were not fully captured in our analysis. 
+Moreover, while we used an improved TTR formula, its inherent sensitivity to text length variability and the possibility of other underlying linguistic factors were not entirely addressed. These could include stylistic choices or genre-specific language use that our study does not explore in depth.
+Future research should aim to unravel these complex interactions further, perhaps by integrating more granular data on authors' personal histories or by employing a wider range of linguistic analysis tools. Additionally, exploring the application of advanced computational methods, such as natural language processing algorithms, could offer more detailed insights into how social class impacts lexical choice and style in literature. Understanding these nuanced relationships is vital for comprehensively interpreting the intersection of social factors and literary expression.
 
 
 

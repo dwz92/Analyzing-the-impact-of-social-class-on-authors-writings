@@ -9,7 +9,7 @@ thanks: "Code and data are available at: https://github.com/dwz92/Analyzing-the-
 date: today
 date-format: long
 abstract: "In this study, we explore the influence of social class on lexical richness in the works of authors  after the Great Depression, utilizing a comprehensive analysis of lexical data from literary works and social context of authors. Our findings reveal upper-class authors exhibiting a higher Corrected Type-Token Ratio which indicates greater lexical richness, and reflecting their social milieu. This study employs a thorough lexical analysis, aiming to elucidate the complex interplay between class background and language use in literature. This research contributes to our understanding of how social class background shapes language use in literature, offering insights into the broader cultural forces that drive linguistic creativity."
-format: html
+format: pdf
 toc: true
 number-sections: true
 bibliography: references.bib
@@ -203,13 +203,7 @@ Future research should aim to unravel these complex interactions further, perhap
 
 # TODO: explainn
 
-Most of the data in our dataset was previously cleaned for the project we are replicating. Thus, @fig-trends-in-birth-rate directly used data from `outputs/data/fig_1.csv` without any further cleaning necessary, as it simply displays the birth rate from 1980 to 2020. Thus, the cleaned data is directly stored to `outputs/data/fig_1.csv` from `inputs/data/fig_1.csv`.
 
-In @fig-trends-in-birth-rate-in-young-people, the dataset was imported from `inputs/data/fig_2.csv` and used `dpylr` [@citedplyr] to select the birth rates of the six age groups (from 15 to 44). Furthermore, the selected data was renamed using `tidyverse` [@citetidyverse] and changed into names that represent the content of the data better. Moreover, these data is then pivoted using `tidyverse` [@citetidyverse] in order to be graphed properly using `ggplot2` [@citeggplot].
-
-In @fig-birth-rate-comparison-old-and-young, the first dataset was imported from `inputs/data/fig_3.csv` and the dataset containing American states information was from `mapdata` [@citemapdata]. The first dataset was first sliced to remove birth rate information regarding the states of Alaska and Hawaii, as these two states can't be properly shown in the dataset from `mapdata` [@citemapdata]. Then, a temporary data frame is created with tibble from `tidyverse` [@citetidyverse] with the abbreviated state names from `inputs/data/fig_3.csv` and the state full names. Moreover, the abbreviated state name in the first dataset is switched with the state full name using left_join from `dpylr` [@citedplyr], which is then selected and renamed using `tidyverse` [@citetidyverse]. After this, the adjusted dataset with the state full names and birth rate is merged with the second dataset that contains the American states information for further graphing with `haven` [@citehaven].
-
-In all three figures, the library `here` [@citehere] was used to ensure that the file path should be accessible in all directories.
 
 
 

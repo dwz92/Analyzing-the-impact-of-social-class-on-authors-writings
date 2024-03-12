@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.3.450">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Qi Er (Emma) Teng">
+<meta name="author" content="Wentao Sun">
+<meta name="author" content="Yang Cheng">
+<meta name="dcterms.date" content="2024-03-12">
+
+<title>Lexical Richness as a Lens: Exploring the Influence of Social Class on Authors’ Writings</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="paper_files/libs/clipboard/clipboard.min.js"></script>
+<script src="paper_files/libs/quarto-html/quarto.js"></script>
+<script src="paper_files/libs/quarto-html/popper.min.js"></script>
+<script src="paper_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="paper_files/libs/quarto-html/anchor.min.js"></script>
+<link href="paper_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="paper_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="paper_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="paper_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="paper_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-intro" id="toc-sec-intro" class="nav-link active" data-scroll-target="#sec-intro"><span class="header-section-number">1</span> Introduction</a></li>
+  <li><a href="#sec-data" id="toc-sec-data" class="nav-link" data-scroll-target="#sec-data"><span class="header-section-number">2</span> Data</a>
+  <ul class="collapse">
+  <li><a href="#source-and-methodology" id="toc-source-and-methodology" class="nav-link" data-scroll-target="#source-and-methodology"><span class="header-section-number">2.1</span> Source and Methodology</a></li>
+  <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables"><span class="header-section-number">2.2</span> Variables</a></li>
+  </ul></li>
+  <li><a href="#todo-explain-for-better-visualization" id="toc-todo-explain-for-better-visualization" class="nav-link" data-scroll-target="#todo-explain-for-better-visualization"><span class="header-section-number">3</span> TODO: explain For better visualization</a>
+  <ul class="collapse">
+  <li><a href="#measurements" id="toc-measurements" class="nav-link" data-scroll-target="#measurements"><span class="header-section-number">3.1</span> Measurements</a></li>
+  <li><a href="#model-set-up" id="toc-model-set-up" class="nav-link" data-scroll-target="#model-set-up"><span class="header-section-number">3.2</span> Model set-up</a></li>
+  </ul></li>
+  <li><a href="#todo-formula" id="toc-todo-formula" class="nav-link" data-scroll-target="#todo-formula"><span class="header-section-number">4</span> TODO: formula</a>
+  <ul class="collapse">
+  <li><a href="#model-justification" id="toc-model-justification" class="nav-link" data-scroll-target="#model-justification"><span class="header-section-number">4.1</span> Model Justification</a></li>
+  </ul></li>
+  <li><a href="#todo-expectation-and-why" id="toc-todo-expectation-and-why" class="nav-link" data-scroll-target="#todo-expectation-and-why"><span class="header-section-number">5</span> TODO: expectation and why</a></li>
+  <li><a href="#sec-result" id="toc-sec-result" class="nav-link" data-scroll-target="#sec-result"><span class="header-section-number">6</span> Results</a></li>
+  <li><a href="#expalin" id="toc-expalin" class="nav-link" data-scroll-target="#expalin"><span class="header-section-number">7</span> Expalin</a>
+  <ul class="collapse">
+  <li><a href="#hugh-garners-cttr-and-length" id="toc-hugh-garners-cttr-and-length" class="nav-link" data-scroll-target="#hugh-garners-cttr-and-length"><span class="header-section-number">7.1</span> Hugh Garners CTTR and Length</a></li>
+  <li><a href="#david-herbert-lawrence-cttr-and-length" id="toc-david-herbert-lawrence-cttr-and-length" class="nav-link" data-scroll-target="#david-herbert-lawrence-cttr-and-length"><span class="header-section-number">7.2</span> David Herbert Lawrence CTTR and Length</a></li>
+  <li><a href="#nancy-mitford-cttr-and-length" id="toc-nancy-mitford-cttr-and-length" class="nav-link" data-scroll-target="#nancy-mitford-cttr-and-length"><span class="header-section-number">7.3</span> Nancy Mitford CTTR and Length</a></li>
+  <li><a href="#powell-anthony-cttr-and-length" id="toc-powell-anthony-cttr-and-length" class="nav-link" data-scroll-target="#powell-anthony-cttr-and-length"><span class="header-section-number">7.4</span> Powell Anthony CTTR and Length</a></li>
+  </ul></li>
+  <li><a href="#sec-discussion" id="toc-sec-discussion" class="nav-link" data-scroll-target="#sec-discussion"><span class="header-section-number">8</span> Discussion</a>
+  <ul class="collapse">
+  <li><a href="#findings" id="toc-findings" class="nav-link" data-scroll-target="#findings"><span class="header-section-number">8.1</span> Findings</a></li>
+  <li><a href="#economic-impact-insights" id="toc-economic-impact-insights" class="nav-link" data-scroll-target="#economic-impact-insights"><span class="header-section-number">8.2</span> Economic Impact Insights</a></li>
+  <li><a href="#societal-and-technological-influences" id="toc-societal-and-technological-influences" class="nav-link" data-scroll-target="#societal-and-technological-influences"><span class="header-section-number">8.3</span> Societal and Technological Influences</a></li>
+  <li><a href="#weaknesses-and-future-research-directions" id="toc-weaknesses-and-future-research-directions" class="nav-link" data-scroll-target="#weaknesses-and-future-research-directions"><span class="header-section-number">8.4</span> Weaknesses and Future Research Directions</a></li>
+  </ul></li>
+  <li><a href="#appendix" id="toc-appendix" class="nav-link" data-scroll-target="#appendix">Appendix</a></li>
+  <li><a href="#sec-appendix" id="toc-sec-appendix" class="nav-link" data-scroll-target="#sec-appendix"><span class="header-section-number">9</span> Data Manipulation and Cleaning</a></li>
+  <li><a href="#todo-explainn" id="toc-todo-explainn" class="nav-link" data-scroll-target="#todo-explainn"><span class="header-section-number">10</span> TODO: explainn</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">11</span> References</a></li>
+  </ul>
+</nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Lexical Richness as a Lens: Exploring the Influence of Social Class on Authors’ Writings</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Authors</div>
+    <div class="quarto-title-meta-contents">
+             <p>Qi Er (Emma) Teng </p>
+             <p>Wentao Sun </p>
+             <p>Yang Cheng </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 12, 2024</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+<div>
+  <div class="abstract">
+    <div class="abstract-title">Abstract</div>
+    In this study, we explore the impact of the Great Recession on birth rates among young people in the United States, utilizing a comprehensive analysis of demographic and economic data. Our findings reveal a significant decline in birth rates within this group during and following the economic downturn, highlighting the intricate relationship between economic stability and reproductive decisions. This research contributes to our understanding of how macroeconomic factors can have profound effects on personal life choices, emphasizing the need for supportive policies targeting young individuals during economic crises.
+  </div>
+</div>
+
+</header>
+
+<section id="sec-intro" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
+<p>The paper is structured to facilitate a comprehensive understanding of the study and its implications. Following <a href="#sec-intro">Section&nbsp;1</a>, <a href="#sec-data">Section&nbsp;2</a> presents the data, detailing the data sources, analytical techniques, and the rationale behind the chosen methods. <a href="#sec-result">Section&nbsp;6</a> discusses the results, elaborating on the observed trends and patterns in birth rate data. <a href="#sec-discussion">Section&nbsp;8</a> provides an in-depth discussion of these findings, exploring potential factors influencing these trends, drawing connections to broader socio-economic issues, and providing suggestions for future research in this area.</p>
+</section>
+<section id="sec-data" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Data</h1>
+<p>This section aims to offer an insightful understanding of the dataset utilized in our analysis. The dataset captures the birth rates across various demographics in the United States from 1980 to 2020. The data provide a broader context, allowing an analysis of trends over time and across different economic cycles, including the period of the Great Recession.</p>
+<section id="source-and-methodology" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="source-and-methodology"><span class="header-section-number">2.1</span> Source and Methodology</h2>
+<p>Data on birth rates for women aged 15-44 were sourced from National Vital Statistics Reports covering 2015, 2019, and 2020 <span class="citation" data-cites="cite2015birth cite2019birth cite2020birth">(<a href="#ref-cite2015birth" role="doc-biblioref">Martin and Mathews 2017</a>; <a href="#ref-cite2019birth" role="doc-biblioref">Martin and Driscoll 2021</a>; <a href="#ref-cite2020birth" role="doc-biblioref">Hamilton and Osterman 2021</a>)</span>, compiled from birth certificates across the US and the District of Columbia. <span class="citation" data-cites="citeoriginal">Kearney, Levine, and Pardue (<a href="#ref-citeoriginal" role="doc-biblioref">2022</a>)</span> provided aggregated birth data for six cohorts over five-year spans, derived from the NBER Natality Database <span class="citation" data-cites="citeNBER">(<a href="#ref-citeNBER" role="doc-biblioref">National Bureau of Economic Research 2021</a>)</span> and NCHS microdata <span class="citation" data-cites="citeNCHS">(<a href="#ref-citeNCHS" role="doc-biblioref">National Center for Health Statistics 2020</a>)</span> for 1980-2019. In this study, we simply used the replication data package provided by <span class="citation" data-cites="citeoriginal">Kearney, Levine, and Pardue (<a href="#ref-citeoriginal" role="doc-biblioref">2022</a>)</span> for analysis.</p>
+<p>While there were alternative datasets available from other public and private sources, this dataset was chosen due to its comprehensive coverage, reliability, and the level of detail it offers. It includes data from the National Center for Health Statistics <span class="citation" data-cites="citeNCHS">(<a href="#ref-citeNCHS" role="doc-biblioref">National Center for Health Statistics 2020</a>)</span> and the U.S. Census Bureau, which are both reputable sources of demographic data.</p>
+<p>The data was processed and cleaned using R<span class="citation" data-cites="citeR">(<a href="#ref-citeR" role="doc-biblioref">R Core Team 2020</a>)</span>, a powerful statistical programming language. For key operations, please refer to the <a href="#sec-appendix">Section&nbsp;9</a>.</p>
+</section>
+<section id="variables" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="variables"><span class="header-section-number">2.2</span> Variables</h2>
+<p>#TODO: explain raw text, sample raw text</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="tbl-display-raw-data" class="anchored">
+<table class="table table-sm table-striped small">
+<caption>Table&nbsp;1: First Ten Row of Waste No tear by Hugh Garners</caption>
+<colgroup>
+<col style="width: 100%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Text</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">“TO LOOK AT ME, you’d never know that I’d ever been anything but a skid row bum. I haven’t been one long, as years are reckoned down here, and I won’t be one much longer. As soon as I get out of this hospital and get a drink or two into me, I’m going to blow the top off this town. Yeah, I know. I’ve been saying the same thing for months, but this time I mean it.”</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">“”</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">“In our city the skid row is located ten blocks from Waltham Avenue. I was born on Waltham Avenue thirty-seven years ago, and it took me the last twenty to get to skid row. Twenty years is a third of a lifetime, and my twenty should have been the formative and pleasurable ones of my life. Instead, they were something else again, something I am going to try to put down here. It may help me, if I lay out my life in black type on white paper. It may give me the guts to do the things I’ve got to do.”</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">“”</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">“When I was a kid Waltham Avenue had not yet become a slum street. It was situated in a poor working-class district, but its tenants were decent people who believed in work, thrift, and of some day moving to one of the new residential districts that were springing up in the suburbs of our city. Many of them moved away over the years when I was a boy, but my family were left behind. It might have been my old man’s drinking that stopped the Matterson family from getting ahead, or, as he claimed, it might have been bad luck. Whatever it was, it kept us chained down to our little rented house on Waltham Avenue. We were still there when Waltham became an industrial street, with the soap factory and the planing mill and the fish wholesaler’s where there had formerly been rows of little houses like ours.”</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">“”</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">“In the summer the smells from the factories used to fill the streets, and Nicky Manulesco used to stop his bicycle in front of our steps and sniff the air. “Smell that, Tom?” he would ask. “That goddamn soap company is cleaning its vats again. Between the smell of the soap and the smell of the fish from down the street, this street stinks like bath night in a girls’ school.””</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">“”</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">“When I was fourteen I left school and got a job riding a bicycle for the telegraph company. It was good to get away from school, and the money I made helped us at home. By this time my old man was a confirmed lush, and he had stopped working with the first day of the Depression. From then on the Matterson family lived on relief hand-outs and from the money I made delivering telegraphs.”</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">“”</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">“My mother might have been young once, but she was old from the first time I remember her. When I think of her now, I see a little beaten-up old woman working over the coal range in the kitchen or scrubbing the tattered linoleum in the front hall. She’d had a hard life, and had dragged up four kids, of which I was the eldest. Besides my sister Elsie, who was two years younger them me, there were two other boys, Eric and Paul. My mother died in 1930, and my two young brothers were taken away by the Children’s Aid. Elsie went to live with an aunt in another part of town, and my old man disappeared. I learned years later that he had died in a Midwest jail. I moved in with a friend of mine, Alec Ranning.”</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p><a href="#tbl-display-raw-data">Table&nbsp;1</a>, created with <code>kableExtra</code> <span class="citation" data-cites="citekableExtra">(<a href="#ref-citekableExtra" role="doc-biblioref">Zhu 2021</a>)</span>, showcases the first ten rows of #TODO: Explain raw data</p>
+</section>
+</section>
+<section id="todo-explain-for-better-visualization" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> TODO: explain For better visualization</h1>
+<div class="cell">
+<div class="cell-output-display">
+<div id="tbl-authors-cttr" class="anchored">
+<table class="table table-sm table-striped small">
+<caption>Table&nbsp;2: First Ten Rows of Authors’ Corrected Type Token Ratio</caption>
+<colgroup>
+<col style="width: 28%">
+<col style="width: 38%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">author</th>
+<th style="text-align: left;">title</th>
+<th style="text-align: right;">corrected type token ratio</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">David Herbert Lawrence</td>
+<td style="text-align: left;">england_my_england</td>
+<td style="text-align: right;">21.4</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">David Herbert Lawrence</td>
+<td style="text-align: left;">kangaroo</td>
+<td style="text-align: right;">40.3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">David Herbert Lawrence</td>
+<td style="text-align: left;">lady_chatterleys_lover</td>
+<td style="text-align: right;">35.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">David Herbert Lawrence</td>
+<td style="text-align: left;">odour_of_chrysanthemums</td>
+<td style="text-align: right;">20.5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">David Herbert Lawrence</td>
+<td style="text-align: left;">sons_and_lovers</td>
+<td style="text-align: right;">35.2</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">David Herbert Lawrence</td>
+<td style="text-align: left;">the_plumed_serpent</td>
+<td style="text-align: right;">37.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">David Herbert Lawrence</td>
+<td style="text-align: left;">the_rainbow</td>
+<td style="text-align: right;">35.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">David Herbert Lawrence</td>
+<td style="text-align: left;">the_virgin_and_the_gipsy</td>
+<td style="text-align: right;">28.3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Hugh Garners</td>
+<td style="text-align: left;">waste_no_tears</td>
+<td style="text-align: right;">21.9</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Hugh Garners</td>
+<td style="text-align: left;">the_conversion_of_willie_heaps</td>
+<td style="text-align: right;">15.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<p><a href="#tbl-authors-cttr">Table&nbsp;2</a> # TODO: Explain</p>
+<section id="measurements" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="measurements"><span class="header-section-number">3.1</span> Measurements</h2>
+<p>#TODO: explainnnn</p>
+<p>#Model # TODO: Explain neg binom model</p>
+</section>
+<section id="model-set-up" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="model-set-up"><span class="header-section-number">3.2</span> Model set-up</h2>
+</section>
+</section>
+<section id="todo-formula" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> TODO: formula</h1>
+<section id="model-justification" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="model-justification"><span class="header-section-number">4.1</span> Model Justification</h2>
+</section>
+</section>
+<section id="todo-expectation-and-why" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> TODO: expectation and why</h1>
+</section>
+<section id="sec-result" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Results</h1>
+</section>
+<section id="expalin" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Expalin</h1>
+<p><a href="#sec-result">Section&nbsp;6</a></p>
+<section id="hugh-garners-cttr-and-length" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="hugh-garners-cttr-and-length"><span class="header-section-number">7.1</span> Hugh Garners CTTR and Length</h2>
+</section>
+<section id="david-herbert-lawrence-cttr-and-length" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="david-herbert-lawrence-cttr-and-length"><span class="header-section-number">7.2</span> David Herbert Lawrence CTTR and Length</h2>
+</section>
+<section id="nancy-mitford-cttr-and-length" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="nancy-mitford-cttr-and-length"><span class="header-section-number">7.3</span> Nancy Mitford CTTR and Length</h2>
+</section>
+<section id="powell-anthony-cttr-and-length" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="powell-anthony-cttr-and-length"><span class="header-section-number">7.4</span> Powell Anthony CTTR and Length</h2>
+<div style="page-break-after: always;"></div>
+</section>
+</section>
+<section id="sec-discussion" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Discussion</h1>
+<p>The findings of this study offer a layered perspective on the decline in birth rates among young people in the United States, particularly in the context of the Great Recession. Our analysis provides an understanding of the multifaceted influences on demographic trends.</p>
+<section id="findings" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="findings"><span class="header-section-number">8.1</span> Findings</h2>
+</section>
+<section id="economic-impact-insights" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="economic-impact-insights"><span class="header-section-number">8.2</span> Economic Impact Insights</h2>
+</section>
+<section id="societal-and-technological-influences" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="societal-and-technological-influences"><span class="header-section-number">8.3</span> Societal and Technological Influences</h2>
+</section>
+<section id="weaknesses-and-future-research-directions" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="weaknesses-and-future-research-directions"><span class="header-section-number">8.4</span> Weaknesses and Future Research Directions</h2>
+<div style="page-break-after: always;"></div>
+</section>
+</section>
+<section id="appendix" class="level1 unnumbered">
+<h1 class="unnumbered">Appendix</h1>
+</section>
+<section id="sec-appendix" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Data Manipulation and Cleaning</h1>
+</section>
+<section id="todo-explainn" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> TODO: explainn</h1>
+<p>Most of the data in our dataset was previously cleaned for the project we are replicating. Thus, <strong>?@fig-trends-in-birth-rate</strong> directly used data from <code>outputs/data/fig_1.csv</code> without any further cleaning necessary, as it simply displays the birth rate from 1980 to 2020. Thus, the cleaned data is directly stored to <code>outputs/data/fig_1.csv</code> from <code>inputs/data/fig_1.csv</code>.</p>
+<p>In <strong>?@fig-trends-in-birth-rate-in-young-people</strong>, the dataset was imported from <code>inputs/data/fig_2.csv</code> and used <code>dpylr</code> <span class="citation" data-cites="citedplyr">(<a href="#ref-citedplyr" role="doc-biblioref">Wickham et al. 2023</a>)</span> to select the birth rates of the six age groups (from 15 to 44). Furthermore, the selected data was renamed using <code>tidyverse</code> <span class="citation" data-cites="citetidyverse">(<a href="#ref-citetidyverse" role="doc-biblioref">Wickham et al. 2019</a>)</span> and changed into names that represent the content of the data better. Moreover, these data is then pivoted using <code>tidyverse</code> <span class="citation" data-cites="citetidyverse">(<a href="#ref-citetidyverse" role="doc-biblioref">Wickham et al. 2019</a>)</span> in order to be graphed properly using <code>ggplot2</code> <span class="citation" data-cites="citeggplot">(<a href="#ref-citeggplot" role="doc-biblioref">Wickham 2016</a>)</span>.</p>
+<p>In <strong>?@fig-birth-rate-comparison-old-and-young</strong>, the first dataset was imported from <code>inputs/data/fig_3.csv</code> and the dataset containing American states information was from <code>mapdata</code> <span class="citation" data-cites="citemapdata">(<a href="#ref-citemapdata" role="doc-biblioref">Richard A. Becker and Ray Brownrigg. 2022</a>)</span>. The first dataset was first sliced to remove birth rate information regarding the states of Alaska and Hawaii, as these two states can’t be properly shown in the dataset from <code>mapdata</code> <span class="citation" data-cites="citemapdata">(<a href="#ref-citemapdata" role="doc-biblioref">Richard A. Becker and Ray Brownrigg. 2022</a>)</span>. Then, a temporary data frame is created with tibble from <code>tidyverse</code> <span class="citation" data-cites="citetidyverse">(<a href="#ref-citetidyverse" role="doc-biblioref">Wickham et al. 2019</a>)</span> with the abbreviated state names from <code>inputs/data/fig_3.csv</code> and the state full names. Moreover, the abbreviated state name in the first dataset is switched with the state full name using left_join from <code>dpylr</code> <span class="citation" data-cites="citedplyr">(<a href="#ref-citedplyr" role="doc-biblioref">Wickham et al. 2023</a>)</span>, which is then selected and renamed using <code>tidyverse</code> <span class="citation" data-cites="citetidyverse">(<a href="#ref-citetidyverse" role="doc-biblioref">Wickham et al. 2019</a>)</span>. After this, the adjusted dataset with the state full names and birth rate is merged with the second dataset that contains the American states information for further graphing with <code>haven</code> <span class="citation" data-cites="citehaven">(<a href="#ref-citehaven" role="doc-biblioref">Wickham, Miller, and Smith 2023</a>)</span>.</p>
+<p>In all three figures, the library <code>here</code> <span class="citation" data-cites="citehere">(<a href="#ref-citehere" role="doc-biblioref">Müller 2020</a>)</span> was used to ensure that the file path should be accessible in all directories.</p>
+<div style="page-break-after: always;"></div>
+</section>
+<section id="references" class="level1 unnumbered" data-number="11">
+
+
+</section>
+
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">11 References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-cite2020birth" class="csl-entry" role="listitem">
+Hamilton, Martin, Brady E., and Michelle J. K. Osterman. 2021. <span>“Births: Provisional Data for 2020.”</span> <em>Vital Statistics Rapid Release</em>, no. 12: 6. https://doi.org/<a href="https://doi.org/10.15620/cdc:104993">https://doi.org/10.15620/cdc:104993</a>.
+</div>
+<div id="ref-citeoriginal" class="csl-entry" role="listitem">
+Kearney, Melissa S., Phillip B. Levine, and Luke Pardue. 2022. <span>“The Puzzle of Falling US Birth Rates Since the Great Recession.”</span> <em>Journal of Economic Perspectives</em> 36 (1): 151–76. <a href="https://doi.org/10.1257/jep.36.1.151">https://doi.org/10.1257/jep.36.1.151</a>.
+</div>
+<div id="ref-cite2019birth" class="csl-entry" role="listitem">
+Martin, Hamilton, Joyce A., and Anne K. Driscoll. 2021. <span>“Births: Final Data for 2019.”</span> <em>National Vital Statistics Report</em> 70 (2): 13. https://doi.org/<a href="https://dx.doi.org/10.15620/cdc:100472">https://dx.doi.org/10.15620/cdc:100472</a>.
+</div>
+<div id="ref-cite2015birth" class="csl-entry" role="listitem">
+Martin, Hamilton, Joyce A., and T. J. Mathews. 2017. <span>“Births: Final Data for 2015.”</span> <em>National Vital Statistics Report</em> 66 (1): 35. <a href="https://www.cdc.gov/nchs/data/nvsr/nvsr66/nvsr66_01.pdf">https://www.cdc.gov/nchs/data/nvsr/nvsr66/nvsr66_01.pdf</a>.
+</div>
+<div id="ref-citehere" class="csl-entry" role="listitem">
+Müller, Kirill. 2020. <em>Here: A Simpler Way to Find Your Files</em>. <a href="https://CRAN.R-project.org/package=here">https://CRAN.R-project.org/package=here</a>.
+</div>
+<div id="ref-citeNBER" class="csl-entry" role="listitem">
+National Bureau of Economic Research. 2021. <em>NCHS Vital Statistics Natality Birth Data</em>. <a href="https://data.nber.org/data/vital-statistics-natality-data.html">https://data.nber.org/data/vital-statistics-natality-data.html</a>.
+</div>
+<div id="ref-citeNCHS" class="csl-entry" role="listitem">
+National Center for Health Statistics. 2020. <em>Restricted-Use Vital Statistics Data</em>. <a href="https://www.cdc.gov/nchs/nvss/nvss-restricted-data.htm">https://www.cdc.gov/nchs/nvss/nvss-restricted-data.htm</a>.
+</div>
+<div id="ref-citeR" class="csl-entry" role="listitem">
+R Core Team. 2020. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+</div>
+<div id="ref-citemapdata" class="csl-entry" role="listitem">
+Richard A. Becker, Original S code by, and Allan R. Wilks. R version by Ray Brownrigg. 2022. <em>Mapdata: Extra Map Databases</em>. <a href="https://CRAN.R-project.org/package=mapdata">https://CRAN.R-project.org/package=mapdata</a>.
+</div>
+<div id="ref-citeggplot" class="csl-entry" role="listitem">
+Wickham, Hadley. 2016. <em>Ggplot2: Elegant Graphics for Data Analysis</em>. Springer-Verlag New York. <a href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</a>.
+</div>
+<div id="ref-citetidyverse" class="csl-entry" role="listitem">
+Wickham, Hadley, Mara Averick, Jennifer Bryan, Winston Chang, Lucy D’Agostino McGowan, Romain François, Garrett Grolemund, et al. 2019. <span>“Welcome to the <span class="nocase">tidyverse</span>.”</span> <em>Journal of Open Source Software</em> 4 (43): 1686. <a href="https://doi.org/10.21105/joss.01686">https://doi.org/10.21105/joss.01686</a>.
+</div>
+<div id="ref-citedplyr" class="csl-entry" role="listitem">
+Wickham, Hadley, Romain François, Lionel Henry, Kirill Müller, and Davis Vaughan. 2023. <em>Dplyr: A Grammar of Data Manipulation</em>. <a href="https://dplyr.tidyverse.org">https://dplyr.tidyverse.org</a>.
+</div>
+<div id="ref-citehaven" class="csl-entry" role="listitem">
+Wickham, Hadley, Evan Miller, and Danny Smith. 2023. <em>Haven: Import and Export ’SPSS’, ’Stata’ and ’SAS’ Files</em>. <a href="https://haven.tidyverse.org">https://haven.tidyverse.org</a>.
+</div>
+<div id="ref-citekableExtra" class="csl-entry" role="listitem">
+Zhu, Hao. 2021. <em>kableExtra: Construct Complex Table with ’Kable’ and Pipe Syntax</em>. <a href="http://haozhu233.github.io/kableExtra/,
+https://github.com/haozhu233/kableExtra">http://haozhu233.github.io/kableExtra/, https://github.com/haozhu233/kableExtra</a>.
+</div>
+</div></section></div></main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

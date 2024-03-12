@@ -1,8 +1,8 @@
 #### Preamble ####
 # Purpose: Simulates data
-# Author: Yuanyi (Leo) Liu, Qi Er (Emma) Teng
-# Email: leoy.liu@mail.utoronto.ca, e.teng@mail.utoronto.ca
-# Date: 8 February 2024
+# Author: Qi Er (Emma) Teng, Wentao Sun, Yang Cheng
+# Contact: e.teng@mail.utoronto.ca, wentaosun196@gmail.com, yvonneyang.cheng@mail.utoronto.ca
+# Date: 11 March 2024
 # License: MIT
 
 

@@ -1,0 +1,212 @@
+---
+title: "Lexical Richness as a Lens: Exploring the Influence of Social Class on Authors' Writings"
+author: 
+  - Qi Er (Emma) Teng
+  - Wentao Sun
+  - Yang Cheng 
+  
+thanks: "Code and data are available at: https://github.com/dwz92/Analyzing-the-impact-of-social-class-on-authors-writings."
+date: today
+date-format: long
+abstract: "In this study, we explore the impact of the Great Recession on birth rates among young people in the United States, utilizing a comprehensive analysis of demographic and economic data. Our findings reveal a significant decline in birth rates within this group during and following the economic downturn, highlighting the intricate relationship between economic stability and reproductive decisions. This research contributes to our understanding of how macroeconomic factors can have profound effects on personal life choices, emphasizing the need for supportive policies targeting young individuals during economic crises."
+format: html
+toc: true
+number-sections: true
+bibliography: references.bib
+---
+
+```{r}
+#| include: false
+#| warning: false
+#| message: false
+
+# install.packages("tidyverse")
+# install.packages("dplyr")
+# install.packages("here")
+# install.packages("mapdata")
+# install.packages("ggplot2")
+# install.packages("haven")
+# install.packages("kableExtra")
+
+library(tidyverse)
+library(dplyr)
+library(here)
+library(ggplot2)
+library(modelsummary)
+library(kableExtra)
+```
+
+# Introduction {#sec-intro}
+
+
+The paper is structured to facilitate a comprehensive understanding of the study and its implications. Following @sec-intro, @sec-data presents the data, detailing the data sources, analytical techniques, and the rationale behind the chosen methods. @sec-result discusses the results, elaborating on the observed trends and patterns in birth rate data. @sec-discussion provides an in-depth discussion of these findings, exploring potential factors influencing these trends, drawing connections to broader socio-economic issues, and providing suggestions for future research in this area.
+
+# Data {#sec-data}
+
+This section aims to offer an insightful understanding of the dataset utilized in our analysis. The dataset captures the birth rates across various demographics in the United States from 1980 to 2020. The data provide a broader context, allowing an analysis of trends over time and across different economic cycles, including the period of the Great Recession.
+
+## Source and Methodology
+Data on birth rates for women aged 15-44 were sourced from National Vital Statistics Reports covering 2015, 2019, and 2020 [@cite2015birth; @cite2019birth; @cite2020birth], compiled from birth certificates across the US and the District of Columbia. @citeoriginal provided aggregated birth data for six cohorts over five-year spans, derived from the NBER Natality Database [@citeNBER] and NCHS microdata [@citeNCHS] for 1980-2019. In this study, we simply used the replication data package provided by @citeoriginal for analysis.
+
+While there were alternative datasets available from other public and private sources, this dataset was chosen due to its comprehensive coverage, reliability, and the level of detail it offers. It includes data from the National Center for Health Statistics [@citeNCHS] and the U.S. Census Bureau, which are both reputable sources of demographic data.
+
+The data was processed and cleaned using R[@citeR], a powerful statistical programming language. For key operations, please refer to the [@sec-appendix]. 
+
+## Variables
+
+#TODO: explain raw text, sample raw text
+
+```{r}
+#| label: tbl-display-raw-data
+#| tbl-cap: First Ten Row of Waste No tear by Hugh Garners
+#| echo: false
+
+waste_no_tears_t <- readLines(here::here("data/analysis_data/waste_no_tear_raw.txt"), encoding = "UTF-8")
+
+waste_no_tears_t |>
+  kable(
+    col.names = c("Text"),
+    booktabs = TRUE
+  )
+
+```
+@tbl-display-raw-data, created with `kableExtra` [@citekableExtra], showcases the first ten rows of 
+#TODO: Explain raw data
+
+
+
+
+# TODO: explain For better visualization
+
+```{r}
+#| label: tbl-authors-cttr
+#| tbl-cap: First Ten Rows of Authors' Corrected Type Token Ratio
+#| echo: false
+
+cleaned_data <- read.csv(here::here("data/analysis_data/cttr_all.csv"))
+
+cleaned_data |>
+  select(author, title, corrected_type_token_ratio) |>
+  slice(1:10) |>
+  kable(
+    col.names = c("author", "title", "corrected type token ratio"),
+    digits = 1,
+    booktabs = TRUE
+  )
+```
+@tbl-authors-cttr
+# TODO: Explain 
+
+## Measurements
+
+#TODO: explainnnn
+
+#Model
+# TODO: Explain neg binom model
+
+## Model set-up
+
+# TODO: formula
+
+## Model Justification
+
+# TODO: expectation and why
+
+
+
+# Results {#sec-result}
+
+# Expalin
+@sec-result 
+
+## Hugh Garners CTTR and Length
+```{r}
+#| label: fig-trends-in-birth-rate
+#| fig-cap: Trend in Birth Rates in US
+#| echo: false
+
+
+```
+
+
+## David Herbert Lawrence CTTR and Length
+```{r}
+#| label: fig-trends-in-birth-rate-in-young-people
+#| fig-cap: Trends in Birth Rates by Age Group
+#| echo: false
+
+
+```
+
+
+
+
+
+
+## Nancy Mitford CTTR and Length
+```{r}
+#| label: fig-birth-rate-comparison-old-and-young
+#| fig-cap: Birth Rate between Younger and Older Population
+#| echo: false
+
+```
+
+
+## Powell Anthony CTTR and Length
+```{r}
+#| label: fig-change-in-birth-rates-by-state
+#| fig-cap: Change in Birth Rates by State, 2004–2008 to 2015–2019
+#| echo: false
+
+
+```
+
+
+\newpage
+
+# Discussion {#sec-discussion}
+
+The findings of this study offer a layered perspective on the decline in birth rates among young people in the United States, particularly in the context of the Great Recession. Our analysis provides an understanding of the multifaceted influences on demographic trends.
+
+## Findings
+
+
+
+
+## Economic Impact Insights
+
+
+
+## Societal and Technological Influences
+
+
+
+## Weaknesses and Future Research Directions
+
+
+
+
+\newpage
+
+\appendix
+
+# Appendix {-}
+
+# Data Manipulation and Cleaning {#sec-appendix}
+
+# TODO: explainn
+
+Most of the data in our dataset was previously cleaned for the project we are replicating. Thus, @fig-trends-in-birth-rate directly used data from `outputs/data/fig_1.csv` without any further cleaning necessary, as it simply displays the birth rate from 1980 to 2020. Thus, the cleaned data is directly stored to `outputs/data/fig_1.csv` from `inputs/data/fig_1.csv`.
+
+In @fig-trends-in-birth-rate-in-young-people, the dataset was imported from `inputs/data/fig_2.csv` and used `dpylr` [@citedplyr] to select the birth rates of the six age groups (from 15 to 44). Furthermore, the selected data was renamed using `tidyverse` [@citetidyverse] and changed into names that represent the content of the data better. Moreover, these data is then pivoted using `tidyverse` [@citetidyverse] in order to be graphed properly using `ggplot2` [@citeggplot].
+
+In @fig-birth-rate-comparison-old-and-young, the first dataset was imported from `inputs/data/fig_3.csv` and the dataset containing American states information was from `mapdata` [@citemapdata]. The first dataset was first sliced to remove birth rate information regarding the states of Alaska and Hawaii, as these two states can't be properly shown in the dataset from `mapdata` [@citemapdata]. Then, a temporary data frame is created with tibble from `tidyverse` [@citetidyverse] with the abbreviated state names from `inputs/data/fig_3.csv` and the state full names. Moreover, the abbreviated state name in the first dataset is switched with the state full name using left_join from `dpylr` [@citedplyr], which is then selected and renamed using `tidyverse` [@citetidyverse]. After this, the adjusted dataset with the state full names and birth rate is merged with the second dataset that contains the American states information for further graphing with `haven` [@citehaven].
+
+In all three figures, the library `here` [@citehere] was used to ensure that the file path should be accessible in all directories.
+
+
+
+\newpage
+
+
+# References

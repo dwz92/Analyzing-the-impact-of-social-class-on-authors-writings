@@ -10,6 +10,7 @@ This repository contains a paper that explore the influence of social class on l
 -   `other` holds the `llm/` directory with llm usage, and `sketch` directory with the sketch for dataset and observation.
 -   `paper/` directory featuring the paper's PDF, the R Markdown script, and sourced references.
 -   `scripts/` contains the R script employed for data cleaning, simulation, modelling and testing.
+-   `models/` directory contains the `.rds` files to build the model.
 
 ## LLM Usage
 

@@ -33,26 +33,30 @@ library(tidybayes)
 # Introduction {#sec-intro}
 The Great Depression was a major economic event of the 20th century that had a profound effect on the global economic situation and class divisions. The question of whether the writing styles of different authors are affected by their class of origin and the general economic climate deserves an in-depth discussion. The purpose of this paper is to gain a deeper understanding of how people lived and thought after the Great Depression by examining whether upper-class writers had a richer writing vocabulary to utilize in their essays than middle-class writers.
 
-
 Utilizing a combination of quantitative data analysis and authorship studies, we investigated the vocabulary richness of texts used by upper-class and middle-class authors after the Great Depression. Our findings suggest that works produced by upper-class authors during the period 1930-1990 will have a richer vocabulary compared to middle-class writers. This phenomenon suggests that different classes of writers have different writing styles, and that economic downturns and international instability have had an impact on writers' writing styles. It also had a profound effect on the writers' personal lives, including education, life and thought. These influences, brought about by the broader context of the times, affect not only the choice of vocabulary used in the essay, but also the expression of the central idea of the whole essay, which in turn affects the minds of many civilian readers.
-
 
 The paper is structured to facilitate a comprehensive understanding of the study and its implications. Following @sec-intro, @sec-data presents the data, detailing the data sources, analytical techniques, and the rationale behind the chosen methods. @sec-result discusses the results, elaborating on the observed trends and patterns in the authors writings. @sec-discussion provides an in-depth discussion of these findings, exploring potential factors influencing these trends, drawing connections to broader socio-economic issues, and providing suggestions for future research in this area.
 
-# Estimand
+## Estimand
 In this study, our main object of estimation is the causal effect of different classes on the vocabulary use of writers' writing, i.e., changes that can be attributed to the writers' own class of origin, divorced from the economic factors of their times. This involves analyzing the richness of the writing vocabulary of authors from both the upper and middle classes, in order to understand how differences in education, life, and personal perceptions brought about by different class origins affect writers' ideas and writing styles.
 
 # Data {#sec-data}
 
-# TODO: explain
+## TODO: explain
 
 ## Source and Methodology
 
-# TODO: explain
+Data on birth rates for women aged 15-44 were sourced from National Vital Statistics Reports covering 2015, 2019, and 2020 [@cite2015birth; @cite2019birth; @cite2020birth], compiled from birth certificates across the US and the District of Columbia. @citeoriginal provided aggregated birth data for six cohorts over five-year spans, derived from the NBER Natality Database [@citeNBER] and NCHS microdata [@citeNCHS] for 1980-2019. In this study, we simply used the replication data package provided by @citeoriginal for analysis.
+
+Data on the 
+
+While there were alternative datasets available from other public and private sources, this dataset was chosen due to its comprehensive coverage, reliability, and the level of detail it offers. It includes data from the National Center for Health Statistics [@citeNCHS] and the U.S. Census Bureau, which are both reputable sources of demographic data.
+
+The data was processed and cleaned using R[@citeR], a powerful statistical programming language. For key operations, please refer to the [@sec-appendix].
 
 ## Variables
 
-#TODO: explain raw text, sample raw text
+###TODO: explain raw text, sample raw text
 
 ```{r}
 #| label: tbl-display-raw-data
@@ -69,12 +73,12 @@ waste_no_tears_t |>
 
 ```
 @tbl-display-raw-data, created with `kableExtra` [@citekableExtra], showcases the first ten rows of 
-#TODO: Explain raw data
+###TODO: Explain raw data
 
 
 
 
-# TODO: explain For better visualization
+### TODO: explain For better visualization
 
 ```{r}
 #| label: tbl-authors-cttr
@@ -112,17 +116,26 @@ word_distribution |>
     booktabs = TRUE
   )
 ```
-# TODO: Explain 
+### TODO: Explain 
+
+
+
+
 
 ## Measurements
 
-#TODO: explainnnn
+###TODO: explainnnn
+
+
+
 
 #Model
-# TODO: Explain neg binom model
-Negative Binomial regression
 
-We will fit our multi-level model with the Negative Binomial regression, and although CTTR is not a count value, for the context of this paper we will temporarily disregard this assumption.
+Negative binomial regression is a type of generalized linear model that is particularly useful for modeling count data, especially when equal mean and variance cannot be assumed. The negative binomial regression model extends the Poisson regression model by disregard this restriction by allowing data to exhibit overdispersion.
+
+Moreover, as a negative binomial regression model combines with multilevel modeling (hierarchical linear modeling), the principles of multilevel analysis and the flexibility of the negative binomial distribution combines to handle overdispersed count data.
+
+In the context of our paper, we will fit our multi-level model with the Negative Binomial regression to discover the correlation between authors lexical richness and their social class. Although Corrected Type Token Ration (CTTR) is not an exact count value, for the context of this paper we will temporarily disregard this assumption by rounding the ratio to zero decimal digit.
 
 ## Model set-up
 
@@ -136,16 +149,20 @@ logit(\pi_i) &= \beta_0 + \alpha_a\\
 \alpha_a &\sim \mbox{Normal}(0, 3) \space for \space a = 1, \space 2,  \space 3, \space 4\\
 \end{align}
 
-We run the model in R [@citeR] using the `rstanarm` package of @rstanarm. We use the default priors from `rstanarm`.
+In this model:
+
+$y_i$: The dependent variable, $y_i$, represents the CTTR of the author's writings.
+
+$\beta_0$: The intercept $\beta_0$ has a prior distribution that is normal with mean 0 and standard deviation 3.
+
+$\alpha_a$: Each author effect $\alpha_a$ also has a normal prior with mean 0 and standard deviation 3.
 
 
-
-# TODO: formula
+We will run the model in R [@citeR] using the `rstanarm` package of @rstanarm.
 
 ## Model Justification
 
-# TODO: expectation and why
-
+The goal of this model is to understand how authors' lexical richness, as measured by CTTR, varies among authors. To account for the inherent variability and overdispersion in the count data, we model our data with the Negative Binomial regression. The multilevel aspect, from the background of each authors, allows the model to account for differences between authors. This aspect acknowledges that some authors may consistently use a more diverse vocabulary than others. With this setup, we expect to see a model that explores the variability in lexical richness across authors' writings, accounting for overdispersion in corrected type token ratio (CTTR) data. Moreover, since this setup is particularly useful for exploring the individual characteristics of authors, we also anticipate to see cprrelation of authors' social class with the lexical richness of their writings.
 
 # Results {#sec-result}
 
@@ -169,6 +186,10 @@ cttr_distribution |>
 ```
 
 
+@tbl-author-cttr-dist shows the average Corrected Type-Token Ratio (CTTR) and the associated standard deviation for each of the four studied authors. David Herbert Lawrence and Nancy Mitford both have high average CTTRs at 31.61 and 31.97 respectively, indicating a greater lexical richness in their works. However, Lawrence's works show more variability with a standard deviation of 7.37, as opposed to Mitford's 1.49, suggesting her use of vocabulary is more consistent. Hugh Garners has a notably lower average CTTR of 16.31, paired with a standard deviation of 2.31, which is indicative of a consistently narrower range of vocabulary. Powell Anthony tops the average CTTR at 34.67 with a standard deviation of 1.64, demonstrating not only the highest lexical richness but also a high consistency in vocabulary usage across his works. These figures collectively offer a quantitative insight into the diversity and consistency of language used by authors from different social backgrounds.
+
+
+
 ```{r}
 #| label: tbl-multi-lev-model
 #| tbl-cap: Model Summary of Multi-level and Negative Binomial model
@@ -187,8 +208,9 @@ modelsummary(
 ```
 
 
+@tbl-multi-lev-model provides coefficients from a negative binomial regression and a multilevel negative binomial regression, indicating how each author's work differs from the intercept in terms of Corrected Type-Token Ratio (CTTR). Hugh Garners shows a negative coefficient (-0.658 in Neg Binom and -1.308 in Multilevel Neg Binom), suggesting his CTTR is significantly lower than the baseline set by the intercept, which is consistent with the shortest average word count observed in the previous analysis. Nancy Mitford's coefficient is slightly above zero (0.021 in Neg Binom and 0.152 in Multilevel Neg Binom), indicating her CTTR is almost at the baseline level. This aligns with her position as neither the lowest nor the highest in terms of lexical richness. Powell Anthony’s positive coefficient (0.107 in Neg Binom and 0.153 in Multilevel Neg Binom) implies his CTTR is above the baseline, though not as high as David Herbert Lawrence's. David Herbert Lawrence does not have a coefficient listed here but is included in the distribution figure below.
 
-Here is a better visualization of the model
+
 ```{r}
 #| label: fig-multi-lev-model-by-author
 #| fig-cap: Distribution of Draws by Authors
@@ -202,6 +224,9 @@ author_CTTR_rstanarm_multilevel |>
   theme_minimal()
 ```
 
+
+To gain a more intuitive understanding of the model, we visualized the coefficients from @tbl-multi-lev-model in the form of a distribution figure. @fig-multi-lev-model-by-author, presents the distribution of CTTR estimates for each author, providing a visual representation of the variance around the mean estimate. Powell Anthony’s distribution is relatively narrow and centered around the mean, suggesting his lexical richness is consistently above the baseline with less variation in CTTR scores. Nancy Mitford's distribution also clusters closely around the mean but shows a slight skew towards higher values in the multilevel negative binomial regression, indicating a modest variability with a tendency for higher CTTR scores. Hugh Garners' distribution is broader and notably shifted to the left of the baseline in both models, implying a lower CTTR and greater variability in lexical richness compared to the others. David Herbert Lawrence, while not explicitly compared against a coefficient in the table, is represented in the figure with the broadest distribution. This suggests that his CTTR is highly variable, confirming the previous analysis which indicated his works are both lengthy and diverse in terms of lexical richness.
+Overall, the @fig-multi-lev-model-by-author corroborates the numerical findings of @tbl-multi-lev-model, offering a visual confirmation of the differences in lexical richness and variability among the authors. It highlights the significant spread in the lexical diversity of Lawrence's works, as well as the relative consistency observed in the writings of Powell Anthony and Nancy Mitford, with Garners' works showing both a lower mean and a higher dispersion.
 
 
 ```{r}
@@ -221,31 +246,32 @@ ggplot(cttr_all, aes(x = corrected_type_token_ratio, y = word_count, color = aut
 ```
 
 
+@fig-hugh-cttr-vs-wordcount presents a scatter plot comparing the CTTR and word count for works by David Herbert Lawrence, Hugh Garners, Nancy Mitford, and Powell Anthony. The plot reveals a pattern that suggests a correlation between the lexical richness of an author's work, as measured by CTTR, and the length of the text, as indicated by word count.
+
+David Herbert Lawrence is a conspicuous outlier in this analysis. His works are scattered across a wide range of both CTTR and word counts, showing that while he has a propensity for longer works, the lexical richness within those works is quite variable. Hugh Garners’ points cluster at the lower end of both word count and CTTR scales, suggesting that his works are shorter and less lexically rich. This could reflect the impact of social and educational limitations on his writing style. Nancy Mitford's works are positioned in the middle range of the word counts but show a higher CTTR, similar to that of Lawrence, indicating a richer vocabulary that is not necessarily dependent on the length of the text. Powell Anthony stands out with a group of works that not only have high CTTR values but also fall into a moderate range of word counts. His data points suggest a strong consistency in lexical richness that does not fluctuate widely with the length of the text.
+
+Overall, @fig-hugh-cttr-vs-wordcount points to a general trend where longer works tend to have higher CTTRs, but also highlights individual variations among authors. David Herbert Lawrence's variability points to a unique stylistic approach, while the other authors demonstrate a more predictable relationship between the volume of text and lexical diversity, aligning with the anticipated influence of their social class and educational experiences on literary production.
+
 
 \newpage
 
 # Discussion {#sec-discussion}
 
-The findings of this study offer a layered perspective on the decline in birth rates among young people in the United States, particularly in the context of the Great Recession. Our analysis provides an understanding of the multifaceted influences on demographic trends.
+This study provides a new perspective on literary analysis, particularly through quantitative substantiating the impact of social class on the use of literary language. Traditionally, literary analysis has focused primarily on qualitative methods, emphasizing subjective interpretation and thematic exploration. By introducing a quantitative dimension, this study not only complements these traditional approaches, but also provides a new lens through which the interplay between socioeconomic and cultural factors can be understood. 
 
 ## Findings
 
+The results of this research strongly support our initial hypothesis, underscoring a notable correlation between an author's social class, educational background, and the lexical richness of their work, despite the clear outliers in our data. The observed differences in Corrected Type-Token Ratios (CTTR) between upper-class authors like Nancy Mitford and Anthony Powell and those of Hugh Garners and David Herbert Lawrence reinforce this link. It is noteworthy that David Herbert Lawrence, while presenting a high CTTR, also has a significant work length. When normalized for a moderate length, Lawrence's CTTR settles around 20, which is consistent with our hypothesis. The study not only delineates the association between social class and lexical richness in literature but also emphasizes the importance of considering an author's background for a more nuanced interpretation of their work. This indicates that the vocabulary an author employs is substantially shaped by their social context, rather than being solely a reflection of individual style.
 
-
-
-## Economic Impact Insights
-
-
-
-## Societal and Technological Influences
-
-
+## Social and historical influences
+The novels selected for this study were written during the mid-20th century. This period was heavily influenced by World War II as well as the Great Depression, which resulted in profound social changes and significant class divisions. Social stratification had a significant impact on the educational and cultural experiences of individuals, which in turn was reflected in the richness of the vocabulary of their literary works. Writers from upper class backgrounds, such as Nancy Mitford and Anthony Powell, were exposed to a rich educational environment and a leisurely pursuit of literature and language that was usually unavailable to writers from the lower classes. This may have helped to enrich their vocabularies by observing a wider and more subtle choice of words in their work. Conversely, authors from lower socio-economic backgrounds, such as Hugh Garners and David Herbert Lawrence, experienced more limited educational opportunities, often confined to vocational or primary education. Their writing tended to reflect the immediate, more constrained realities of their lives and the spoken language of their surroundings. This difference in education and cultural exposure is evident in comparative analyses of the vocabulary richness of their work, which is much narrower in the works of lower-class writers.
+Thus, the unique social circumstances and educational differences of the mid-twentieth century played a key role in shaping the lexical character of literary works. The unique socio-economic contexts of the period created different opportunities for the linguistic development of writers, leading to a clear stratification of vocabulary use closely related to the class background of the authors. This observation underscores the importance of considering socio-economic factors when analyzing literary language trends, especially during periods of significant social and economic contrasts. This understanding is crucial for a comprehensive statistical analysis of language patterns across social classes and historical contexts in literary studies.
 
 ## Weaknesses and Future Research Directions
-One limitation of our study is the potential influence of unobserved variables that may affect the lexical richness in authors' works, such as individual educational background or specific life experiences, which were not fully captured in our analysis. 
-Moreover, while we used an improved TTR formula, its inherent sensitivity to text length variability and the possibility of other underlying linguistic factors were not entirely addressed. These could include stylistic choices or genre-specific language use that our study does not explore in depth.
-Future research should aim to unravel these complex interactions further, perhaps by integrating more granular data on authors' personal histories or by employing a wider range of linguistic analysis tools. Additionally, exploring the application of advanced computational methods, such as natural language processing algorithms, could offer more detailed insights into how social class impacts lexical choice and style in literature. Understanding these nuanced relationships is vital for comprehensively interpreting the intersection of social factors and literary expression.
 
+One limitation of our study is the potential influence of unobserved variables that may affect the lexical richness in authors' works, such as individual educational background or specific life experiences, which were not fully captured in our analysis. Moreover, while we used an improved TTR formula, its inherent sensitivity to text length variability and the possibility of other underlying linguistic factors were not entirely addressed. These could include stylistic choices or genre-specific language use that our study does not explore in depth.
+
+Future research should aim to unravel these complex interactions further, perhaps by integrating more granular data on authors' personal histories or by employing a wider range of linguistic analysis tools. Additionally, exploring the application of advanced computational methods, such as natural language processing algorithms, could offer more detailed insights into how social class impacts lexical choice and style in literature. Understanding these nuanced relationships is vital for comprehensively interpreting the intersection of social factors and literary expression.
 
 
 
@@ -257,7 +283,7 @@ Future research should aim to unravel these complex interactions further, perhap
 
 # Data Manipulation and Cleaning {#sec-appendix}
 
-# TODO: explainn
+In the context of our raw data, we are dealing with raw text files of authors' writings. Thus, we begin by 
 
 
 

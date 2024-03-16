@@ -80,17 +80,14 @@ div.csl-indent {
   <li><a href="#sec-data" id="toc-sec-data" class="nav-link" data-scroll-target="#sec-data"><span class="header-section-number">2</span> Data</a>
   <ul class="collapse">
   <li><a href="#todo-explain" id="toc-todo-explain" class="nav-link" data-scroll-target="#todo-explain"><span class="header-section-number">2.1</span> TODO: explain</a></li>
-  <li><a href="#source-and-methodology" id="toc-source-and-methodology" class="nav-link" data-scroll-target="#source-and-methodology"><span class="header-section-number">2.2</span> Source and Methodology</a>
-  <ul class="collapse">
-  <li><a href="#todo-explain-1" id="toc-todo-explain-1" class="nav-link" data-scroll-target="#todo-explain-1"><span class="header-section-number">2.2.1</span> TODO: explain</a></li>
-  </ul></li>
+  <li><a href="#source-and-methodology" id="toc-source-and-methodology" class="nav-link" data-scroll-target="#source-and-methodology"><span class="header-section-number">2.2</span> Source and Methodology</a></li>
   <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables"><span class="header-section-number">2.3</span> Variables</a>
   <ul class="collapse">
   <li><a href="#todo-explain-for-better-visualization" id="toc-todo-explain-for-better-visualization" class="nav-link" data-scroll-target="#todo-explain-for-better-visualization"><span class="header-section-number">2.3.1</span> TODO: explain For better visualization</a></li>
   </ul></li>
   <li><a href="#authors-average-word-counts-distribution" id="toc-authors-average-word-counts-distribution" class="nav-link" data-scroll-target="#authors-average-word-counts-distribution"><span class="header-section-number">2.4</span> Author’s average word counts distribution</a>
   <ul class="collapse">
-  <li><a href="#todo-explain-2" id="toc-todo-explain-2" class="nav-link" data-scroll-target="#todo-explain-2"><span class="header-section-number">2.4.1</span> TODO: Explain</a></li>
+  <li><a href="#todo-explain-1" id="toc-todo-explain-1" class="nav-link" data-scroll-target="#todo-explain-1"><span class="header-section-number">2.4.1</span> TODO: Explain</a></li>
   </ul></li>
   <li><a href="#measurements" id="toc-measurements" class="nav-link" data-scroll-target="#measurements"><span class="header-section-number">2.5</span> Measurements</a></li>
   <li><a href="#model-set-up" id="toc-model-set-up" class="nav-link" data-scroll-target="#model-set-up"><span class="header-section-number">2.6</span> Model set-up</a></li>
@@ -165,9 +162,10 @@ div.csl-indent {
 </section>
 <section id="source-and-methodology" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="source-and-methodology"><span class="header-section-number">2.2</span> Source and Methodology</h2>
-<section id="todo-explain-1" class="level3" data-number="2.2.1">
-<h3 data-number="2.2.1" class="anchored" data-anchor-id="todo-explain-1"><span class="header-section-number">2.2.1</span> TODO: explain</h3>
-</section>
+<p>Data on birth rates for women aged 15-44 were sourced from National Vital Statistics Reports covering 2015, 2019, and 2020 <span class="citation" data-cites="cite2015birth cite2019birth cite2020birth">(<a href="#ref-cite2015birth" role="doc-biblioref">Martin and Mathews 2017</a>; <a href="#ref-cite2019birth" role="doc-biblioref">Martin and Driscoll 2021</a>; <a href="#ref-cite2020birth" role="doc-biblioref">Hamilton and Osterman 2021</a>)</span>, compiled from birth certificates across the US and the District of Columbia. <span class="citation" data-cites="citeoriginal">Kearney, Levine, and Pardue (<a href="#ref-citeoriginal" role="doc-biblioref">2022</a>)</span> provided aggregated birth data for six cohorts over five-year spans, derived from the NBER Natality Database <span class="citation" data-cites="citeNBER">(<a href="#ref-citeNBER" role="doc-biblioref">National Bureau of Economic Research 2021</a>)</span> and NCHS microdata <span class="citation" data-cites="citeNCHS">(<a href="#ref-citeNCHS" role="doc-biblioref">National Center for Health Statistics 2020</a>)</span> for 1980-2019. In this study, we simply used the replication data package provided by <span class="citation" data-cites="citeoriginal">Kearney, Levine, and Pardue (<a href="#ref-citeoriginal" role="doc-biblioref">2022</a>)</span> for analysis.</p>
+<p>Data on the</p>
+<p>While there were alternative datasets available from other public and private sources, this dataset was chosen due to its comprehensive coverage, reliability, and the level of detail it offers. It includes data from the National Center for Health Statistics <span class="citation" data-cites="citeNCHS">(<a href="#ref-citeNCHS" role="doc-biblioref">National Center for Health Statistics 2020</a>)</span> and the U.S. Census Bureau, which are both reputable sources of demographic data.</p>
+<p>The data was processed and cleaned using R<span class="citation" data-cites="citeR">(<a href="#ref-citeR" role="doc-biblioref">R Core Team 2020</a>)</span>, a powerful statistical programming language. For key operations, please refer to the <a href="#sec-appendix">Section&nbsp;5</a>.</p>
 </section>
 <section id="variables" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="variables"><span class="header-section-number">2.3</span> Variables</h2>
@@ -340,8 +338,8 @@ div.csl-indent {
 </figure>
 </div>
 </div>
-<section id="todo-explain-2" class="level3" data-number="2.4.1">
-<h3 data-number="2.4.1" class="anchored" data-anchor-id="todo-explain-2"><span class="header-section-number">2.4.1</span> TODO: Explain</h3>
+<section id="todo-explain-1" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="todo-explain-1"><span class="header-section-number">2.4.1</span> TODO: Explain</h3>
 </section>
 </section>
 <section id="measurements" class="level2" data-number="2.5">
@@ -573,6 +571,24 @@ logit(\pi_i) &amp;= \beta_0 + \alpha_a\\
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">6 References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-cite2020birth" class="csl-entry" role="listitem">
+Hamilton, Martin, Brady E., and Michelle J. K. Osterman. 2021. <span>“Births: Provisional Data for 2020.”</span> <em>Vital Statistics Rapid Release</em>, no. 12: 6. https://doi.org/<a href="https://doi.org/10.15620/cdc:104993">https://doi.org/10.15620/cdc:104993</a>.
+</div>
+<div id="ref-citeoriginal" class="csl-entry" role="listitem">
+Kearney, Melissa S., Phillip B. Levine, and Luke Pardue. 2022. <span>“The Puzzle of Falling US Birth Rates Since the Great Recession.”</span> <em>Journal of Economic Perspectives</em> 36 (1): 151–76. <a href="https://doi.org/10.1257/jep.36.1.151">https://doi.org/10.1257/jep.36.1.151</a>.
+</div>
+<div id="ref-cite2019birth" class="csl-entry" role="listitem">
+Martin, Hamilton, Joyce A., and Anne K. Driscoll. 2021. <span>“Births: Final Data for 2019.”</span> <em>National Vital Statistics Report</em> 70 (2): 13. https://doi.org/<a href="https://dx.doi.org/10.15620/cdc:100472">https://dx.doi.org/10.15620/cdc:100472</a>.
+</div>
+<div id="ref-cite2015birth" class="csl-entry" role="listitem">
+Martin, Hamilton, Joyce A., and T. J. Mathews. 2017. <span>“Births: Final Data for 2015.”</span> <em>National Vital Statistics Report</em> 66 (1): 35. <a href="https://www.cdc.gov/nchs/data/nvsr/nvsr66/nvsr66_01.pdf">https://www.cdc.gov/nchs/data/nvsr/nvsr66/nvsr66_01.pdf</a>.
+</div>
+<div id="ref-citeNBER" class="csl-entry" role="listitem">
+National Bureau of Economic Research. 2021. <em>NCHS Vital Statistics Natality Birth Data</em>. <a href="https://data.nber.org/data/vital-statistics-natality-data.html">https://data.nber.org/data/vital-statistics-natality-data.html</a>.
+</div>
+<div id="ref-citeNCHS" class="csl-entry" role="listitem">
+National Center for Health Statistics. 2020. <em>Restricted-Use Vital Statistics Data</em>. <a href="https://www.cdc.gov/nchs/nvss/nvss-restricted-data.htm">https://www.cdc.gov/nchs/nvss/nvss-restricted-data.htm</a>.
+</div>
 <div id="ref-citeR" class="csl-entry" role="listitem">
 R Core Team. 2020. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
 </div>

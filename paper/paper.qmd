@@ -102,16 +102,15 @@ cttr_all |>
 #| fig-cap: "Word Count Comparison by Authors"
 #| echo: false
 
-cttr_all <- read.csv(here::here("data/analysis_data/cttr_all.csv"))
+word_distribution <- read.csv(here::here("data/analysis_data/wordcount_dist.csv"))
 
-ggplot(cttr_all, aes(x = title, y = word_count, color = author)) +
-  geom_line(linewidth=1) +
-  labs(x = "Title",
-       y = "Word Count") +
-  theme(panel.background = element_rect(fill = "white"),
-              panel.grid.major = element_line(colour = "grey"),
-              plot.title = element_text(color = "black", size = 14, face = "bold"),
-              axis.title = element_text(color = "black"))
+word_distribution |>
+  select(author, average, stddev) |>
+  kable(
+    col.names = c("author", "word count mean", "word count std. dev."),
+    digits = 2,
+    booktabs = TRUE
+  )
 ```
 # TODO: Explain 
 

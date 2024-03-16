@@ -12,6 +12,7 @@
 library(tidyverse)
 library(rstanarm)
 library(modelsummary)
+library(broom.mixed)
 
 #### Read data ####
 analysis_data <- read_csv("data/analysis_data/cttr_all.csv")

@@ -17,22 +17,21 @@ library(dplyr)
 #### Simulate ####
 
 
-# In this simulation, we focus on two different age categories for birth rate data: younger and older groups.
-# The simulation starts with birth rate of 6 age groups.
-# The simulated data is derived from a normal distribution instead of a poisson distribution since birth rate can be more than just integers.
-# By applying the abs() function, we guarantee the recording of only positive birth rates for the older age group.
+# In this simulation, we focus on finding the corrected type token ratio (CTTR) from summary statistics of a writing.
+# The simulation starts with the word count and unique word count of 4 different authors.
+# The simulated data is derived from a poisson distribution since word counts must be integer.
+# By dividing the simulated unqie word count with the square root of double the overall word count, we applied the CTTR formula.
 
+set.seed(1008)
 
-
-cttr_dav <- read.csv(here::here("data/analysis_data/cttr_david.csv"))
-cttr_hug <- read.csv(here::here("data/analysis_data/cttr_hugh.csv"))
-cttr_nan <- read.csv(here::here("data/analysis_data/cttr_nancy.csv"))
-cttr_pow <- read.csv(here::here("data/analysis_data/cttr_powell.csv"))
-
-cttr_distribution <- cttr_dist(
-  list(cttr_dav, cttr_hug, cttr_nan, cttr_pow)
+# Initialize a tibble
+simulated_data <- tibble(
+  "author" = sample(c("author1", "author2", "author3", "author4"), size = 50, replace = TRUE),
+  "word_count" = rpois(50, lambda = 40000),
+  "unique_words" = rpois(50, lambda = 15000)
 )
 
-cttr_distribution
+simulated_data$corrected_type_token_ratio <- simulated_data$unique_words / sqrt(2 * simulated_data$word_count)
 
-write.csv(cttr_distribution, "data/analysis_data/cttr_dist.csv")
+# View the simulated data
+print(simulated_data)

@@ -8,53 +8,161 @@
 
 #### Workspace setup ####
 library(tidyverse)
+library(testthat)
+library(here)
 
 
 #### Test data ####
 
-# Load dataset
-figure_1 <- read.csv("outputs/data/figure_1.csv", check.names = FALSE)
-figure_2 <- read.csv("outputs/data/figure_2.csv", check.names = FALSE)
-figure_3 <- read.csv("outputs/data/figure_3.csv", check.names = FALSE)
-figure_4 <- read.csv("outputs/data/figure_4.csv", check.names = FALSE)
-table_2 <- read.csv("outputs/data/table_2.csv", check.names = FALSE)
+# Load the dataset
+cttr_all <- read_csv(here::here("data/analysis_data/cttr_all.csv"))
 
-# Test 1: Check for missing values for figure_1
-test1_result <- !any(is.na(figure_1))
-print(paste("Test 1 Passed:", test1_result))
+# Test 1: Check for missing values
+test_that("Dataset has no missing values", {
+  expect_true(all(!is.na(cttr_all)))
+})
 
-# Test 2: Check for missing values for figure_2
-test2_result <- !any(is.na(figure_2))
-print(paste("Test 2 Passed:", test2_result))
+# Test 2: Check for reasonable word count ranges
+test_that("Word counts are within reasonable ranges", {
+  expect_true(all(cttr_all$word_count > 0))
+  expect_true(all(cttr_all$types > 0))
+})
 
-# Test 3: Check for missing values for figure_3
-test3_result <- !any(is.na(figure_3))
-print(paste("Test 3 Passed:", test3_result))
+# Test 3: Check for expected authors
+expected_authors <- c("David Herbert Lawrence", "Hugh Garners", "Nancy Mitford", "Powell Anthony")
 
-# Test 4: Check for missing values for figure_4
-test4_result <- !any(is.na(figure_4))
-print(paste("Test 4 Passed:", test4_result))
+actual_authors <- unique(cttr_all$author)
 
-# Test 5: Check for missing values for table_2
-test5_result <- !any(is.na(table_2))
-print(paste("Test 5 Passed:", test5_result))
+test_that("All rows have expected authors", {
+  expect_true(all(expected_authors %in% actual_authors) && all(actual_authors %in% expected_authors),
+              info = "The dataset contains unexpected authors or is missing expected authors.")
+})
 
-# Test 6: Check for duplicated rows for figure_1
-test6_result <- !any(duplicated(figure_1))
-print(paste("Test 6 Passed:", test6_result))
 
-# Test 7: Check for duplicated rows for figure_2
-test7_result <- !any(duplicated(figure_1))
-print(paste("Test 7 Passed:", test7_result))
 
-# Test 8: Check for duplicated rows for figure_3
-test8_result <- !any(duplicated(figure_1))
-print(paste("Test 8 Passed:", test8_result))
+# Load the dataset
+cttr_dav <- read_csv(here::here("data/analysis_data/cttr_david.csv"))
 
-# Test 9: Check for duplicated rows for figure_4
-test9_result <- !any(duplicated(figure_1))
-print(paste("Test 9 Passed:", test9_result))
+# Test 1: Check for missing values
+test_that("Dataset has no missing values", {
+  expect_true(all(!is.na(cttr_dav)))
+})
 
-# Test 10: Check for duplicated rows for table_2
-test10_result <- !any(duplicated(figure_1))
-print(paste("Test 10 Passed:", test10_result))
+# Test 2: Check for reasonable word count ranges
+test_that("Word counts are within reasonable ranges", {
+  expect_true(all(cttr_dav$word_count > 0))
+  expect_true(all(cttr_dav$types > 0))
+})
+
+# Test 3: Check for expected authors
+expected_authors <- c("David Herbert Lawrence")
+
+actual_authors <- unique(cttr_dav$author)
+
+test_that("All rows have expected authors", {
+  expect_true(all(expected_authors %in% actual_authors) && all(actual_authors %in% expected_authors),
+              info = "The dataset contains unexpected authors or is missing expected authors.")
+})
+
+
+
+# Load the dataset
+cttr_hugh <- read_csv(here::here("data/analysis_data/cttr_hugh.csv"))
+
+# Test 1: Check for missing values
+test_that("Dataset has no missing values", {
+  expect_true(all(!is.na(cttr_hugh)))
+})
+
+# Test 2: Check for reasonable word count ranges
+test_that("Word counts are within reasonable ranges", {
+  expect_true(all(cttr_hugh$word_count > 0))
+  expect_true(all(cttr_hugh$types > 0))
+})
+
+# Test 3: Check for expected authors
+expected_authors <- c("Hugh Garners")
+
+actual_authors <- unique(cttr_hugh$author)
+
+test_that("All rows have expected authors", {
+  expect_true(all(expected_authors %in% actual_authors) && all(actual_authors %in% expected_authors),
+              info = "The dataset contains unexpected authors or is missing expected authors.")
+})
+
+
+
+# Load the dataset
+cttr_nan <- read_csv(here::here("data/analysis_data/cttr_nancy.csv"))
+
+# Test 1: Check for missing values
+test_that("Dataset has no missing values", {
+  expect_true(all(!is.na(cttr_nan)))
+})
+
+# Test 2: Check for reasonable word count ranges
+test_that("Word counts are within reasonable ranges", {
+  expect_true(all(cttr_nan$word_count > 0))
+  expect_true(all(cttr_nan$types > 0))
+})
+
+# Test 3: Check for expected authors
+expected_authors <- c("Nancy Mitford")
+
+actual_authors <- unique(cttr_nan$author)
+
+test_that("All rows have expected authors", {
+  expect_true(all(expected_authors %in% actual_authors) && all(actual_authors %in% expected_authors),
+              info = "The dataset contains unexpected authors or is missing expected authors.")
+})
+
+
+
+# Load the dataset
+cttr_pow <- read_csv(here::here("data/analysis_data/cttr_powell.csv"))
+
+# Test 1: Check for missing values
+test_that("Dataset has no missing values", {
+  expect_true(all(!is.na(cttr_pow)))
+})
+
+# Test 2: Check for reasonable word count ranges
+test_that("Word counts are within reasonable ranges", {
+  expect_true(all(cttr_pow$word_count > 0))
+  expect_true(all(cttr_pow$types > 0))
+})
+
+# Test 3: Check for expected authors
+expected_authors <- c("Powell Anthony")
+
+actual_authors <- unique(cttr_pow$author)
+
+test_that("All rows have expected authors", {
+  expect_true(all(expected_authors %in% actual_authors) && all(actual_authors %in% expected_authors),
+              info = "The dataset contains unexpected authors or is missing expected authors.")
+})
+
+
+
+# Load the datasets
+wordcount_dist <- read_csv(here::here("data/analysis_data/wordcount_dist.csv"))
+cttr_dist <- read_csv(here::here("data/analysis_data/cttr_dist.csv"))
+
+# Test 1: Consistency Test
+test_that("Consistency between datasets", {
+  expect_equal(sort(unique(wordcount_dist$author)), sort(unique(cttr_dist$author)))
+})
+
+# Test 2: Dataset Completeness Test
+test_that("Datasets are not empty and have a minimum expected number of rows", {
+  expect_true(nrow(wordcount_dist) > 0)
+  expect_true(nrow(cttr_dist) > 0)
+  expect_true(nrow(wordcount_dist) >= 4)
+  expect_true(nrow(cttr_dist) >= 4)
+})
+
+# Test 3: Positive Values Test
+test_that("Numerical values are positive", {
+  expect_true(all(wordcount_dist$average > 0))
+  expect_true(all(cttr_dist$average > 0))
+})

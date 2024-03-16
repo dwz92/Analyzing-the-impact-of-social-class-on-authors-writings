@@ -9,7 +9,7 @@
 <meta name="author" content="Qi Er (Emma) Teng">
 <meta name="author" content="Wentao Sun">
 <meta name="author" content="Yang Cheng">
-<meta name="dcterms.date" content="2024-03-15">
+<meta name="dcterms.date" content="2024-03-16">
 
 <title>Lexical Richness as a Lens: Exploring the Influence of Social Class on Authors’ Writings</title>
 <style>
@@ -86,34 +86,37 @@ div.csl-indent {
   </ul></li>
   <li><a href="#todo-explain-for-better-visualization" id="toc-todo-explain-for-better-visualization" class="nav-link" data-scroll-target="#todo-explain-for-better-visualization"><span class="header-section-number">6</span> TODO: explain For better visualization</a>
   <ul class="collapse">
-  <li><a href="#measurements" id="toc-measurements" class="nav-link" data-scroll-target="#measurements"><span class="header-section-number">6.1</span> Measurements</a></li>
-  <li><a href="#model-set-up" id="toc-model-set-up" class="nav-link" data-scroll-target="#model-set-up"><span class="header-section-number">6.2</span> Model set-up</a></li>
+  <li><a href="#authors-average-word-counts-distribution" id="toc-authors-average-word-counts-distribution" class="nav-link" data-scroll-target="#authors-average-word-counts-distribution"><span class="header-section-number">6.1</span> Author’s average word counts distribution</a></li>
   </ul></li>
-  <li><a href="#todo-formula" id="toc-todo-formula" class="nav-link" data-scroll-target="#todo-formula"><span class="header-section-number">7</span> TODO: formula</a>
+  <li><a href="#todo-explain-2" id="toc-todo-explain-2" class="nav-link" data-scroll-target="#todo-explain-2"><span class="header-section-number">7</span> TODO: Explain</a>
   <ul class="collapse">
-  <li><a href="#model-justification" id="toc-model-justification" class="nav-link" data-scroll-target="#model-justification"><span class="header-section-number">7.1</span> Model Justification</a></li>
+  <li><a href="#measurements" id="toc-measurements" class="nav-link" data-scroll-target="#measurements"><span class="header-section-number">7.1</span> Measurements</a></li>
+  <li><a href="#model-set-up" id="toc-model-set-up" class="nav-link" data-scroll-target="#model-set-up"><span class="header-section-number">7.2</span> Model set-up</a></li>
   </ul></li>
-  <li><a href="#todo-expectation-and-why" id="toc-todo-expectation-and-why" class="nav-link" data-scroll-target="#todo-expectation-and-why"><span class="header-section-number">8</span> TODO: expectation and why</a></li>
-  <li><a href="#sec-result" id="toc-sec-result" class="nav-link" data-scroll-target="#sec-result"><span class="header-section-number">9</span> Results</a></li>
-  <li><a href="#expalin" id="toc-expalin" class="nav-link" data-scroll-target="#expalin"><span class="header-section-number">10</span> Expalin</a>
+  <li><a href="#todo-formula" id="toc-todo-formula" class="nav-link" data-scroll-target="#todo-formula"><span class="header-section-number">8</span> TODO: formula</a>
   <ul class="collapse">
-  <li><a href="#hugh-garners-cttr-and-length" id="toc-hugh-garners-cttr-and-length" class="nav-link" data-scroll-target="#hugh-garners-cttr-and-length"><span class="header-section-number">10.1</span> Hugh Garners CTTR and Length</a></li>
-  <li><a href="#david-herbert-lawrence-cttr-and-length" id="toc-david-herbert-lawrence-cttr-and-length" class="nav-link" data-scroll-target="#david-herbert-lawrence-cttr-and-length"><span class="header-section-number">10.2</span> David Herbert Lawrence CTTR and Length</a></li>
-  <li><a href="#nancy-mitford-cttr-and-length" id="toc-nancy-mitford-cttr-and-length" class="nav-link" data-scroll-target="#nancy-mitford-cttr-and-length"><span class="header-section-number">10.3</span> Nancy Mitford CTTR and Length</a></li>
-  <li><a href="#powell-anthony-cttr-and-length" id="toc-powell-anthony-cttr-and-length" class="nav-link" data-scroll-target="#powell-anthony-cttr-and-length"><span class="header-section-number">10.4</span> Powell Anthony CTTR and Length</a></li>
-  <li><a href="#authors-average-word-counts-distribution" id="toc-authors-average-word-counts-distribution" class="nav-link" data-scroll-target="#authors-average-word-counts-distribution"><span class="header-section-number">10.5</span> Author’s average word counts distribution</a></li>
+  <li><a href="#model-justification" id="toc-model-justification" class="nav-link" data-scroll-target="#model-justification"><span class="header-section-number">8.1</span> Model Justification</a></li>
   </ul></li>
-  <li><a href="#sec-discussion" id="toc-sec-discussion" class="nav-link" data-scroll-target="#sec-discussion"><span class="header-section-number">11</span> Discussion</a>
+  <li><a href="#todo-expectation-and-why" id="toc-todo-expectation-and-why" class="nav-link" data-scroll-target="#todo-expectation-and-why"><span class="header-section-number">9</span> TODO: expectation and why</a></li>
+  <li><a href="#sec-result" id="toc-sec-result" class="nav-link" data-scroll-target="#sec-result"><span class="header-section-number">10</span> Results</a></li>
+  <li><a href="#expalin" id="toc-expalin" class="nav-link" data-scroll-target="#expalin"><span class="header-section-number">11</span> Expalin</a>
   <ul class="collapse">
-  <li><a href="#findings" id="toc-findings" class="nav-link" data-scroll-target="#findings"><span class="header-section-number">11.1</span> Findings</a></li>
-  <li><a href="#economic-impact-insights" id="toc-economic-impact-insights" class="nav-link" data-scroll-target="#economic-impact-insights"><span class="header-section-number">11.2</span> Economic Impact Insights</a></li>
-  <li><a href="#societal-and-technological-influences" id="toc-societal-and-technological-influences" class="nav-link" data-scroll-target="#societal-and-technological-influences"><span class="header-section-number">11.3</span> Societal and Technological Influences</a></li>
-  <li><a href="#weaknesses-and-future-research-directions" id="toc-weaknesses-and-future-research-directions" class="nav-link" data-scroll-target="#weaknesses-and-future-research-directions"><span class="header-section-number">11.4</span> Weaknesses and Future Research Directions</a></li>
+  <li><a href="#hugh-garners-cttr-and-length" id="toc-hugh-garners-cttr-and-length" class="nav-link" data-scroll-target="#hugh-garners-cttr-and-length"><span class="header-section-number">11.1</span> Hugh Garners CTTR and Length</a></li>
+  <li><a href="#david-herbert-lawrence-cttr-and-length" id="toc-david-herbert-lawrence-cttr-and-length" class="nav-link" data-scroll-target="#david-herbert-lawrence-cttr-and-length"><span class="header-section-number">11.2</span> David Herbert Lawrence CTTR and Length</a></li>
+  <li><a href="#nancy-mitford-cttr-and-length" id="toc-nancy-mitford-cttr-and-length" class="nav-link" data-scroll-target="#nancy-mitford-cttr-and-length"><span class="header-section-number">11.3</span> Nancy Mitford CTTR and Length</a></li>
+  <li><a href="#powell-anthony-cttr-and-length" id="toc-powell-anthony-cttr-and-length" class="nav-link" data-scroll-target="#powell-anthony-cttr-and-length"><span class="header-section-number">11.4</span> Powell Anthony CTTR and Length</a></li>
+  </ul></li>
+  <li><a href="#sec-discussion" id="toc-sec-discussion" class="nav-link" data-scroll-target="#sec-discussion"><span class="header-section-number">12</span> Discussion</a>
+  <ul class="collapse">
+  <li><a href="#findings" id="toc-findings" class="nav-link" data-scroll-target="#findings"><span class="header-section-number">12.1</span> Findings</a></li>
+  <li><a href="#economic-impact-insights" id="toc-economic-impact-insights" class="nav-link" data-scroll-target="#economic-impact-insights"><span class="header-section-number">12.2</span> Economic Impact Insights</a></li>
+  <li><a href="#societal-and-technological-influences" id="toc-societal-and-technological-influences" class="nav-link" data-scroll-target="#societal-and-technological-influences"><span class="header-section-number">12.3</span> Societal and Technological Influences</a></li>
+  <li><a href="#weaknesses-and-future-research-directions" id="toc-weaknesses-and-future-research-directions" class="nav-link" data-scroll-target="#weaknesses-and-future-research-directions"><span class="header-section-number">12.4</span> Weaknesses and Future Research Directions</a></li>
   </ul></li>
   <li><a href="#appendix" id="toc-appendix" class="nav-link" data-scroll-target="#appendix">Appendix</a></li>
-  <li><a href="#sec-appendix" id="toc-sec-appendix" class="nav-link" data-scroll-target="#sec-appendix"><span class="header-section-number">12</span> Data Manipulation and Cleaning</a></li>
-  <li><a href="#todo-explainn" id="toc-todo-explainn" class="nav-link" data-scroll-target="#todo-explainn"><span class="header-section-number">13</span> TODO: explainn</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">14</span> References</a></li>
+  <li><a href="#sec-appendix" id="toc-sec-appendix" class="nav-link" data-scroll-target="#sec-appendix"><span class="header-section-number">13</span> Data Manipulation and Cleaning</a></li>
+  <li><a href="#todo-explainn" id="toc-todo-explainn" class="nav-link" data-scroll-target="#todo-explainn"><span class="header-section-number">14</span> TODO: explainn</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">15</span> References</a></li>
   </ul>
 </nav>
 </div>
@@ -140,7 +143,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 15, 2024</p>
+      <p class="date">March 16, 2024</p>
     </div>
   </div>
   
@@ -160,7 +163,7 @@ div.csl-indent {
 <h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
 <p>The Great Depression was a major economic event of the 20th century that had a profound effect on the global economic situation and class divisions. The question of whether the writing styles of different authors are affected by their class of origin and the general economic climate deserves an in-depth discussion. The purpose of this paper is to gain a deeper understanding of how people lived and thought after the Great Depression by examining whether upper-class writers had a richer writing vocabulary to utilize in their essays than middle-class writers.</p>
 <p>Utilizing a combination of quantitative data analysis and authorship studies, we investigated the vocabulary richness of texts used by upper-class and middle-class authors after the Great Depression. Our findings suggest that works produced by upper-class authors during the period 1930-1990 will have a richer vocabulary compared to middle-class writers. This phenomenon suggests that different classes of writers have different writing styles, and that economic downturns and international instability have had an impact on writers’ writing styles. It also had a profound effect on the writers’ personal lives, including education, life and thought. These influences, brought about by the broader context of the times, affect not only the choice of vocabulary used in the essay, but also the expression of the central idea of the whole essay, which in turn affects the minds of many civilian readers.</p>
-<p>The paper is structured to facilitate a comprehensive understanding of the study and its implications. Following <a href="#sec-intro">Section&nbsp;1</a>, <a href="#sec-data">Section&nbsp;3</a> presents the data, detailing the data sources, analytical techniques, and the rationale behind the chosen methods. <a href="#sec-result">Section&nbsp;9</a> discusses the results, elaborating on the observed trends and patterns in the authors writings. <a href="#sec-discussion">Section&nbsp;11</a> provides an in-depth discussion of these findings, exploring potential factors influencing these trends, drawing connections to broader socio-economic issues, and providing suggestions for future research in this area.</p>
+<p>The paper is structured to facilitate a comprehensive understanding of the study and its implications. Following <a href="#sec-intro">Section&nbsp;1</a>, <a href="#sec-data">Section&nbsp;3</a> presents the data, detailing the data sources, analytical techniques, and the rationale behind the chosen methods. <a href="#sec-result">Section&nbsp;10</a> discusses the results, elaborating on the observed trends and patterns in the authors writings. <a href="#sec-discussion">Section&nbsp;12</a> provides an in-depth discussion of these findings, exploring potential factors influencing these trends, drawing connections to broader socio-economic issues, and providing suggestions for future research in this area.</p>
 </section>
 <section id="estimand" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Estimand</h1>
@@ -307,15 +310,35 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p><a href="#tbl-authors-cttr">Table&nbsp;2</a> # TODO: Explain</p>
-<section id="measurements" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="measurements"><span class="header-section-number">6.1</span> Measurements</h2>
+<p><a href="#tbl-authors-cttr">Table&nbsp;2</a></p>
+<section id="authors-average-word-counts-distribution" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="authors-average-word-counts-distribution"><span class="header-section-number">6.1</span> Author’s average word counts distribution</h2>
+<div class="cell">
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_line()`: Each group consists of only one observation.
+ℹ Do you need to adjust the group aesthetic?</code></pre>
+</div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="paper_files/figure-html/Authors-Word-Count-Distribution-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">Word Count Comparison by Authors</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="todo-explain-2" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> TODO: Explain</h1>
+<section id="measurements" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="measurements"><span class="header-section-number">7.1</span> Measurements</h2>
 <p>#TODO: explainnnn</p>
 <p>#Model # TODO: Explain neg binom model Negative Binomial regression</p>
 <p>We will fit our multi-level model with the Negative Binomial regression, and although CTTR is not a count value, for the context of this paper we will temporarily disregard this assumption.</p>
 </section>
-<section id="model-set-up" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="model-set-up"><span class="header-section-number">6.2</span> Model set-up</h2>
+<section id="model-set-up" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="model-set-up"><span class="header-section-number">7.2</span> Model set-up</h2>
 <p>Define <span class="math inline">\(y_i\)</span> as the CTTR of the author’s writings, then <span class="math inline">\(\alpha_a\)</span> as the author.</p>
 <p><span class="math display">\[\begin{align}
 y_i|\pi_i &amp;\sim \mbox{Negative Binomial}(r, \pi_i) \\
@@ -326,14 +349,14 @@ logit(\pi_i) &amp;= \beta_0 + \alpha_a\\
 <p>We run the model in R <span class="citation" data-cites="citeR">(<a href="#ref-citeR" role="doc-biblioref">R Core Team 2020</a>)</span> using the <code>rstanarm</code> package of <span class="citation" data-cites="rstanarm">(<a href="#ref-rstanarm" role="doc-biblioref"><strong>rstanarm?</strong></a>)</span>. We use the default priors from <code>rstanarm</code>.</p>
 </section>
 </section>
-<section id="todo-formula" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> TODO: formula</h1>
-<section id="model-justification" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="model-justification"><span class="header-section-number">7.1</span> Model Justification</h2>
+<section id="todo-formula" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> TODO: formula</h1>
+<section id="model-justification" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="model-justification"><span class="header-section-number">8.1</span> Model Justification</h2>
 </section>
 </section>
-<section id="todo-expectation-and-why" class="level1" data-number="8">
-<h1 data-number="8"><span class="header-section-number">8</span> TODO: expectation and why</h1>
+<section id="todo-expectation-and-why" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> TODO: expectation and why</h1>
 <div class="cell">
 <div class="cell-output-display">
 
@@ -535,43 +558,40 @@ RMSE
 </div>
 </div>
 </section>
-<section id="sec-result" class="level1" data-number="9">
-<h1 data-number="9"><span class="header-section-number">9</span> Results</h1>
+<section id="sec-result" class="level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> Results</h1>
 </section>
-<section id="expalin" class="level1" data-number="10">
-<h1 data-number="10"><span class="header-section-number">10</span> Expalin</h1>
-<p><a href="#sec-result">Section&nbsp;9</a></p>
-<section id="hugh-garners-cttr-and-length" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="hugh-garners-cttr-and-length"><span class="header-section-number">10.1</span> Hugh Garners CTTR and Length</h2>
+<section id="expalin" class="level1" data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span> Expalin</h1>
+<p><a href="#sec-result">Section&nbsp;10</a></p>
+<section id="hugh-garners-cttr-and-length" class="level2" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="hugh-garners-cttr-and-length"><span class="header-section-number">11.1</span> Hugh Garners CTTR and Length</h2>
 </section>
-<section id="david-herbert-lawrence-cttr-and-length" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="david-herbert-lawrence-cttr-and-length"><span class="header-section-number">10.2</span> David Herbert Lawrence CTTR and Length</h2>
+<section id="david-herbert-lawrence-cttr-and-length" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="david-herbert-lawrence-cttr-and-length"><span class="header-section-number">11.2</span> David Herbert Lawrence CTTR and Length</h2>
 </section>
-<section id="nancy-mitford-cttr-and-length" class="level2" data-number="10.3">
-<h2 data-number="10.3" class="anchored" data-anchor-id="nancy-mitford-cttr-and-length"><span class="header-section-number">10.3</span> Nancy Mitford CTTR and Length</h2>
+<section id="nancy-mitford-cttr-and-length" class="level2" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="nancy-mitford-cttr-and-length"><span class="header-section-number">11.3</span> Nancy Mitford CTTR and Length</h2>
 </section>
-<section id="powell-anthony-cttr-and-length" class="level2" data-number="10.4">
-<h2 data-number="10.4" class="anchored" data-anchor-id="powell-anthony-cttr-and-length"><span class="header-section-number">10.4</span> Powell Anthony CTTR and Length</h2>
-</section>
-<section id="authors-average-word-counts-distribution" class="level2" data-number="10.5">
-<h2 data-number="10.5" class="anchored" data-anchor-id="authors-average-word-counts-distribution"><span class="header-section-number">10.5</span> Author’s average word counts distribution</h2>
+<section id="powell-anthony-cttr-and-length" class="level2" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="powell-anthony-cttr-and-length"><span class="header-section-number">11.4</span> Powell Anthony CTTR and Length</h2>
 <div style="page-break-after: always;"></div>
 </section>
 </section>
-<section id="sec-discussion" class="level1" data-number="11">
-<h1 data-number="11"><span class="header-section-number">11</span> Discussion</h1>
+<section id="sec-discussion" class="level1" data-number="12">
+<h1 data-number="12"><span class="header-section-number">12</span> Discussion</h1>
 <p>The findings of this study offer a layered perspective on the decline in birth rates among young people in the United States, particularly in the context of the Great Recession. Our analysis provides an understanding of the multifaceted influences on demographic trends.</p>
-<section id="findings" class="level2" data-number="11.1">
-<h2 data-number="11.1" class="anchored" data-anchor-id="findings"><span class="header-section-number">11.1</span> Findings</h2>
+<section id="findings" class="level2" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="findings"><span class="header-section-number">12.1</span> Findings</h2>
 </section>
-<section id="economic-impact-insights" class="level2" data-number="11.2">
-<h2 data-number="11.2" class="anchored" data-anchor-id="economic-impact-insights"><span class="header-section-number">11.2</span> Economic Impact Insights</h2>
+<section id="economic-impact-insights" class="level2" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="economic-impact-insights"><span class="header-section-number">12.2</span> Economic Impact Insights</h2>
 </section>
-<section id="societal-and-technological-influences" class="level2" data-number="11.3">
-<h2 data-number="11.3" class="anchored" data-anchor-id="societal-and-technological-influences"><span class="header-section-number">11.3</span> Societal and Technological Influences</h2>
+<section id="societal-and-technological-influences" class="level2" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="societal-and-technological-influences"><span class="header-section-number">12.3</span> Societal and Technological Influences</h2>
 </section>
-<section id="weaknesses-and-future-research-directions" class="level2" data-number="11.4">
-<h2 data-number="11.4" class="anchored" data-anchor-id="weaknesses-and-future-research-directions"><span class="header-section-number">11.4</span> Weaknesses and Future Research Directions</h2>
+<section id="weaknesses-and-future-research-directions" class="level2" data-number="12.4">
+<h2 data-number="12.4" class="anchored" data-anchor-id="weaknesses-and-future-research-directions"><span class="header-section-number">12.4</span> Weaknesses and Future Research Directions</h2>
 <p>One limitation of our study is the potential influence of unobserved variables that may affect the lexical richness in authors’ works, such as individual educational background or specific life experiences, which were not fully captured in our analysis. Moreover, while we used an improved TTR formula, its inherent sensitivity to text length variability and the possibility of other underlying linguistic factors were not entirely addressed. These could include stylistic choices or genre-specific language use that our study does not explore in depth. Future research should aim to unravel these complex interactions further, perhaps by integrating more granular data on authors’ personal histories or by employing a wider range of linguistic analysis tools. Additionally, exploring the application of advanced computational methods, such as natural language processing algorithms, could offer more detailed insights into how social class impacts lexical choice and style in literature. Understanding these nuanced relationships is vital for comprehensively interpreting the intersection of social factors and literary expression.</p>
 <div style="page-break-after: always;"></div>
 </section>
@@ -579,19 +599,19 @@ RMSE
 <section id="appendix" class="level1 unnumbered">
 <h1 class="unnumbered">Appendix</h1>
 </section>
-<section id="sec-appendix" class="level1" data-number="12">
-<h1 data-number="12"><span class="header-section-number">12</span> Data Manipulation and Cleaning</h1>
+<section id="sec-appendix" class="level1" data-number="13">
+<h1 data-number="13"><span class="header-section-number">13</span> Data Manipulation and Cleaning</h1>
 </section>
-<section id="todo-explainn" class="level1" data-number="13">
-<h1 data-number="13"><span class="header-section-number">13</span> TODO: explainn</h1>
+<section id="todo-explainn" class="level1" data-number="14">
+<h1 data-number="14"><span class="header-section-number">14</span> TODO: explainn</h1>
 <div style="page-break-after: always;"></div>
 </section>
-<section id="references" class="level1 unnumbered" data-number="14">
+<section id="references" class="level1 unnumbered" data-number="15">
 
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">14 References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">15 References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
 <div id="ref-citeR" class="csl-entry" role="listitem">
 R Core Team. 2020. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
 </div>

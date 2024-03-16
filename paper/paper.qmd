@@ -81,9 +81,9 @@ waste_no_tears_t |>
 #| tbl-cap: "First Ten Rows of Writing's Word Count and Uniques Word Count"
 #| echo: false
 
-cleaned_data <- read.csv(here::here("data/analysis_data/cttr_all.csv"))
+cttr_all <- read.csv(here::here("data/analysis_data/cttr_all.csv"))
 
-cleaned_data |>
+cttr_all |>
   select(author, title, word_count, types) |>
   slice(1:10) |>
   kable(
@@ -92,7 +92,27 @@ cleaned_data |>
     booktabs = TRUE
   )
 ```
+
 @tbl-authors-cttr
+
+
+## Author's average word counts distribution
+```{r}
+#| label: Authors-Word-Count-Distribution
+#| fig-cap: "Word Count Comparison by Authors"
+#| echo: false
+
+cttr_all <- read.csv(here::here("data/analysis_data/cttr_all.csv"))
+
+ggplot(cttr_all, aes(x = title, y = word_count, color = author)) +
+  geom_line(linewidth=1) +
+  labs(x = "Title",
+       y = "Word Count") +
+  theme(panel.background = element_rect(fill = "white"),
+              panel.grid.major = element_line(colour = "grey"),
+              plot.title = element_text(color = "black", size = 14, face = "bold"),
+              axis.title = element_text(color = "black"))
+```
 # TODO: Explain 
 
 ## Measurements
@@ -204,20 +224,6 @@ author_CTTR_rstanarm_multilevel |>
 #| label: fig-change-in-birth-rates-by-state
 #| fig-cap: Change in Birth Rates by State, 2004–2008 to 2015–2019
 #| echo: false
-
-
-```
-
-
-## Author's average word counts distribution
-```{r}
-#| label: Authors-Word-Count-and-CTTR-Distribution
-#| fig-cap: Change in Birth Rates by State, 2004–2008 to 2015–2019
-#| echo: false
-
-
-
-
 
 
 ```

@@ -23,6 +23,7 @@ cttr <- function(textlist, textnamelist, name) {
       author = c(),
       title = c(),
       word_count =c(),
+      types = c(),
       corrected_type_token_ratio = c()
     )
   
@@ -39,6 +40,7 @@ cttr <- function(textlist, textnamelist, name) {
           author = name,
           title = textnamelist[i],
           word_count = total_tokens,
+          types = types,
           corrected_type_token_ratio = types / sqrt(2 * total_tokens)
         )
       )
@@ -94,7 +96,7 @@ cttr_hugh
 write.csv(cttr_hugh, "data/analysis_data/cttr_hugh.csv")
 
 # write to file
-write.table(waste_no_tears_raw[105:115], "data/analysis_data/waste_no_tear_raw.txt", append = FALSE, sep = " ", col.names = FALSE, row.names = FALSE)
+write.table(waste_no_tears_raw[105:110], "data/analysis_data/waste_no_tear_raw.txt", append = FALSE, col.names = FALSE, row.names = FALSE)
 
 
 ## David Herbert Lawrence CTTR ##

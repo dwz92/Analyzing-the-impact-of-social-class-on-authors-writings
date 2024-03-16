@@ -9,7 +9,7 @@ thanks: "Code and data are available at: https://github.com/dwz92/Analyzing-the-
 date: today
 date-format: long
 abstract: "In this study, we explore the influence of social class on lexical richness in the works of authors  after the Great Depression, utilizing a comprehensive analysis of lexical data from literary works and social context of authors. Our findings reveal upper-class authors exhibiting a higher Corrected Type-Token Ratio which indicates greater lexical richness, and reflecting their social milieu. This study employs a thorough lexical analysis, aiming to elucidate the complex interplay between class background and language use in literature. This research contributes to our understanding of how social class background shapes language use in literature, offering insights into the broader cultural forces that drive linguistic creativity."
-format: pdf
+format: html
 toc: true
 number-sections: true
 bibliography: references.bib
@@ -20,20 +20,14 @@ bibliography: references.bib
 #| warning: false
 #| message: false
 
-# install.packages("tidyverse")
-# install.packages("dplyr")
-# install.packages("here")
-# install.packages("mapdata")
-# install.packages("ggplot2")
-# install.packages("haven")
-# install.packages("kableExtra")
-
 library(tidyverse)
 library(dplyr)
 library(here)
 library(ggplot2)
 library(modelsummary)
 library(kableExtra)
+library(broom.mixed)
+library(tidybayes)
 ```
 
 # Introduction {#sec-intro}
@@ -62,7 +56,7 @@ In this study, our main object of estimation is the causal effect of different c
 
 ```{r}
 #| label: tbl-display-raw-data
-#| tbl-cap: First Ten Row of Waste No tear by Hugh Garners
+#| tbl-cap: First 3 Paragraph of Waste No tear by Hugh Garners
 #| echo: false
 
 waste_no_tears_t <- readLines(here::here("data/analysis_data/waste_no_tear_raw.txt"), encoding = "UTF-8")
@@ -84,16 +78,16 @@ waste_no_tears_t |>
 
 ```{r}
 #| label: tbl-authors-cttr
-#| tbl-cap: First Ten Rows of Authors' Corrected Type Token Ratio
+#| tbl-cap: "First Ten Rows of Writing's Word Count and Uniques Word Count"
 #| echo: false
 
 cleaned_data <- read.csv(here::here("data/analysis_data/cttr_all.csv"))
 
 cleaned_data |>
-  select(author, title, corrected_type_token_ratio) |>
+  select(author, title, word_count, types) |>
   slice(1:10) |>
   kable(
-    col.names = c("author", "title", "corrected type token ratio"),
+    col.names = c("author", "title", "word count", "unique word count"),
     digits = 1,
     booktabs = TRUE
   )
@@ -107,8 +101,25 @@ cleaned_data |>
 
 #Model
 # TODO: Explain neg binom model
+Negative Binomial regression
+
+We will fit our multi-level model with the Negative Binomial regression, and although CTTR is not a count value, for the context of this paper we will temporarily disregard this assumption.
 
 ## Model set-up
+
+
+Define $y_i$ as the CTTR of the author's writings, then $\alpha_a$ as the author.
+
+\begin{align} 
+y_i|\pi_i &\sim \mbox{Negative Binomial}(r, \pi_i) \\
+logit(\pi_i) &= \beta_0 + \alpha_a\\
+\beta_0 &\sim \mbox{Normal}(0, 3) \\
+\alpha_a &\sim \mbox{Normal}(0, 3) \space for \space a = 1, \space 2,  \space 3, \space 4\\
+\end{align}
+
+We run the model in R [@citeR] using the `rstanarm` package of @rstanarm. We use the default priors from `rstanarm`.
+
+
 
 # TODO: formula
 
@@ -116,6 +127,38 @@ cleaned_data |>
 
 # TODO: expectation and why
 
+```{r}
+#| label: multi level model
+#| fig-cap: " TODO"
+#| echo: false
+#| warning: false
+
+author_CTTR_rstanarm <- readRDS(file = here::here("models/author_cttr_model.rds"))
+author_CTTR_rstanarm_multilevel <- readRDS(file = here::here("models/author_cttr_model_multi.rds"))
+
+modelsummary(
+  list(
+    "Neg Binom" = author_CTTR_rstanarm,
+    "Multilevel Neg Binom" = author_CTTR_rstanarm_multilevel
+    )
+)
+```
+
+
+
+Here is a better visualization of the model
+```{r}
+#| label: multi level model distribution
+#| fig-cap: "First Ten Rows of Writing's Word Count and Uniques Word Count"
+#| echo: false
+
+author_CTTR_rstanarm_multilevel |>
+  spread_draws(`(Intercept)`, b[, group]) |>
+  mutate(condition_mean = `(Intercept)` + b) |>
+  ggplot(aes(y = group, x = condition_mean)) +
+  stat_halfeye() +
+  theme_minimal()
+```
 
 
 # Results {#sec-result}
@@ -161,6 +204,20 @@ cleaned_data |>
 #| label: fig-change-in-birth-rates-by-state
 #| fig-cap: Change in Birth Rates by State, 2004–2008 to 2015–2019
 #| echo: false
+
+
+```
+
+
+## Author's average word counts distribution
+```{r}
+#| label: Authors-Word-Count-and-CTTR-Distribution
+#| fig-cap: Change in Birth Rates by State, 2004–2008 to 2015–2019
+#| echo: false
+
+
+
+
 
 
 ```

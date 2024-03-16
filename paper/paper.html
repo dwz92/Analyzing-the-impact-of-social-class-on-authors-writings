@@ -9,7 +9,7 @@
 <meta name="author" content="Qi Er (Emma) Teng">
 <meta name="author" content="Wentao Sun">
 <meta name="author" content="Yang Cheng">
-<meta name="dcterms.date" content="2024-03-12">
+<meta name="dcterms.date" content="2024-03-15">
 
 <title>Lexical Richness as a Lens: Exploring the Influence of Social Class on Authors’ Writings</title>
 <style>
@@ -57,6 +57,11 @@ div.csl-indent {
 <link href="paper_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="paper_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 
+<script src="paper_files/libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="paper_files/libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -96,6 +101,7 @@ div.csl-indent {
   <li><a href="#david-herbert-lawrence-cttr-and-length" id="toc-david-herbert-lawrence-cttr-and-length" class="nav-link" data-scroll-target="#david-herbert-lawrence-cttr-and-length"><span class="header-section-number">10.2</span> David Herbert Lawrence CTTR and Length</a></li>
   <li><a href="#nancy-mitford-cttr-and-length" id="toc-nancy-mitford-cttr-and-length" class="nav-link" data-scroll-target="#nancy-mitford-cttr-and-length"><span class="header-section-number">10.3</span> Nancy Mitford CTTR and Length</a></li>
   <li><a href="#powell-anthony-cttr-and-length" id="toc-powell-anthony-cttr-and-length" class="nav-link" data-scroll-target="#powell-anthony-cttr-and-length"><span class="header-section-number">10.4</span> Powell Anthony CTTR and Length</a></li>
+  <li><a href="#authors-average-word-counts-distribution" id="toc-authors-average-word-counts-distribution" class="nav-link" data-scroll-target="#authors-average-word-counts-distribution"><span class="header-section-number">10.5</span> Author’s average word counts distribution</a></li>
   </ul></li>
   <li><a href="#sec-discussion" id="toc-sec-discussion" class="nav-link" data-scroll-target="#sec-discussion"><span class="header-section-number">11</span> Discussion</a>
   <ul class="collapse">
@@ -134,7 +140,7 @@ div.csl-indent {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">March 12, 2024</p>
+      <p class="date">March 15, 2024</p>
     </div>
   </div>
   
@@ -178,7 +184,7 @@ div.csl-indent {
 <div class="cell-output-display">
 <div id="tbl-display-raw-data" class="anchored">
 <table class="table table-sm table-striped small">
-<caption>Table&nbsp;1: First Ten Row of Waste No tear by Hugh Garners</caption>
+<caption>Table&nbsp;1: First 3 Paragraph of Waste No tear by Hugh Garners</caption>
 <colgroup>
 <col style="width: 100%">
 </colgroup>
@@ -206,21 +212,6 @@ div.csl-indent {
 <tr class="even">
 <td style="text-align: left;">“”</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">“In the summer the smells from the factories used to fill the streets, and Nicky Manulesco used to stop his bicycle in front of our steps and sniff the air. “Smell that, Tom?” he would ask. “That goddamn soap company is cleaning its vats again. Between the smell of the soap and the smell of the fish from down the street, this street stinks like bath night in a girls’ school.””</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">“”</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">“When I was fourteen I left school and got a job riding a bicycle for the telegraph company. It was good to get away from school, and the money I made helped us at home. By this time my old man was a confirmed lush, and he had stopped working with the first day of the Depression. From then on the Matterson family lived on relief hand-outs and from the money I made delivering telegraphs.”</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;">“”</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;">“My mother might have been young once, but she was old from the first time I remember her. When I think of her now, I see a little beaten-up old woman working over the coal range in the kitchen or scrubbing the tattered linoleum in the front hall. She’d had a hard life, and had dragged up four kids, of which I was the eldest. Besides my sister Elsie, who was two years younger them me, there were two other boys, Eric and Paul. My mother died in 1930, and my two young brothers were taken away by the Children’s Aid. Elsie went to live with an aunt in another part of town, and my old man disappeared. I learned years later that he had died in a Midwest jail. I moved in with a friend of mine, Alec Ranning.”</td>
-</tr>
 </tbody>
 </table>
 </div>
@@ -235,69 +226,81 @@ div.csl-indent {
 <div class="cell-output-display">
 <div id="tbl-authors-cttr" class="anchored">
 <table class="table table-sm table-striped small">
-<caption>Table&nbsp;2: First Ten Rows of Authors’ Corrected Type Token Ratio</caption>
+<caption>Table&nbsp;2: First Ten Rows of Writing’s Word Count and Uniques Word Count</caption>
 <colgroup>
-<col style="width: 28%">
-<col style="width: 38%">
-<col style="width: 33%">
+<col style="width: 27%">
+<col style="width: 37%">
+<col style="width: 13%">
+<col style="width: 21%">
 </colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">author</th>
 <th style="text-align: left;">title</th>
-<th style="text-align: right;">corrected type token ratio</th>
+<th style="text-align: right;">word count</th>
+<th style="text-align: right;">unique word count</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">David Herbert Lawrence</td>
 <td style="text-align: left;">england_my_england</td>
-<td style="text-align: right;">21.4</td>
+<td style="text-align: right;">12885</td>
+<td style="text-align: right;">3441</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">David Herbert Lawrence</td>
 <td style="text-align: left;">kangaroo</td>
-<td style="text-align: right;">40.3</td>
+<td style="text-align: right;">149227</td>
+<td style="text-align: right;">21989</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">David Herbert Lawrence</td>
 <td style="text-align: left;">lady_chatterleys_lover</td>
-<td style="text-align: right;">35.1</td>
+<td style="text-align: right;">117257</td>
+<td style="text-align: right;">17006</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">David Herbert Lawrence</td>
 <td style="text-align: left;">odour_of_chrysanthemums</td>
-<td style="text-align: right;">20.5</td>
+<td style="text-align: right;">7516</td>
+<td style="text-align: right;">2509</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">David Herbert Lawrence</td>
 <td style="text-align: left;">sons_and_lovers</td>
-<td style="text-align: right;">35.2</td>
+<td style="text-align: right;">160136</td>
+<td style="text-align: right;">19927</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">David Herbert Lawrence</td>
 <td style="text-align: left;">the_plumed_serpent</td>
-<td style="text-align: right;">37.0</td>
+<td style="text-align: right;">170581</td>
+<td style="text-align: right;">21632</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">David Herbert Lawrence</td>
 <td style="text-align: left;">the_rainbow</td>
-<td style="text-align: right;">35.1</td>
+<td style="text-align: right;">185724</td>
+<td style="text-align: right;">21378</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">David Herbert Lawrence</td>
 <td style="text-align: left;">the_virgin_and_the_gipsy</td>
-<td style="text-align: right;">28.3</td>
+<td style="text-align: right;">30421</td>
+<td style="text-align: right;">6982</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Hugh Garners</td>
 <td style="text-align: left;">waste_no_tears</td>
-<td style="text-align: right;">21.9</td>
+<td style="text-align: right;">44293</td>
+<td style="text-align: right;">6504</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Hugh Garners</td>
 <td style="text-align: left;">the_conversion_of_willie_heaps</td>
-<td style="text-align: right;">15.0</td>
+<td style="text-align: right;">3592</td>
+<td style="text-align: right;">1271</td>
 </tr>
 </tbody>
 </table>
@@ -308,10 +311,19 @@ div.csl-indent {
 <section id="measurements" class="level2" data-number="6.1">
 <h2 data-number="6.1" class="anchored" data-anchor-id="measurements"><span class="header-section-number">6.1</span> Measurements</h2>
 <p>#TODO: explainnnn</p>
-<p>#Model # TODO: Explain neg binom model</p>
+<p>#Model # TODO: Explain neg binom model Negative Binomial regression</p>
+<p>We will fit our multi-level model with the Negative Binomial regression, and although CTTR is not a count value, for the context of this paper we will temporarily disregard this assumption.</p>
 </section>
 <section id="model-set-up" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="model-set-up"><span class="header-section-number">6.2</span> Model set-up</h2>
+<p>Define <span class="math inline">\(y_i\)</span> as the CTTR of the author’s writings, then <span class="math inline">\(\alpha_a\)</span> as the author.</p>
+<p><span class="math display">\[\begin{align}
+y_i|\pi_i &amp;\sim \mbox{Negative Binomial}(r, \pi_i) \\
+logit(\pi_i) &amp;= \beta_0 + \alpha_a\\
+\beta_0 &amp;\sim \mbox{Normal}(0, 3) \\
+\alpha_a &amp;\sim \mbox{Normal}(0, 3) \space for \space a = 1, \space 2,  \space 3, \space 4\\
+\end{align}\]</span></p>
+<p>We run the model in R <span class="citation" data-cites="citeR">(<a href="#ref-citeR" role="doc-biblioref">R Core Team 2020</a>)</span> using the <code>rstanarm</code> package of <span class="citation" data-cites="rstanarm">(<a href="#ref-rstanarm" role="doc-biblioref"><strong>rstanarm?</strong></a>)</span>. We use the default priors from <code>rstanarm</code>.</p>
 </section>
 </section>
 <section id="todo-formula" class="level1" data-number="7">
@@ -322,6 +334,206 @@ div.csl-indent {
 </section>
 <section id="todo-expectation-and-why" class="level1" data-number="8">
 <h1 data-number="8"><span class="header-section-number">8</span> TODO: expectation and why</h1>
+<div class="cell">
+<div class="cell-output-display">
+
+<table class="table" style="width: auto !important; margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:center;">
+Neg Binom
+</th>
+<th style="text-align:center;">
+Multilevel Neg Binom
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+(Intercept)
+</td>
+<td style="text-align:center;">
+3.444
+</td>
+<td style="text-align:center;">
+3.291
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+(0.119)
+</td>
+<td style="text-align:center;">
+(0.267)
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+authorHugh Garners
+</td>
+<td style="text-align:center;">
+−0.658
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+(0.153)
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+authorNancy Mitford
+</td>
+<td style="text-align:center;">
+0.021
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:center;">
+(0.156)
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+authorPowell Anthony
+</td>
+<td style="text-align:center;">
+0.107
+</td>
+<td style="text-align:center;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;box-shadow: 0px 1.5px">
+</td>
+<td style="text-align:center;box-shadow: 0px 1.5px">
+(0.152)
+</td>
+<td style="text-align:center;box-shadow: 0px 1.5px">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Num.Obs.
+</td>
+<td style="text-align:center;">
+42
+</td>
+<td style="text-align:center;">
+42
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Log.Lik.
+</td>
+<td style="text-align:center;">
+−136.460
+</td>
+<td style="text-align:center;">
+−137.308
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ELPD
+</td>
+<td style="text-align:center;">
+−137.9
+</td>
+<td style="text-align:center;">
+−138.8
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+ELPD s.e.
+</td>
+<td style="text-align:center;">
+2.1
+</td>
+<td style="text-align:center;">
+2.0
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LOOIC
+</td>
+<td style="text-align:center;">
+275.9
+</td>
+<td style="text-align:center;">
+277.5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+LOOIC s.e.
+</td>
+<td style="text-align:center;">
+4.2
+</td>
+<td style="text-align:center;">
+4.1
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+WAIC
+</td>
+<td style="text-align:center;">
+275.8
+</td>
+<td style="text-align:center;">
+277.5
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+RMSE
+</td>
+<td style="text-align:center;">
+3.48
+</td>
+<td style="text-align:center;">
+3.54
+</td>
+</tr>
+</tbody>
+
+</table>
+<p>TODO</p>
+</div>
+</div>
+<p>Here is a better visualization of the model</p>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="paper_files/figure-html/multi%20level%20model%20distribution-1.png" class="img-fluid figure-img" width="672"></p>
+<figcaption class="figure-caption">First Ten Rows of Writing’s Word Count and Uniques Word Count</figcaption>
+</figure>
+</div>
+</div>
+</div>
 </section>
 <section id="sec-result" class="level1" data-number="9">
 <h1 data-number="9"><span class="header-section-number">9</span> Results</h1>
@@ -340,6 +552,9 @@ div.csl-indent {
 </section>
 <section id="powell-anthony-cttr-and-length" class="level2" data-number="10.4">
 <h2 data-number="10.4" class="anchored" data-anchor-id="powell-anthony-cttr-and-length"><span class="header-section-number">10.4</span> Powell Anthony CTTR and Length</h2>
+</section>
+<section id="authors-average-word-counts-distribution" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="authors-average-word-counts-distribution"><span class="header-section-number">10.5</span> Author’s average word counts distribution</h2>
 <div style="page-break-after: always;"></div>
 </section>
 </section>
@@ -377,6 +592,9 @@ div.csl-indent {
 </section>
 
 <div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">14 References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-citeR" class="csl-entry" role="listitem">
+R Core Team. 2020. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.
+</div>
 <div id="ref-citekableExtra" class="csl-entry" role="listitem">
 Zhu, Hao. 2021. <em>kableExtra: Construct Complex Table with ’Kable’ and Pipe Syntax</em>. <a href="http://haozhu233.github.io/kableExtra/,
 https://github.com/haozhu233/kableExtra">http://haozhu233.github.io/kableExtra/, https://github.com/haozhu233/kableExtra</a>.

@@ -16,9 +16,11 @@ library(modelsummary)
 #### Read data ####
 analysis_data <- read_csv("data/analysis_data/cttr_all.csv")
 
+#For the purpose of fitting our data, we will round up to zero digits in order to use negative binom model
+
 analysis_data$corrected_type_token_ratio <- analysis_data$corrected_type_token_ratio |>
   round(digits = 0)
-  
+
 analysis_data
 
 ### Model data ####
@@ -56,4 +58,11 @@ saveRDS(
 saveRDS(
   author_lines_rstanarm_multilevel,
   file = "models/author_cttr_model_multi.rds"
+)
+
+modelsummary(
+  list(
+    "Neg Binom" = author_cttr_rstanarm,
+    "Multilevel neg binomial" = author_lines_rstanarm_multilevel
+    )
 )

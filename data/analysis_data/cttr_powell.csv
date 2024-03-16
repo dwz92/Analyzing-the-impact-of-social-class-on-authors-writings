@@ -1,12 +1,12 @@
-"","author","title","word_count","corrected_type_token_ratio"
-"1","Powell Anthony","casanovas_chinese_restaurant",70617,32.5376213183074
-"2","Powell Anthony","the_soldiers_art",63859,33.200275535303
-"3","Powell Anthony","books_do_furnish_a_room",74530,35.5649013754907
-"4","Powell Anthony","the_acceptance_world",62888,32.8550086971377
-"5","Powell Anthony","at_lady_mollys",71873,33.0644344880732
-"6","Powell Anthony","the_valley_of_bones",71528,33.8923052153861
-"7","Powell Anthony","hearing_secret_harmonies",82153,35.6854950980565
-"8","Powell Anthony","temporary_kings",85007,37.2519381338249
-"9","Powell Anthony","the_military_philosophers",73837,36.6526037713418
-"10","Powell Anthony","a_buyers_market",82845,34.9686456731751
-"11","Powell Anthony","the_kindly_ones",76904,35.7103124972581
+"","author","title","word_count","types","corrected_type_token_ratio"
+"1","Powell Anthony","casanovas_chinese_restaurant",70617,12228,32.5376213183074
+"2","Powell Anthony","the_soldiers_art",63859,11865,33.200275535303
+"3","Powell Anthony","books_do_furnish_a_room",74530,13731,35.5649013754907
+"4","Powell Anthony","the_acceptance_world",62888,11652,32.8550086971377
+"5","Powell Anthony","at_lady_mollys",71873,12536,33.0644344880732
+"6","Powell Anthony","the_valley_of_bones",71528,12819,33.8923052153861
+"7","Powell Anthony","hearing_secret_harmonies",82153,14465,35.6854950980565
+"8","Powell Anthony","temporary_kings",85007,15360,37.2519381338249
+"9","Powell Anthony","the_military_philosophers",73837,14085,36.6526037713418
+"10","Powell Anthony","a_buyers_market",82845,14234,34.9686456731751
+"11","Powell Anthony","the_kindly_ones",76904,14005,35.7103124972581

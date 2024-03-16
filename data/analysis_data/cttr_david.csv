@@ -1,9 +1,9 @@
-"","author","title","word_count","corrected_type_token_ratio"
-"1","David Herbert Lawrence","england_my_england",12885,21.4351962152662
-"2","David Herbert Lawrence","kangaroo",149227,40.2500827295611
-"3","David Herbert Lawrence","lady_chatterleys_lover",117257,35.117030725642
-"4","David Herbert Lawrence","odour_of_chrysanthemums",7516,20.4640824902082
-"5","David Herbert Lawrence","sons_and_lovers",160136,35.2113304349984
-"6","David Herbert Lawrence","the_plumed_serpent",170581,37.0353410566454
-"7","David Herbert Lawrence","the_rainbow",185724,35.0766460633026
-"8","David Herbert Lawrence","the_virgin_and_the_gipsy",30421,28.3059740117631
+"","author","title","word_count","types","corrected_type_token_ratio"
+"1","David Herbert Lawrence","england_my_england",12885,3441,21.4351962152662
+"2","David Herbert Lawrence","kangaroo",149227,21989,40.2500827295611
+"3","David Herbert Lawrence","lady_chatterleys_lover",117257,17006,35.117030725642
+"4","David Herbert Lawrence","odour_of_chrysanthemums",7516,2509,20.4640824902082
+"5","David Herbert Lawrence","sons_and_lovers",160136,19927,35.2113304349984
+"6","David Herbert Lawrence","the_plumed_serpent",170581,21632,37.0353410566454
+"7","David Herbert Lawrence","the_rainbow",185724,21378,35.0766460633026
+"8","David Herbert Lawrence","the_virgin_and_the_gipsy",30421,6982,28.3059740117631

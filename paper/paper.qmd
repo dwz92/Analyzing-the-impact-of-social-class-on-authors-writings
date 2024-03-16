@@ -46,13 +46,9 @@ In this study, our main object of estimation is the causal effect of different c
 
 ## Source and Methodology
 
-Data on birth rates for women aged 15-44 were sourced from National Vital Statistics Reports covering 2015, 2019, and 2020 [@cite2015birth; @cite2019birth; @cite2020birth], compiled from birth certificates across the US and the District of Columbia. @citeoriginal provided aggregated birth data for six cohorts over five-year spans, derived from the NBER Natality Database [@citeNBER] and NCHS microdata [@citeNCHS] for 1980-2019. In this study, we simply used the replication data package provided by @citeoriginal for analysis.
+Data on word counts and unique word counts for the four selected authors were sourced from the original text files of the selected authors' writings. The original files of these writings [@citePowell, @citeNan, @citeDH, @citeHu] were gathered through online library sources, these files were processed and transformed into workable data using R[@citeR]. For key operations, please refer to the [@sec-appendix].
 
-Data on the 
-
-While there were alternative datasets available from other public and private sources, this dataset was chosen due to its comprehensive coverage, reliability, and the level of detail it offers. It includes data from the National Center for Health Statistics [@citeNCHS] and the U.S. Census Bureau, which are both reputable sources of demographic data.
-
-The data was processed and cleaned using R[@citeR], a powerful statistical programming language. For key operations, please refer to the [@sec-appendix].
+While there were alternative text files available from other public and private sources, these works were chosen due to the completeness and accuracy of these files.
 
 ## Variables
 
@@ -102,8 +98,8 @@ cttr_all |>
 
 ## Author's average word counts distribution
 ```{r}
-#| label: fig-authors-Word-Count-Distribution
-#| fig-cap: Word Count Comparison by Authors
+#| label: tbl-authors-word-count-distribution
+#| tbl-cap: Word Count Comparison by Authors
 #| echo: false
 
 word_distribution <- read.csv(here::here("data/analysis_data/wordcount_dist.csv"))
@@ -287,8 +283,17 @@ Future research should aim to unravel these complex interactions further, perhap
 
 # Data Manipulation and Cleaning {#sec-appendix}
 
-In the context of our raw data, we are dealing with raw text files of authors' writings. Thus, we begin by 
+In the context of our raw data, we are dealing with raw text files of authors' writings. Thus, we begin by omitting unnecessary portions (such as publishers' notes) the text files. To transform these raw texts to workable data, we created three functions, `word_dist()`, `cttr_dist()`, and `cttr()` using R libraries [@citetidyverse, @citedplyr, @citehere, @citekableExtra]. These functions aim to gather the descriptive statistics of each writings partially (average, mean, cttr), and store them into `data/analysis_data` with the author name.
 
+@tbl-authors-cttr was created using the dataset imported from `data/analysis_data/cttr_all.csv`, which was created by using `cttr()`. The cleaned texts along with the titles and authors were passed into `cttr()`, which loop through each of the text to gather the word counts and unique word counts. Then, these temporary parameters were formulated into the calculation for CTTR, then stored into `data/analysis_data/cttr_all.csv`.
+
+@tbl-authors-word-count-distribution was created using the dataset imported from `data/analysis_data/wordcount_dist.csv`. This dataset was created by using the function `word_dist()`, which returns the author, average word count, and std. dev. of word count of each texts. Different from `cttr()`, the stored value from `data/analysis_data/cttr_all.csv` were passed into the function to generate the values.
+
+@tbl-author-cttr-dist was created using `data/analysis_data/cttr_dist.csv`. This dataset  was created  by using the function `cttr_dist()`, which returns the author, average word count, and std. dev. of CTTR of each texts. Similar to the creation of @tbl-authors-word-count-distribution, `data/analysis_data/cttr_all.csv` were passed into the function to generate the values.
+
+@tbl-multi-lev-model and @fig-multi-lev-model-by-author were created using the imports from `models/author_cttr_model_multi.rds` and `models/author_cttr_model.rds`. These `.rds` files were created in `scripts/03-models.R` using functions such as `stan_glm()` from R libraries [@tidyverse, @rstanarm]. Moreover, the `corrected_type_token_ratio` from `data/analysis_data/cttr_all.csv` were rounded to integers in order to use Negative Binomial regression.
+
+@fig-hugh-cttr-vs-wordcount were created using the imports from `data/analysis_data/cttr_all.csv`. Which has the same creation process as @tbl-authors-cttr.
 
 
 

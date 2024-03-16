@@ -78,7 +78,7 @@ waste_no_tears_t |>
 
 ```{r}
 #| label: tbl-authors-cttr
-#| tbl-cap: "First Ten Rows of Writing's Word Count and Uniques Word Count"
+#| tbl-cap: First Ten Rows of Writings Word Count and Uniques Word Count
 #| echo: false
 
 cttr_all <- read.csv(here::here("data/analysis_data/cttr_all.csv"))
@@ -98,8 +98,8 @@ cttr_all |>
 
 ## Author's average word counts distribution
 ```{r}
-#| label: Authors-Word-Count-Distribution
-#| fig-cap: "Word Count Comparison by Authors"
+#| label: fig-authors-Word-Count-Distribution
+#| fig-cap: Word Count Comparison by Authors
 #| echo: false
 
 word_distribution <- read.csv(here::here("data/analysis_data/wordcount_dist.csv"))
@@ -146,9 +146,32 @@ We run the model in R [@citeR] using the `rstanarm` package of @rstanarm. We use
 
 # TODO: expectation and why
 
+
+# Results {#sec-result}
+
+
+@sec-result 
+
 ```{r}
-#| label: multi level model
-#| fig-cap: " TODO"
+#| label: tbl-author-cttr-dist
+#| tbl-cap: Authors CTTR Average and Standard Deviation
+#| echo: false
+
+cttr_distribution <- read.csv(here::here("data/analysis_data/cttr_dist.csv"))
+
+cttr_distribution |>
+  select(author, average, stddev) |>
+  kable(
+    col.names = c("Author", "Average", "Standard Deviation"),
+    digits = 2
+  )
+
+```
+
+
+```{r}
+#| label: tbl-multi-lev-model
+#| tbl-cap: Model Summary of Multi-level and Negative Binomial model
 #| echo: false
 #| warning: false
 
@@ -167,8 +190,8 @@ modelsummary(
 
 Here is a better visualization of the model
 ```{r}
-#| label: multi level model distribution
-#| fig-cap: "First Ten Rows of Writing's Word Count and Uniques Word Count"
+#| label: fig-multi-lev-model-by-author
+#| fig-cap: Distribution of Draws by Authors
 #| echo: false
 
 author_CTTR_rstanarm_multilevel |>
@@ -180,52 +203,23 @@ author_CTTR_rstanarm_multilevel |>
 ```
 
 
-# Results {#sec-result}
 
-# Expalin
-@sec-result 
-
-## Hugh Garners CTTR and Length
 ```{r}
-#| label: fig-trends-in-birth-rate
-#| fig-cap: Trend in Birth Rates in US
+#| label: fig-hugh-cttr-vs-wordcount
+#| fig-cap: Comparison Between CTTR and Word Count by Authors
 #| echo: false
 
+cttr_all <- read.csv(here::here("data/analysis_data/cttr_all.csv"))
 
+ggplot(cttr_all, aes(x = corrected_type_token_ratio, y = word_count, color = author)) +
+  geom_point() +
+  labs(x = "CTTR", y = "Word Count") +
+  theme(panel.background = element_rect(fill = "white"),
+              panel.grid.major = element_line(colour = "grey"),
+              plot.title = element_text(color = "black", size = 14, face = "bold"),
+              axis.title = element_text(color = "black"))
 ```
 
-
-## David Herbert Lawrence CTTR and Length
-```{r}
-#| label: fig-trends-in-birth-rate-in-young-people
-#| fig-cap: Trends in Birth Rates by Age Group
-#| echo: false
-
-
-```
-
-
-
-
-
-
-## Nancy Mitford CTTR and Length
-```{r}
-#| label: fig-birth-rate-comparison-old-and-young
-#| fig-cap: Birth Rate between Younger and Older Population
-#| echo: false
-
-```
-
-
-## Powell Anthony CTTR and Length
-```{r}
-#| label: fig-change-in-birth-rates-by-state
-#| fig-cap: Change in Birth Rates by State, 2004–2008 to 2015–2019
-#| echo: false
-
-
-```
 
 
 \newpage

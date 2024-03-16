@@ -39,6 +39,30 @@ word_dist <- function(auth_list) {
   return(unique(res))
 }
 
+##Create a function for word count info##
+cttr_dist <- function(auth_list) {
+  res <- tibble(
+    author = c(),
+    average =c(),
+    stddev = c()
+  )
+  
+  for (info in auth_list) {
+    avg = mean(info$corrected_type_token_ratio)
+    std = sd(info$corrected_type_token_ratio)
+    
+    res <-
+      rbind(res,
+            tibble(
+              author = info$author,
+              average = avg,
+              stddev = std
+            )
+      )
+  }
+  return(unique(res))
+}
+
 ##Create a function for CTTR##
 cttr <- function(textlist, textnamelist, name) {
   
@@ -276,7 +300,7 @@ cttr_all
 write.csv(cttr_all, "data/analysis_data/cttr_all.csv")
 
 
-## Word count distributio n##
+## Word count distribution ##
 cttr_dav <- read.csv(here::here("data/analysis_data/cttr_david.csv"))
 cttr_hug <- read.csv(here::here("data/analysis_data/cttr_hugh.csv"))
 cttr_nan <- read.csv(here::here("data/analysis_data/cttr_nancy.csv"))
@@ -285,5 +309,13 @@ cttr_pow <- read.csv(here::here("data/analysis_data/cttr_powell.csv"))
 word_distribution <- word_dist(
   list(cttr_dav, cttr_hug, cttr_nan, cttr_pow)
 )
+
+## CTTR distribution ##
+cttr_distribution <- cttr_dist(
+  list(cttr_dav, cttr_hug, cttr_nan, cttr_pow)
+)
+
+
+write.csv(cttr_distribution, "data/analysis_data/cttr_dist.csv")
 
 write.csv(word_distribution, "data/analysis_data/wordcount_dist.csv")

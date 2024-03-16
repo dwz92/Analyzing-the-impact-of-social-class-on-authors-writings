@@ -291,7 +291,7 @@ In the context of our raw data, we are dealing with raw text files of authors' w
 
 @tbl-author-cttr-dist was created using `data/analysis_data/cttr_dist.csv`. This dataset  was created  by using the function `cttr_dist()`, which returns the author, average word count, and std. dev. of CTTR of each texts. Similar to the creation of @tbl-authors-word-count-distribution, `data/analysis_data/cttr_all.csv` were passed into the function to generate the values.
 
-@tbl-multi-lev-model and @fig-multi-lev-model-by-author were created using the imports from `models/author_cttr_model_multi.rds` and `models/author_cttr_model.rds`. These `.rds` files were created in `scripts/03-models.R` using functions such as `stan_glm()` from R libraries [@tidyverse, @rstanarm]. Moreover, the `corrected_type_token_ratio` from `data/analysis_data/cttr_all.csv` were rounded to integers in order to use Negative Binomial regression.
+@tbl-multi-lev-model and @fig-multi-lev-model-by-author were created using the imports from `models/author_cttr_model_multi.rds` and `models/author_cttr_model.rds`. These `.rds` files were created in `scripts/03-models.R` using functions such as `stan_glm()` from R libraries [@citetidyverse, @citerstanarm]. Moreover, the `corrected_type_token_ratio` from `data/analysis_data/cttr_all.csv` were rounded to integers in order to use Negative Binomial regression.
 
 @fig-hugh-cttr-vs-wordcount were created using the imports from `data/analysis_data/cttr_all.csv`. Which has the same creation process as @tbl-authors-cttr.
 

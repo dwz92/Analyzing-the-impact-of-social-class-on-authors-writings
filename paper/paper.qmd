@@ -9,7 +9,7 @@ thanks: "Code and data are available at: https://github.com/dwz92/Analyzing-the-
 date: today
 date-format: long
 abstract: "In this study, we explore the influence of social class on lexical richness in the works of authors  after the Great Depression, utilizing a comprehensive analysis of lexical data from literary works and social context of authors. Our findings reveal upper-class authors exhibiting a higher Corrected Type-Token Ratio which indicates greater lexical richness, and reflecting their social milieu. This study employs a thorough lexical analysis, aiming to elucidate the complex interplay between class background and language use in literature. This research contributes to our understanding of how social class background shapes language use in literature, offering insights into the broader cultural forces that drive linguistic creativity."
-format: html
+format: pdf
 toc: true
 number-sections: true
 bibliography: references.bib
@@ -31,28 +31,28 @@ library(tidybayes)
 ```
 
 # Introduction {#sec-intro}
-The Great Depression was a major economic event of the 20th century that had a profound effect on the global economic situation and class divisions. The question of whether the writing styles of different authors are affected by their class of origin and the general economic climate deserves an in-depth discussion. The purpose of this paper is to gain a deeper understanding of how people lived and thought after the Great Depression by examining whether upper-class writers had a richer writing vocabulary to utilize in their essays than middle-class writers.
+At the end of the 20th century, the quantitative study of vocabulary in texts reached a level of precision that spurred a series of linguistic studies. Vocabulary is a fundamental part of language and is the unit of meaning that makes up larger structures such as sentences, paragraphs, and full texts [@cite2020vocabulary]. The use of vocabulary represents the author's writing style and is also influenced by family education and social class. The question of whether the vocabulary used by different authors in their writing is influenced by their class of origin deserves to be explored in depth. The purpose of this paper is to gain insight into whether class differences affect the richness of vocabulary and central ideas in works by examining whether upper-class authors use richer writing vocabulary in their essays than middle-class authors.
 
-Utilizing a combination of quantitative data analysis and authorship studies, we investigated the vocabulary richness of texts used by upper-class and middle-class authors after the Great Depression. Our findings suggest that works produced by upper-class authors during the period 1930-1990 will have a richer vocabulary compared to middle-class writers. This phenomenon suggests that different classes of writers have different writing styles, and that economic downturns and international instability have had an impact on writers' writing styles. It also had a profound effect on the writers' personal lives, including education, life and thought. These influences, brought about by the broader context of the times, affect not only the choice of vocabulary used in the essay, but also the expression of the central idea of the whole essay, which in turn affects the minds of many civilian readers.
+Utilizing a combination of quantitative data analysis and authorship studies, we investigated the Type-Token Ratio of upper- and middle-class authors to reflect the richness of textual vocabulary over the period 1930-1990. This richness gives us an idea of the number of different terms used in a text and the diversity of the vocabulary [@cite2013lexical]. For the purpose of this study, we carefully selected two authors from the upper class, namely Nancy Mitford and Anthony Powell, alongside two authors from the working class, Hugh Garners and David Herbert Lawrence, as subjects of our investigation. In order to fulfill the objectives of our study, we employ the method of calculating the Corrected Type-Token Ratio (CTTR) for lexical analysis, as this approach offers a more accurate account of the texts produced by the four selected authors. The type token ratio is calculated for data files containing transcribed utterances. In language acquisition research it often means transcriptions of spontaneous speech, including unguided narratives, guided retellings, or speech elicited by a series of successive pictures [@cite2007comparing]. A higher Corrected Type-Token Ratio (CTTR) indicates that the author possesses a richer vocabulary, demonstrating a greater diversity in word usage within their texts. The CTTR values of four writers from distinct social classes were analyzed to assess the richness of their vocabulary usage. The comparison revealed that the works of upper-class writers exhibited higher CTTR values relative to those of middle-class writers, suggesting a more diverse vocabulary in the literary creations of the upper-class authors. This phenomenon suggests that different classes of writers have different writing styles and preferred vocabularies, and that the writers' writing styles and ideas in their works are influenced by their vocabulary choices.
 
-The paper is structured to facilitate a comprehensive understanding of the study and its implications. Following @sec-intro, @sec-data presents the data, detailing the data sources, analytical techniques, and the rationale behind the chosen methods. @sec-result discusses the results, elaborating on the observed trends and patterns in the authors writings. @sec-discussion provides an in-depth discussion of these findings, exploring potential factors influencing these trends, drawing connections to broader socio-economic issues, and providing suggestions for future research in this area.
+The paper is structured to facilitate a comprehensive understanding of the study and its implications. Following @sec-intro, @sec-data presents the data, detailing the data sources, analytical techniques, and the rationale behind the chosen methods. @sec-result discusses the results, elaborating on the observed trends and patterns in the authors writings. @sec-discussion provides an in-depth discussion of these findings, exploring potential factors influencing these trends, drawing connections to broader social-economic issues, and providing suggestions for future research in this area.
 
 ## Estimand
 In this study, our main object of estimation is the causal effect of different classes on the vocabulary use of writers' writing, i.e., changes that can be attributed to the writers' own class of origin, divorced from the economic factors of their times. This involves analyzing the richness of the writing vocabulary of authors from both the upper and middle classes, in order to understand how differences in education, life, and personal perceptions brought about by different class origins affect writers' ideas and writing styles.
 
 # Data {#sec-data}
 
-## TODO: explain
+This section aims to offer an insightful understanding of the dataset utilized in our analysis. We selected 10 books written by each of two upper-class authors and two middle-class authors between 1930 and 1990. The dataset captures all the texts in the selected books. These data provide the number and type of words in each book, allowing us to analyze the richness of the vocabulary used in the writing of different class authors and to understand the relationship between class background and writing vocabulary use.
 
 ## Source and Methodology
 
-Data on word counts and unique word counts for the four selected authors were sourced from the original text files of the selected authors' writings. The original files of these writings [@citePowell, @citeNan, @citeDH, @citeHu] were gathered through online library sources, these files were processed and transformed into workable data using R[@citeR]. For key operations, please refer to the [@sec-appendix].
+Data on word counts and unique word counts for the four selected authors were sourced from the original text files of the selected authors' writings. The original files of these writings were gathered through online library sources, these files were processed and transformed into workable data using R[@citeR]. For key operations, please refer to the [@sec-appendix].
 
 While there were alternative text files available from other public and private sources, these works were chosen due to the completeness and accuracy of these files.
 
 ## Variables
 
-###TODO: explain raw text, sample raw text
+To better understand the data and the research process, three randomly selected paragraphs have been chosen to provide a detailed description of the research methodology used, explaining its relevance and how it contributes to our understanding of the topic. Our focus is on word count and unique word count in the novels written by the selected authors that offer a comprehensive view of how different authors use the vocabulary in their writing.
 
 ```{r}
 #| label: tbl-display-raw-data
@@ -68,13 +68,8 @@ waste_no_tears_t |>
   )
 
 ```
-@tbl-display-raw-data, created with `kableExtra` [@citekableExtra], showcases the first ten rows of 
-###TODO: Explain raw data
 
-
-
-
-### TODO: explain For better visualization
+@tbl-display-raw-data, created with `kableExtra` [@citekableExtra], showcases the first 3 paragraphs of Waste No Tears by Hugh Garners.  To examine the diversity of vocabulary utilized in the published works of various authors, approximately eight books per author were meticulously selected. The data were then systematically aggregated into two distinct categories: the word count, representing the aggregate number of conventional words, and the unique word count, denoting the tally of distinct words used. This methodical aggregation enables a concentrated comparison between the two types of word counts across the selected works, providing insight into the authors' lexical richness and stylistic nuances.
 
 ```{r}
 #| label: tbl-authors-cttr
@@ -93,7 +88,7 @@ cttr_all |>
   )
 ```
 
-@tbl-authors-cttr
+@tbl-authors-cttr, built with `kableExtra` [@citekableExtra], displays the first ten rows of writing’s word count and unique word count. This is a more concise table after the word count, which shows the authors and the books they wrote and lists the two types of word counts across the selected works. Provides a streamlined view for subsequent analysis and processing.
 
 
 ## Author's average word counts distribution
@@ -112,7 +107,8 @@ word_distribution |>
     booktabs = TRUE
   )
 ```
-### TODO: Explain 
+
+Initially, the length and consistency of the literary outputs were systematically evaluated. Presented in @tbl-authors-word-count-distribution are the mean word count and standard deviation for the works of four selected authors. David Herbert Lawrence, with a mean word count of 104,218.38, ranks highest among the authors, yet the substantial standard deviation of 75,127.43 indicates a significant variation in the lengths of his works. Conversely, Hugh Garners possesses the minimal average word count, registering at merely 7,173.85 words. On the other hand, Nancy Mitford and Anthony Powell exhibit notably higher average word counts, recorded at 71,379.60 and 74,185.55, respectively, with the lengths of their works demonstrating relative stability. Remarkably, Anthony Powell manifests the lowest standard deviation, at 7229.23, underscoring the uniformity in the length of his works. Contrasting with the brevity and conciseness characterizing the outputs of Garners, Mitford, and Powell, Lawrence's compositions are distinguished by their extensive length and variability.
 
 
 
@@ -120,8 +116,9 @@ word_distribution |>
 
 ## Measurements
 
-###TODO: explainnnn
+In our study, ten books published by each of the four authors between 1900-1990 were analyzed in detail. The txt files of these books were extracted from online libraries to ensure the authenticity and accuracy of the data obtained. We measured textual vocabulary richness using CTTR, a modified form of TTR to minimize the effect of text length on vocabulary richness measurements.
 
+For each published book, CTTR is calculated by dividing the number of words in the text that are not repeated (number of types) by the square root of the total number of words (number of tokens) multiplied by two. The type count refers to the number of unique words in the text, i.e. words that are not repeated. The number of tokens, on the other hand, refers to the total number of words in the text, including repeated words. This method allows for a reasonable comparison by knowing the vocabulary richness of each book of the four authors chosen. This calculation method allows for a fairer comparison ignoring the length of the text to each other.The value of CTTR quantitatively responds to the diversity and richness of the text's vocabulary.
 
 
 
@@ -154,7 +151,7 @@ $\beta_0$: The intercept $\beta_0$ has a prior distribution that is normal with 
 $\alpha_a$: Each author effect $\alpha_a$ also has a normal prior with mean 0 and standard deviation 3.
 
 
-We will run the model in R [@citeR] using the `rstanarm` package of @rstanarm.
+We will run the model in R [@citeR] using the `rstanarm` package of [@citerstanarm].
 
 ## Model Justification
 
@@ -264,7 +261,9 @@ This study provides a new perspective on literary analysis, particularly through
 The results of this research strongly support our initial hypothesis, underscoring a notable correlation between an author's social class, educational background, and the lexical richness of their work, despite the clear outliers in our data. The observed differences in Corrected Type-Token Ratios (CTTR) between upper-class authors like Nancy Mitford and Anthony Powell and those of Hugh Garners and David Herbert Lawrence reinforce this link. It is noteworthy that David Herbert Lawrence, while presenting a high CTTR, also has a significant work length. When normalized for a moderate length, Lawrence's CTTR settles around 20, which is consistent with our hypothesis. The study not only delineates the association between social class and lexical richness in literature but also emphasizes the importance of considering an author's background for a more nuanced interpretation of their work. This indicates that the vocabulary an author employs is substantially shaped by their social context, rather than being solely a reflection of individual style.
 
 ## Social and historical influences
-The novels selected for this study were written during the mid-20th century. This period was heavily influenced by World War II as well as the Great Depression, which resulted in profound social changes and significant class divisions. Social stratification had a significant impact on the educational and cultural experiences of individuals, which in turn was reflected in the richness of the vocabulary of their literary works. Writers from upper class backgrounds, such as Nancy Mitford and Anthony Powell, were exposed to a rich educational environment and a leisurely pursuit of literature and language that was usually unavailable to writers from the lower classes. This may have helped to enrich their vocabularies by observing a wider and more subtle choice of words in their work. Conversely, authors from lower socio-economic backgrounds, such as Hugh Garners and David Herbert Lawrence, experienced more limited educational opportunities, often confined to vocational or primary education. Their writing tended to reflect the immediate, more constrained realities of their lives and the spoken language of their surroundings. This difference in education and cultural exposure is evident in comparative analyses of the vocabulary richness of their work, which is much narrower in the works of lower-class writers.
+
+The novels selected for this study were written during the mid-20th century. This period was heavily influenced by World War II as well as the Great Depression, which resulted in profound social changes and significant class divisions. World War II interrupted the schooling of many young women and men，and the outbreak of the war led to an immediate and dramatic decline in high school graduation rates, which fell back to the levels of the early 1930s [@cite2014you]. Social stratification had a significant impact on the educational and cultural experiences of individuals, which in turn was reflected in the richness of the vocabulary of their literary works. Writers from upper class backgrounds, such as Nancy Mitford and Anthony Powell, were exposed to a rich educational environment and a leisurely pursuit of literature and language that was usually unavailable to writers from the lower classes. This may have helped to enrich their vocabularies by observing a wider and more subtle choice of words in their work. Conversely, authors from lower socio-economic backgrounds, such as Hugh Garners and David Herbert Lawrence, experienced more limited educational opportunities, often confined to vocational or primary education. Their writing tended to reflect the immediate, more constrained realities of their lives and the spoken language of their surroundings. This difference in education and cultural exposure is evident in comparative analyses of the vocabulary richness of their work, which is much narrower in the works of lower-class writers.
+
 Thus, the unique social circumstances and educational differences of the mid-twentieth century played a key role in shaping the lexical character of literary works. The unique socio-economic contexts of the period created different opportunities for the linguistic development of writers, leading to a clear stratification of vocabulary use closely related to the class background of the authors. This observation underscores the importance of considering socio-economic factors when analyzing literary language trends, especially during periods of significant social and economic contrasts. This understanding is crucial for a comprehensive statistical analysis of language patterns across social classes and historical contexts in literary studies.
 
 ## Weaknesses and Future Research Directions

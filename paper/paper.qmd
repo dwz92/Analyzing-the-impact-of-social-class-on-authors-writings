@@ -198,12 +198,7 @@ David Herbert Lawrence and Nancy Mitford both have high average CTTRs at 31.61 a
 Hugh Garners has a notably lower average CTTR of 16.31, paired with a standard deviation of 2.31, which is indicative of a consistently narrower range of vocabulary. Powell Anthony tops the average CTTR at 34.67 with a standard deviation of 1.64, demonstrating not only the highest lexical richness but also a high consistency in vocabulary usage across his works. 
 These figures collectively offer a quantitative insight into the diversity and consistency of language used by authors from different social backgrounds.
 
-
-
-
-
-
-
+\newpage
 
 ## Model Visualization
 
@@ -256,9 +251,7 @@ author_CTTR_rstanarm_multilevel |>
   theme(panel.background = element_rect(fill = "white"),
               panel.grid.major = element_line(colour = "grey"),
               plot.title = element_text(color = "black", size = 14, face = "bold"),
-              axis.title = element_text(color = "black"),
-              plot.caption = element_text(hjust = 0.5)) +
-  coord_fixed(ratio = 0.3)
+              axis.title = element_text(color = "black"))
 ```
 
 
@@ -274,7 +267,7 @@ Powell Anthony’s distribution is relatively narrow and centered around the mea
 Hugh Garners' distribution is broader and notably shifted to the left of the baseline in both models, implying a lower CTTR and greater variability in lexical richness compared to the others. David Herbert Lawrence, while not explicitly compared against a coefficient in the table, is represented in the figure with the broadest distribution. This suggests that his CTTR is highly variable, confirming the previous analysis which indicated his works are both lengthy and diverse in terms of lexical richness.
 Overall, the @fig-multi-lev-model-by-author corroborates the numerical findings of @tbl-multi-lev-model, offering a visual confirmation of the differences in lexical richness and variability among the authors. It highlights the significant spread in the lexical diversity of Lawrence's works, as well as the relative consistency observed in the writings of Powell Anthony and Nancy Mitford, with Garners' works showing both a lower mean and a higher dispersion.
 
-
+\newpage
 
 ## Word Count vs. CTTR
 

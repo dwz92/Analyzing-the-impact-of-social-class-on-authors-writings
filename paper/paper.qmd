@@ -256,7 +256,9 @@ author_CTTR_rstanarm_multilevel |>
   theme(panel.background = element_rect(fill = "white"),
               panel.grid.major = element_line(colour = "grey"),
               plot.title = element_text(color = "black", size = 14, face = "bold"),
-              axis.title = element_text(color = "black"))
+              axis.title = element_text(color = "black"),
+              plot.caption = element_text(hjust = 0.5)) +
+  coord_fixed(ratio = 0.3)
 ```
 
 

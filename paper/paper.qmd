@@ -198,8 +198,6 @@ David Herbert Lawrence and Nancy Mitford both have high average CTTRs at 31.61 a
 Hugh Garners has a notably lower average CTTR of 16.31, paired with a standard deviation of 2.31, which is indicative of a consistently narrower range of vocabulary. Powell Anthony tops the average CTTR at 34.67 with a standard deviation of 1.64, demonstrating not only the highest lexical richness but also a high consistency in vocabulary usage across his works. 
 These figures collectively offer a quantitative insight into the diversity and consistency of language used by authors from different social backgrounds.
 
-\newpage
-
 
 ## Model Visualization
 

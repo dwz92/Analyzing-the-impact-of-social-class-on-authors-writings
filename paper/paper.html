@@ -414,7 +414,8 @@ logit(\pi_i) &amp;= \beta_0 + \alpha_a\\
 </section>
 <section id="model-visualization" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="model-visualization"><span class="header-section-number">4.2</span> Model Visualization</h2>
-<div class="cell" data-tbl.pos="H">
+<p><a href="#tbl-multi-lev-model">Table&nbsp;5</a> provides coefficients from a negative binomial regression and a multilevel negative binomial regression, indicating how each author’s work differs from the intercept in terms of Corrected Type-Token Ratio (CTTR).</p>
+<div class="cell">
 <div class="cell-output-display">
 <div id="tbl-multi-lev-model" class="anchored">
 <table class="table table-sm table-striped small" data-quarto-postprocess="true">
@@ -514,8 +515,9 @@ logit(\pi_i) &amp;= \beta_0 + \alpha_a\\
 
 </div>
 </div>
-<p><a href="#tbl-multi-lev-model">Table&nbsp;5</a> provides coefficients from a negative binomial regression and a multilevel negative binomial regression, indicating how each author’s work differs from the intercept in terms of Corrected Type-Token Ratio (CTTR). Hugh Garners shows a negative coefficient (-0.658 in Neg Binom and -1.308 in Multilevel Neg Binom), suggesting his CTTR is significantly lower than the baseline set by the intercept, which is consistent with the shortest average word count observed in the previous analysis.</p>
+<p>Hugh Garners shows a negative coefficient (-0.658 in Neg Binom and -1.308 in Multilevel Neg Binom), suggesting his CTTR is significantly lower than the baseline set by the intercept, which is consistent with the shortest average word count observed in the previous analysis.</p>
 <p>Nancy Mitford’s coefficient is slightly above zero (0.021 in Neg Binom and 0.152 in Multilevel Neg Binom), indicating her CTTR is almost at the baseline level. This aligns with her position as neither the lowest nor the highest in terms of lexical richness. Powell Anthony’s positive coefficient (0.107 in Neg Binom and 0.153 in Multilevel Neg Binom) implies his CTTR is above the baseline, though not as high as David Herbert Lawrence’s. David Herbert Lawrence does not have a coefficient listed here but is included in the distribution figure below.</p>
+<div style="page-break-after: always;"></div>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-multi-lev-model-by-author" class="quarto-figure quarto-figure-center anchored">

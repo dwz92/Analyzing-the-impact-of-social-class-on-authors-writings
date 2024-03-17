@@ -200,12 +200,14 @@ These figures collectively offer a quantitative insight into the diversity and c
 
 \newpage
 
+
 ## Model Visualization
+
+@tbl-multi-lev-model provides coefficients from a negative binomial regression and a multilevel negative binomial regression, indicating how each author's work differs from the intercept in terms of Corrected Type-Token Ratio (CTTR).
 
 ```{r}
 #| label: tbl-multi-lev-model
 #| tbl-cap: Model Summary of Multi-level and Negative Binomial model
-#| tbl.pos: "H"
 #| echo: false
 #| warning: false
 
@@ -221,16 +223,13 @@ modelsummary(
 ```
 
 
-
-
-@tbl-multi-lev-model provides coefficients from a negative binomial regression and a multilevel negative binomial regression, indicating how each author's work differs from the intercept in terms of Corrected Type-Token Ratio (CTTR). 
 Hugh Garners shows a negative coefficient (-0.658 in Neg Binom and -1.308 in Multilevel Neg Binom), suggesting his CTTR is significantly lower than the baseline set by the intercept, which is consistent with the shortest average word count observed in the previous analysis. 
 
 Nancy Mitford's coefficient is slightly above zero (0.021 in Neg Binom and 0.152 in Multilevel Neg Binom), indicating her CTTR is almost at the baseline level. This aligns with her position as neither the lowest nor the highest in terms of lexical richness. 
 Powell Anthony’s positive coefficient (0.107 in Neg Binom and 0.153 in Multilevel Neg Binom) implies his CTTR is above the baseline, though not as high as David Herbert Lawrence's.
 David Herbert Lawrence does not have a coefficient listed here but is included in the distribution figure below.
 
-
+\newpage
 
 
 ```{r}
@@ -272,7 +271,6 @@ Overall, the @fig-multi-lev-model-by-author corroborates the numerical findings 
 ```{r}
 #| label: fig-cttr-vs-wordcount
 #| fig-cap: Comparison Between CTTR and Word Count by Authors
-#| fig.pos: "H"
 #| echo: false
 
 cttr_all <- read.csv(here::here("data/analysis_data/cttr_all.csv"))

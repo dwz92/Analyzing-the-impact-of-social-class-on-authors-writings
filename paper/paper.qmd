@@ -209,7 +209,6 @@ Nancy Mitford's coefficient is slightly above zero (0.021 in Neg Binom and 0.152
 Powell Anthony’s positive coefficient (0.107 in Neg Binom and 0.153 in Multilevel Neg Binom) implies his CTTR is above the baseline, though not as high as David Herbert Lawrence's.
 David Herbert Lawrence does not have a coefficient listed here but is included in the distribution figure below.
 
-\newpage
 
 ```{r}
 #| label: tbl-multi-lev-model

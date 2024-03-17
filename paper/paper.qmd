@@ -201,9 +201,11 @@ These figures collectively offer a quantitative insight into the diversity and c
 \newpage
 
 ## Model Visualization
+
 ```{r}
 #| label: tbl-multi-lev-model
 #| tbl-cap: Model Summary of Multi-level and Negative Binomial model
+#| tbl.pos: "H"
 #| echo: false
 #| warning: false
 
@@ -219,7 +221,6 @@ modelsummary(
 ```
 
 
-\newpage
 
 
 @tbl-multi-lev-model provides coefficients from a negative binomial regression and a multilevel negative binomial regression, indicating how each author's work differs from the intercept in terms of Corrected Type-Token Ratio (CTTR). 
@@ -271,6 +272,7 @@ Overall, the @fig-multi-lev-model-by-author corroborates the numerical findings 
 ```{r}
 #| label: fig-cttr-vs-wordcount
 #| fig-cap: Comparison Between CTTR and Word Count by Authors
+#| fig.pos: "H"
 #| echo: false
 
 cttr_all <- read.csv(here::here("data/analysis_data/cttr_all.csv"))

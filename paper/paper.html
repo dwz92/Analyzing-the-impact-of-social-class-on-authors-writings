@@ -83,19 +83,23 @@ div.csl-indent {
   <li><a href="#variables" id="toc-variables" class="nav-link" data-scroll-target="#variables"><span class="header-section-number">2.2</span> Variables</a></li>
   <li><a href="#authors-average-word-counts-distribution" id="toc-authors-average-word-counts-distribution" class="nav-link" data-scroll-target="#authors-average-word-counts-distribution"><span class="header-section-number">2.3</span> Author’s average word counts distribution</a></li>
   <li><a href="#measurements" id="toc-measurements" class="nav-link" data-scroll-target="#measurements"><span class="header-section-number">2.4</span> Measurements</a></li>
-  <li><a href="#model-set-up" id="toc-model-set-up" class="nav-link" data-scroll-target="#model-set-up"><span class="header-section-number">2.5</span> Model set-up</a></li>
-  <li><a href="#model-justification" id="toc-model-justification" class="nav-link" data-scroll-target="#model-justification"><span class="header-section-number">2.6</span> Model Justification</a></li>
   </ul></li>
-  <li><a href="#sec-result" id="toc-sec-result" class="nav-link" data-scroll-target="#sec-result"><span class="header-section-number">3</span> Results</a></li>
-  <li><a href="#sec-discussion" id="toc-sec-discussion" class="nav-link" data-scroll-target="#sec-discussion"><span class="header-section-number">4</span> Discussion</a>
+  <li><a href="#sec-model" id="toc-sec-model" class="nav-link" data-scroll-target="#sec-model"><span class="header-section-number">3</span> Model</a>
   <ul class="collapse">
-  <li><a href="#findings" id="toc-findings" class="nav-link" data-scroll-target="#findings"><span class="header-section-number">4.1</span> Findings</a></li>
-  <li><a href="#social-and-historical-influences" id="toc-social-and-historical-influences" class="nav-link" data-scroll-target="#social-and-historical-influences"><span class="header-section-number">4.2</span> Social and historical influences</a></li>
-  <li><a href="#weaknesses-and-future-research-directions" id="toc-weaknesses-and-future-research-directions" class="nav-link" data-scroll-target="#weaknesses-and-future-research-directions"><span class="header-section-number">4.3</span> Weaknesses and Future Research Directions</a></li>
+  <li><a href="#model-set-up" id="toc-model-set-up" class="nav-link" data-scroll-target="#model-set-up"><span class="header-section-number">3.1</span> Model set-up</a></li>
+  <li><a href="#model-justification" id="toc-model-justification" class="nav-link" data-scroll-target="#model-justification"><span class="header-section-number">3.2</span> Model Justification</a></li>
+  </ul></li>
+  <li><a href="#sec-result" id="toc-sec-result" class="nav-link" data-scroll-target="#sec-result"><span class="header-section-number">4</span> Results</a></li>
+  <li><a href="#sec-discussion" id="toc-sec-discussion" class="nav-link" data-scroll-target="#sec-discussion"><span class="header-section-number">5</span> Discussion</a>
+  <ul class="collapse">
+  <li><a href="#findings" id="toc-findings" class="nav-link" data-scroll-target="#findings"><span class="header-section-number">5.1</span> Findings</a></li>
+  <li><a href="#social-and-historical-influences" id="toc-social-and-historical-influences" class="nav-link" data-scroll-target="#social-and-historical-influences"><span class="header-section-number">5.2</span> Social and Historical Influences</a></li>
+  <li><a href="#weaknesses-and-future-research-directions" id="toc-weaknesses-and-future-research-directions" class="nav-link" data-scroll-target="#weaknesses-and-future-research-directions"><span class="header-section-number">5.3</span> Weaknesses and Future Research Directions</a></li>
   </ul></li>
   <li><a href="#appendix" id="toc-appendix" class="nav-link" data-scroll-target="#appendix">Appendix</a></li>
-  <li><a href="#sec-appendix" id="toc-sec-appendix" class="nav-link" data-scroll-target="#sec-appendix"><span class="header-section-number">5</span> Data Manipulation and Cleaning</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">6</span> References</a></li>
+  <li><a href="#sec-appendixA" id="toc-sec-appendixA" class="nav-link" data-scroll-target="#sec-appendixA"><span class="header-section-number">6</span> Data Manipulation and Cleaning</a></li>
+  <li><a href="#sec-appendixB" id="toc-sec-appendixB" class="nav-link" data-scroll-target="#sec-appendixB"><span class="header-section-number">7</span> Referenced Writings</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">8</span> References</a></li>
   </ul>
 </nav>
 </div>
@@ -140,12 +144,12 @@ div.csl-indent {
 
 <section id="sec-intro" class="level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span> Introduction</h1>
-<p>At the end of the 20th century, the quantitative study of vocabulary in texts reached a level of precision that spurred a series of linguistic studies. Vocabulary is a fundamental part of language and is the unit of meaning that makes up larger structures such as sentences, paragraphs, and full texts <span class="citation" data-cites="cite2020vocabulary">(<a href="#ref-cite2020vocabulary" role="doc-biblioref">Schmitt and Schmitt 2020</a>)</span>. The use of vocabulary represents the author’s writing style and is also influenced by family education and social class. The question of whether the vocabulary used by different authors in their writing is influenced by their class of origin deserves to be explored in depth. The purpose of this paper is to gain insight into whether class differences affect the richness of vocabulary and central ideas in works by examining whether upper-class authors use richer writing vocabulary in their essays than middle-class authors.</p>
-<p>Utilizing a combination of quantitative data analysis and authorship studies, we investigated the Type-Token Ratio of upper- and middle-class authors to reflect the richness of textual vocabulary over the period 1930-1990. This richness gives us an idea of the number of different terms used in a text and the diversity of the vocabulary <span class="citation" data-cites="cite2013lexical">(<a href="#ref-cite2013lexical" role="doc-biblioref">Torruella and Capsada 2013</a>)</span>. For the purpose of this study, we carefully selected two authors from the upper class, namely Nancy Mitford and Anthony Powell, alongside two authors from the working class, Hugh Garners and David Herbert Lawrence, as subjects of our investigation. In order to fulfill the objectives of our study, we employ the method of calculating the Corrected Type-Token Ratio (CTTR) for lexical analysis, as this approach offers a more accurate account of the texts produced by the four selected authors. The type token ratio is calculated for data files containing transcribed utterances. In language acquisition research it often means transcriptions of spontaneous speech, including unguided narratives, guided retellings, or speech elicited by a series of successive pictures <span class="citation" data-cites="cite2007comparing">(<a href="#ref-cite2007comparing" role="doc-biblioref">Van Hout and Vermeer 2007</a>)</span>.A higher Corrected Type-Token Ratio (CTTR) indicates that the author possesses a richer vocabulary, demonstrating a greater diversity in word usage within their texts. The CTTR values of four writers from distinct social classes were analyzed to assess the richness of their vocabulary usage. The comparison revealed that the works of upper-class writers exhibited higher CTTR values relative to those of middle-class writers, suggesting a more diverse vocabulary in the literary creations of the upper-class authors. This phenomenon suggests that different classes of writers have different writing styles and preferred vocabularies, and that the writers’ writing styles and ideas in their works are influenced by their vocabulary choices.</p>
-<p>The paper is structured to facilitate a comprehensive understanding of the study and its implications. Following <a href="#sec-intro">Section&nbsp;1</a>, <a href="#sec-data">Section&nbsp;2</a> presents the data, detailing the data sources, analytical techniques, and the rationale behind the chosen methods. <a href="#sec-result">Section&nbsp;3</a> discusses the results, elaborating on the observed trends and patterns in the authors writings. <a href="#sec-discussion">Section&nbsp;4</a> provides an in-depth discussion of these findings, exploring potential factors influencing these trends, drawing connections to broader social-economic issues, and providing suggestions for future research in this area.</p>
+<p>By the late 20th century, the quantitative study of vocabulary in texts reached a level of precision that spurred a series of linguistic studies. Vocabulary is a fundamental part of language and is the unit of meaning that makes up larger structures such as sentences, paragraphs, and full texts <span class="citation" data-cites="cite2020vocabulary">(<a href="#ref-cite2020vocabulary" role="doc-biblioref">Schmitt and Schmitt 2020</a>)</span>. The use of vocabulary represents the author’s writing style and is also influenced by family education and social class. The purpose of this paper is to gain insight into whether class differences affect the richness of vocabulary and central ideas in works by examining whether upper-class authors use richer writing vocabulary in their essays than middle-class authors.</p>
+<p>Utilizing a combination of quantitative data analysis and authorship studies, we investigated the Type-Token Ratio of upper- and middle-class authors to reflect the richness of textual vocabulary over the period 1930-1990. This richness gives us an idea of the number of different terms used in a text and the diversity of the vocabulary<span class="citation" data-cites="cite2013lexical">(<a href="#ref-cite2013lexical" role="doc-biblioref">Torruella and Capsada 2013</a>)</span>. For this study, we selected two upper-class authors, Nancy Mitford and Anthony Powell, and two working-class authors, Hugh Garners and David Herbert Lawrence. We utilized the Corrected Type-Token Ratio (CTTR) for a detailed lexical analysis of their texts. In language acquisition studies, this often entails transcriptions of spontaneous speech, such as narratives, retellings, and picture-elicited speech<span class="citation" data-cites="cite2007comparing">(<a href="#ref-cite2007comparing" role="doc-biblioref">Van Hout and Vermeer 2007</a>)</span>. A higher Corrected Type-Token Ratio (CTTR) indicates that the author possesses a richer vocabulary, demonstrating a greater diversity in word usage within their texts. This phenomenon suggests that different classes of writers have different writing styles and preferred vocabularies, and that the writers’ writing styles and ideas in their works are influenced by their vocabulary choices.</p>
+<p>The paper is structured to facilitate a comprehensive understanding of the study and its implications. Following <a href="#sec-intro">Section&nbsp;1</a>, <a href="#sec-data">Section&nbsp;2</a> presents the data, detailing the data sources, analytical techniques, and the rationale behind the chosen methods. <a href="#sec-result">Section&nbsp;4</a> discusses the results, elaborating on the observed trends and patterns in the authors writings. <a href="#sec-discussion">Section&nbsp;5</a> provides an in-depth discussion of these findings, exploring potential factors influencing these trends, drawing connections to broader social-economic issues, and providing suggestions for future research in this area.</p>
 <section id="estimand" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="estimand"><span class="header-section-number">1.1</span> Estimand</h2>
-<p>In this study, our main object of estimation is the causal effect of different classes on the vocabulary use of writers’ writing, i.e., changes that can be attributed to the writers’ own class of origin, divorced from the economic factors of their times. This involves analyzing the richness of the writing vocabulary of authors from both the upper and middle classes, in order to understand how differences in education, life, and personal perceptions brought about by different class origins affect writers’ ideas and writing styles.</p>
+<p>This study focuses on estimating the causal effect of class origin on writers’ vocabulary use, specifically how it shapes and changes in writing style. By examining the vocabulary richness of authors from upper and working classes, we aim to understand how variations in education, life experiences, and personal perceptions due to class differences influence writing.</p>
 </section>
 </section>
 <section id="sec-data" class="level1" data-number="2">
@@ -153,7 +157,7 @@ div.csl-indent {
 <p>This section aims to offer an insightful understanding of the dataset utilized in our analysis. We selected 10 books written by each of two upper-class authors and two middle-class authors between 1930 and 1990. The dataset captures all the texts in the selected books. These data provide the number and type of words in each book, allowing us to analyze the richness of the vocabulary used in the writing of different class authors and to understand the relationship between class background and writing vocabulary use.</p>
 <section id="source-and-methodology" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="source-and-methodology"><span class="header-section-number">2.1</span> Source and Methodology</h2>
-<p>Data on word counts and unique word counts for the four selected authors were sourced from the original text files of the selected authors’ writings. The original files of these writings <span class="citation" data-cites="citePowell">(<a href="#ref-citeHu" role="doc-biblioref"><strong>citeHu?</strong></a>)</span> were gathered through online library sources, these files were processed and transformed into workable data using R<span class="citation" data-cites="citeR">(<a href="#ref-citeR" role="doc-biblioref">R Core Team 2020</a>)</span>. For key operations, please refer to the <a href="#sec-appendix">Section&nbsp;5</a>.</p>
+<p>Data on word counts and unique word counts for the four selected authors were sourced from the original text files of the selected authors’ writings. The original files of these writings were gathered through online library sources (please refer to <a href="#sec-appendixB">Section&nbsp;7</a>), these files were processed and transformed into workable data using R<span class="citation" data-cites="citeR">(<a href="#ref-citeR" role="doc-biblioref">R Core Team 2020</a>)</span>. For key operations, please refer to the <a href="#sec-appendixA">Section&nbsp;6</a>.</p>
 <p>While there were alternative text files available from other public and private sources, these works were chosen due to the completeness and accuracy of these files.</p>
 </section>
 <section id="variables" class="level2" data-number="2.2">
@@ -282,7 +286,7 @@ div.csl-indent {
 </div>
 </div>
 </div>
-<p><a href="#tbl-authors-cttr">Table&nbsp;2</a>, built with <code>kableExtra</code> <span class="citation" data-cites="citecitekableExtra">(<a href="#ref-citecitekableExtra" role="doc-biblioref"><strong>citecitekableExtra?</strong></a>)</span>, displays the first ten rows of writing’s word count and unique word count. This is a more concise table after the word count, which shows the authors and the books they wrote and lists the two types of word counts across the selected works. Provides a streamlined view for subsequent analysis and processing.</p>
+<p><a href="#tbl-authors-cttr">Table&nbsp;2</a>, built with <code>kableExtra</code> <span class="citation" data-cites="citekableExtra">(<a href="#ref-citekableExtra" role="doc-biblioref">Zhu 2021</a>)</span>, displays the first ten rows of writing’s word count and unique word count. This is a more concise table after the word count, which shows the authors and the books they wrote and lists the two types of word counts across the selected works. Provides a streamlined view for subsequent analysis and processing.</p>
 </section>
 <section id="authors-average-word-counts-distribution" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="authors-average-word-counts-distribution"><span class="header-section-number">2.3</span> Author’s average word counts distribution</h2>
@@ -330,13 +334,15 @@ div.csl-indent {
 <h2 data-number="2.4" class="anchored" data-anchor-id="measurements"><span class="header-section-number">2.4</span> Measurements</h2>
 <p>In our study, ten books published by each of the four authors between 1900-1990 were analyzed in detail. The txt files of these books were extracted from online libraries to ensure the authenticity and accuracy of the data obtained. We measured textual vocabulary richness using CTTR, a modified form of TTR to minimize the effect of text length on vocabulary richness measurements.</p>
 <p>For each published book, CTTR is calculated by dividing the number of words in the text that are not repeated (number of types) by the square root of the total number of words (number of tokens) multiplied by two. The type count refers to the number of unique words in the text, i.e.&nbsp;words that are not repeated. The number of tokens, on the other hand, refers to the total number of words in the text, including repeated words. This method allows for a reasonable comparison by knowing the vocabulary richness of each book of the four authors chosen. This calculation method allows for a fairer comparison ignoring the length of the text to each other.The value of CTTR quantitatively responds to the diversity and richness of the text’s vocabulary.</p>
-<p>#Model</p>
+</section>
+</section>
+<section id="sec-model" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Model</h1>
 <p>Negative binomial regression is a type of generalized linear model that is particularly useful for modeling count data, especially when equal mean and variance cannot be assumed. The negative binomial regression model extends the Poisson regression model by disregard this restriction by allowing data to exhibit overdispersion.</p>
 <p>Moreover, as a negative binomial regression model combines with multilevel modeling (hierarchical linear modeling), the principles of multilevel analysis and the flexibility of the negative binomial distribution combines to handle overdispersed count data.</p>
 <p>In the context of our paper, we will fit our multi-level model with the Negative Binomial regression to discover the correlation between authors lexical richness and their social class. Although Corrected Type Token Ration (CTTR) is not an exact count value, for the context of this paper we will temporarily disregard this assumption by rounding the ratio to zero decimal digit.</p>
-</section>
-<section id="model-set-up" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="model-set-up"><span class="header-section-number">2.5</span> Model set-up</h2>
+<section id="model-set-up" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="model-set-up"><span class="header-section-number">3.1</span> Model set-up</h2>
 <p>Define <span class="math inline">\(y_i\)</span> as the CTTR of the author’s writings, then <span class="math inline">\(\alpha_a\)</span> as the author.</p>
 <p><span class="math display">\[\begin{align}
 y_i|\pi_i &amp;\sim \mbox{Negative Binomial}(r, \pi_i) \\
@@ -348,16 +354,16 @@ logit(\pi_i) &amp;= \beta_0 + \alpha_a\\
 <p><span class="math inline">\(y_i\)</span>: The dependent variable, <span class="math inline">\(y_i\)</span>, represents the CTTR of the author’s writings.</p>
 <p><span class="math inline">\(\beta_0\)</span>: The intercept <span class="math inline">\(\beta_0\)</span> has a prior distribution that is normal with mean 0 and standard deviation 3.</p>
 <p><span class="math inline">\(\alpha_a\)</span>: Each author effect <span class="math inline">\(\alpha_a\)</span> also has a normal prior with mean 0 and standard deviation 3.</p>
-<p>We will run the model in R <span class="citation" data-cites="citeR">(<a href="#ref-citeR" role="doc-biblioref">R Core Team 2020</a>)</span> using the <code>rstanarm</code> package of <span class="citation" data-cites="rstanarm">(<a href="#ref-rstanarm" role="doc-biblioref"><strong>rstanarm?</strong></a>)</span>.</p>
+<p>We will run the model in R <span class="citation" data-cites="citeR">(<a href="#ref-citeR" role="doc-biblioref">R Core Team 2020</a>)</span> using the <code>rstanarm</code> package of <span class="citation" data-cites="citerstanarm">(<a href="#ref-citerstanarm" role="doc-biblioref">Goodrich et al. 2020</a>)</span>.</p>
 </section>
-<section id="model-justification" class="level2" data-number="2.6">
-<h2 data-number="2.6" class="anchored" data-anchor-id="model-justification"><span class="header-section-number">2.6</span> Model Justification</h2>
+<section id="model-justification" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="model-justification"><span class="header-section-number">3.2</span> Model Justification</h2>
 <p>The goal of this model is to understand how authors’ lexical richness, as measured by CTTR, varies among authors. To account for the inherent variability and overdispersion in the count data, we model our data with the Negative Binomial regression. The multilevel aspect, from the background of each authors, allows the model to account for differences between authors. This aspect acknowledges that some authors may consistently use a more diverse vocabulary than others. With this setup, we expect to see a model that explores the variability in lexical richness across authors’ writings, accounting for overdispersion in corrected type token ratio (CTTR) data. Moreover, since this setup is particularly useful for exploring the individual characteristics of authors, we also anticipate to see cprrelation of authors’ social class with the lexical richness of their writings.</p>
 </section>
 </section>
-<section id="sec-result" class="level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Results</h1>
-<p><a href="#sec-result">Section&nbsp;3</a></p>
+<section id="sec-result" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Results</h1>
+<p><a href="#sec-result">Section&nbsp;4</a> presents the core findings on the relationship between authors’ word count and CTTR, specifically focusing on the influence of social class and educational background on literary vocabulary richness.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="tbl-author-cttr-dist" class="anchored">
@@ -396,7 +402,10 @@ logit(\pi_i) &amp;= \beta_0 + \alpha_a\\
 </div>
 </div>
 </div>
-<p><a href="#tbl-author-cttr-dist">Table&nbsp;4</a> shows the average Corrected Type-Token Ratio (CTTR) and the associated standard deviation for each of the four studied authors. David Herbert Lawrence and Nancy Mitford both have high average CTTRs at 31.61 and 31.97 respectively, indicating a greater lexical richness in their works. However, Lawrence’s works show more variability with a standard deviation of 7.37, as opposed to Mitford’s 1.49, suggesting her use of vocabulary is more consistent. Hugh Garners has a notably lower average CTTR of 16.31, paired with a standard deviation of 2.31, which is indicative of a consistently narrower range of vocabulary. Powell Anthony tops the average CTTR at 34.67 with a standard deviation of 1.64, demonstrating not only the highest lexical richness but also a high consistency in vocabulary usage across his works. These figures collectively offer a quantitative insight into the diversity and consistency of language used by authors from different social backgrounds.</p>
+<p><a href="#tbl-author-cttr-dist">Table&nbsp;4</a> shows the average Corrected Type-Token Ratio (CTTR) and the associated standard deviation for each of the four studied authors.</p>
+<p>David Herbert Lawrence and Nancy Mitford both have high average CTTRs at 31.61 and 31.97 respectively, indicating a greater lexical richness in their works. However, Lawrence’s works show more variability with a standard deviation of 7.37, as opposed to Mitford’s 1.49, suggesting her use of vocabulary is more consistent.</p>
+<p>Hugh Garners has a notably lower average CTTR of 16.31, paired with a standard deviation of 2.31, which is indicative of a consistently narrower range of vocabulary. Powell Anthony tops the average CTTR at 34.67 with a standard deviation of 1.64, demonstrating not only the highest lexical richness but also a high consistency in vocabulary usage across his works.</p>
+<p>These figures collectively offer a quantitative insight into the diversity and consistency of language used by authors from different social backgrounds.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="tbl-multi-lev-model" class="anchored">
@@ -497,7 +506,11 @@ logit(\pi_i) &amp;= \beta_0 + \alpha_a\\
 
 </div>
 </div>
-<p><a href="#tbl-multi-lev-model">Table&nbsp;5</a> provides coefficients from a negative binomial regression and a multilevel negative binomial regression, indicating how each author’s work differs from the intercept in terms of Corrected Type-Token Ratio (CTTR). Hugh Garners shows a negative coefficient (-0.658 in Neg Binom and -1.308 in Multilevel Neg Binom), suggesting his CTTR is significantly lower than the baseline set by the intercept, which is consistent with the shortest average word count observed in the previous analysis. Nancy Mitford’s coefficient is slightly above zero (0.021 in Neg Binom and 0.152 in Multilevel Neg Binom), indicating her CTTR is almost at the baseline level. This aligns with her position as neither the lowest nor the highest in terms of lexical richness. Powell Anthony’s positive coefficient (0.107 in Neg Binom and 0.153 in Multilevel Neg Binom) implies his CTTR is above the baseline, though not as high as David Herbert Lawrence’s. David Herbert Lawrence does not have a coefficient listed here but is included in the distribution figure below.</p>
+<p><a href="#tbl-multi-lev-model">Table&nbsp;5</a> provides coefficients from a negative binomial regression and a multilevel negative binomial regression, indicating how each author’s work differs from the intercept in terms of Corrected Type-Token Ratio (CTTR).</p>
+<p>Hugh Garners shows a negative coefficient (-0.658 in Neg Binom and -1.308 in Multilevel Neg Binom), suggesting his CTTR is significantly lower than the baseline set by the intercept, which is consistent with the shortest average word count observed in the previous analysis.</p>
+<p>Nancy Mitford’s coefficient is slightly above zero (0.021 in Neg Binom and 0.152 in Multilevel Neg Binom), indicating her CTTR is almost at the baseline level. This aligns with her position as neither the lowest nor the highest in terms of lexical richness.</p>
+<p>Powell Anthony’s positive coefficient (0.107 in Neg Binom and 0.153 in Multilevel Neg Binom) implies his CTTR is above the baseline, though not as high as David Herbert Lawrence’s.</p>
+<p>David Herbert Lawrence does not have a coefficient listed here but is included in the distribution figure below.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-multi-lev-model-by-author" class="quarto-figure quarto-figure-center anchored">
@@ -508,7 +521,10 @@ logit(\pi_i) &amp;= \beta_0 + \alpha_a\\
 </div>
 </div>
 </div>
-<p>To gain a more intuitive understanding of the model, we visualized the coefficients from <a href="#tbl-multi-lev-model">Table&nbsp;5</a> in the form of a distribution figure. <a href="#fig-multi-lev-model-by-author">Figure&nbsp;1</a>, presents the distribution of CTTR estimates for each author, providing a visual representation of the variance around the mean estimate. Powell Anthony’s distribution is relatively narrow and centered around the mean, suggesting his lexical richness is consistently above the baseline with less variation in CTTR scores. Nancy Mitford’s distribution also clusters closely around the mean but shows a slight skew towards higher values in the multilevel negative binomial regression, indicating a modest variability with a tendency for higher CTTR scores. Hugh Garners’ distribution is broader and notably shifted to the left of the baseline in both models, implying a lower CTTR and greater variability in lexical richness compared to the others. David Herbert Lawrence, while not explicitly compared against a coefficient in the table, is represented in the figure with the broadest distribution. This suggests that his CTTR is highly variable, confirming the previous analysis which indicated his works are both lengthy and diverse in terms of lexical richness. Overall, the <a href="#fig-multi-lev-model-by-author">Figure&nbsp;1</a> corroborates the numerical findings of <a href="#tbl-multi-lev-model">Table&nbsp;5</a>, offering a visual confirmation of the differences in lexical richness and variability among the authors. It highlights the significant spread in the lexical diversity of Lawrence’s works, as well as the relative consistency observed in the writings of Powell Anthony and Nancy Mitford, with Garners’ works showing both a lower mean and a higher dispersion.</p>
+<p>To gain a more intuitive understanding of the model, we visualized the coefficients from <a href="#tbl-multi-lev-model">Table&nbsp;5</a> in the form of a distribution figure. <a href="#fig-multi-lev-model-by-author">Figure&nbsp;1</a>, presents the distribution of CTTR estimates for each author, providing a visual representation of the variance around the mean estimate.</p>
+<p>Powell Anthony’s distribution is relatively narrow and centered around the mean, suggesting his lexical richness is consistently above the baseline with less variation in CTTR scores. Nancy Mitford’s distribution also clusters closely around the mean but shows a slight skew towards higher values in the multilevel negative binomial regression, indicating a modest variability with a tendency for higher CTTR scores.</p>
+<p>Hugh Garners’ distribution is broader and notably shifted to the left of the baseline in both models, implying a lower CTTR and greater variability in lexical richness compared to the others. David Herbert Lawrence, while not explicitly compared against a coefficient in the table, is represented in the figure with the broadest distribution. This suggests that his CTTR is highly variable, confirming the previous analysis which indicated his works are both lengthy and diverse in terms of lexical richness.</p>
+<p>Overall, the <a href="#fig-multi-lev-model-by-author">Figure&nbsp;1</a> corroborates the numerical findings of <a href="#tbl-multi-lev-model">Table&nbsp;5</a>, offering a visual confirmation of the differences in lexical richness and variability among the authors. It highlights the significant spread in the lexical diversity of Lawrence’s works, as well as the relative consistency observed in the writings of Powell Anthony and Nancy Mitford, with Garners’ works showing both a lower mean and a higher dispersion.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-hugh-cttr-vs-wordcount" class="quarto-figure quarto-figure-center anchored">
@@ -520,24 +536,25 @@ logit(\pi_i) &amp;= \beta_0 + \alpha_a\\
 </div>
 </div>
 <p><a href="#fig-hugh-cttr-vs-wordcount">Figure&nbsp;2</a> presents a scatter plot comparing the CTTR and word count for works by David Herbert Lawrence, Hugh Garners, Nancy Mitford, and Powell Anthony. The plot reveals a pattern that suggests a correlation between the lexical richness of an author’s work, as measured by CTTR, and the length of the text, as indicated by word count.</p>
-<p>David Herbert Lawrence is a conspicuous outlier in this analysis. His works are scattered across a wide range of both CTTR and word counts, showing that while he has a propensity for longer works, the lexical richness within those works is quite variable. Hugh Garners’ points cluster at the lower end of both word count and CTTR scales, suggesting that his works are shorter and less lexically rich. This could reflect the impact of social and educational limitations on his writing style. Nancy Mitford’s works are positioned in the middle range of the word counts but show a higher CTTR, similar to that of Lawrence, indicating a richer vocabulary that is not necessarily dependent on the length of the text. Powell Anthony stands out with a group of works that not only have high CTTR values but also fall into a moderate range of word counts. His data points suggest a strong consistency in lexical richness that does not fluctuate widely with the length of the text.</p>
+<p>David Herbert Lawrence is a conspicuous outlier in this analysis. His works are scattered across a wide range of both CTTR and word counts, showing that while he has a propensity for longer works, the lexical richness within those works is quite variable. Hugh Garners’ points cluster at the lower end of both word count and CTTR scales, suggesting that his works are shorter and less lexically rich. This could reflect the impact of social and educational limitations on his writing style.</p>
+<p>Nancy Mitford’s works are positioned in the middle range of the word counts but show a higher CTTR, similar to that of Lawrence, indicating a richer vocabulary that is not necessarily dependent on the length of the text. Powell Anthony stands out with a group of works that not only have high CTTR values but also fall into a moderate range of word counts. His data points suggest a strong consistency in lexical richness that does not fluctuate widely with the length of the text.</p>
 <p>Overall, <a href="#fig-hugh-cttr-vs-wordcount">Figure&nbsp;2</a> points to a general trend where longer works tend to have higher CTTRs, but also highlights individual variations among authors. David Herbert Lawrence’s variability points to a unique stylistic approach, while the other authors demonstrate a more predictable relationship between the volume of text and lexical diversity, aligning with the anticipated influence of their social class and educational experiences on literary production.</p>
 <div style="page-break-after: always;"></div>
 </section>
-<section id="sec-discussion" class="level1" data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> Discussion</h1>
+<section id="sec-discussion" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Discussion</h1>
 <p>This study provides a new perspective on literary analysis, particularly through quantitative substantiating the impact of social class on the use of literary language. Traditionally, literary analysis has focused primarily on qualitative methods, emphasizing subjective interpretation and thematic exploration. By introducing a quantitative dimension, this study not only complements these traditional approaches, but also provides a new lens through which the interplay between socioeconomic and cultural factors can be understood.</p>
-<section id="findings" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="findings"><span class="header-section-number">4.1</span> Findings</h2>
+<section id="findings" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="findings"><span class="header-section-number">5.1</span> Findings</h2>
 <p>The results of this research strongly support our initial hypothesis, underscoring a notable correlation between an author’s social class, educational background, and the lexical richness of their work, despite the clear outliers in our data. The observed differences in Corrected Type-Token Ratios (CTTR) between upper-class authors like Nancy Mitford and Anthony Powell and those of Hugh Garners and David Herbert Lawrence reinforce this link. It is noteworthy that David Herbert Lawrence, while presenting a high CTTR, also has a significant work length. When normalized for a moderate length, Lawrence’s CTTR settles around 20, which is consistent with our hypothesis. The study not only delineates the association between social class and lexical richness in literature but also emphasizes the importance of considering an author’s background for a more nuanced interpretation of their work. This indicates that the vocabulary an author employs is substantially shaped by their social context, rather than being solely a reflection of individual style.</p>
 </section>
-<section id="social-and-historical-influences" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="social-and-historical-influences"><span class="header-section-number">4.2</span> Social and historical influences</h2>
+<section id="social-and-historical-influences" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="social-and-historical-influences"><span class="header-section-number">5.2</span> Social and Historical Influences</h2>
 <p>The novels selected for this study were written during the mid-20th century. This period was heavily influenced by World War II as well as the Great Depression, which resulted in profound social changes and significant class divisions. World War II interrupted the schooling of many young women and men，and the outbreak of the war led to an immediate and dramatic decline in high school graduation rates, which fell back to the levels of the early 1930s <span class="citation" data-cites="cite2014you">(<a href="#ref-cite2014you" role="doc-biblioref">Jaworski 2014</a>)</span>. Social stratification had a significant impact on the educational and cultural experiences of individuals, which in turn was reflected in the richness of the vocabulary of their literary works. Writers from upper class backgrounds, such as Nancy Mitford and Anthony Powell, were exposed to a rich educational environment and a leisurely pursuit of literature and language that was usually unavailable to writers from the lower classes. This may have helped to enrich their vocabularies by observing a wider and more subtle choice of words in their work. Conversely, authors from lower socio-economic backgrounds, such as Hugh Garners and David Herbert Lawrence, experienced more limited educational opportunities, often confined to vocational or primary education. Their writing tended to reflect the immediate, more constrained realities of their lives and the spoken language of their surroundings. This difference in education and cultural exposure is evident in comparative analyses of the vocabulary richness of their work, which is much narrower in the works of lower-class writers.</p>
 <p>Thus, the unique social circumstances and educational differences of the mid-twentieth century played a key role in shaping the lexical character of literary works. The unique socio-economic contexts of the period created different opportunities for the linguistic development of writers, leading to a clear stratification of vocabulary use closely related to the class background of the authors. This observation underscores the importance of considering socio-economic factors when analyzing literary language trends, especially during periods of significant social and economic contrasts. This understanding is crucial for a comprehensive statistical analysis of language patterns across social classes and historical contexts in literary studies.</p>
 </section>
-<section id="weaknesses-and-future-research-directions" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="weaknesses-and-future-research-directions"><span class="header-section-number">4.3</span> Weaknesses and Future Research Directions</h2>
+<section id="weaknesses-and-future-research-directions" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="weaknesses-and-future-research-directions"><span class="header-section-number">5.3</span> Weaknesses and Future Research Directions</h2>
 <p>One limitation of our study is the potential influence of unobserved variables that may affect the lexical richness in authors’ works, such as individual educational background or specific life experiences, which were not fully captured in our analysis. Moreover, while we used an improved TTR formula, its inherent sensitivity to text length variability and the possibility of other underlying linguistic factors were not entirely addressed. These could include stylistic choices or genre-specific language use that our study does not explore in depth.</p>
 <p>Future research should aim to unravel these complex interactions further, perhaps by integrating more granular data on authors’ personal histories or by employing a wider range of linguistic analysis tools. Additionally, exploring the application of advanced computational methods, such as natural language processing algorithms, could offer more detailed insights into how social class impacts lexical choice and style in literature. Understanding these nuanced relationships is vital for comprehensively interpreting the intersection of social factors and literary expression.</p>
 <div style="page-break-after: always;"></div>
@@ -546,30 +563,118 @@ logit(\pi_i) &amp;= \beta_0 + \alpha_a\\
 <section id="appendix" class="level1 unnumbered">
 <h1 class="unnumbered">Appendix</h1>
 </section>
-<section id="sec-appendix" class="level1" data-number="5">
-<h1 data-number="5"><span class="header-section-number">5</span> Data Manipulation and Cleaning</h1>
-<p>In the context of our raw data, we are dealing with raw text files of authors’ writings. Thus, we begin by omitting unnecessary portions (such as publishers’ notes) the text files. To transform these raw texts to workable data, we created three functions, <code>word_dist()</code>, <code>cttr_dist()</code>, and <code>cttr()</code> using R libraries <span class="citation" data-cites="citetidyverse">Zhu (<a href="#ref-citekableExtra" role="doc-biblioref">2021</a>)</span>. These functions aim to gather the descriptive statistics of each writings partially (average, mean, cttr), and store them into <code>data/analysis_data</code> with the author name.</p>
+<section id="sec-appendixA" class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Data Manipulation and Cleaning</h1>
+<p>In the context of our raw data, we are dealing with raw text files of authors’ writings. Thus, we begin by omitting unnecessary portions (such as publishers’ notes) the text files. To transform these raw texts to workable data, we created three functions, <code>word_dist()</code>, <code>cttr_dist()</code>, and <code>cttr()</code> using R libraries <span class="citation" data-cites="citetidyverse citedplyr citehere citekableExtra">(<a href="#ref-citetidyverse" role="doc-biblioref">Wickham et al. 2019</a>, <a href="#ref-citedplyr" role="doc-biblioref">2023</a>; <a href="#ref-citehere" role="doc-biblioref">Müller 2020</a>; <a href="#ref-citekableExtra" role="doc-biblioref">Zhu 2021</a>)</span>. These functions aim to gather the descriptive statistics of each writings partially (average, mean, cttr), and store them into <code>data/analysis_data</code> with the author name.</p>
 <p><a href="#tbl-authors-cttr">Table&nbsp;2</a> was created using the dataset imported from <code>data/analysis_data/cttr_all.csv</code>, which was created by using <code>cttr()</code>. The cleaned texts along with the titles and authors were passed into <code>cttr()</code>, which loop through each of the text to gather the word counts and unique word counts. Then, these temporary parameters were formulated into the calculation for CTTR, then stored into <code>data/analysis_data/cttr_all.csv</code>.</p>
 <p><a href="#tbl-authors-word-count-distribution">Table&nbsp;3</a> was created using the dataset imported from <code>data/analysis_data/wordcount_dist.csv</code>. This dataset was created by using the function <code>word_dist()</code>, which returns the author, average word count, and std. dev. of word count of each texts. Different from <code>cttr()</code>, the stored value from <code>data/analysis_data/cttr_all.csv</code> were passed into the function to generate the values.</p>
 <p><a href="#tbl-author-cttr-dist">Table&nbsp;4</a> was created using <code>data/analysis_data/cttr_dist.csv</code>. This dataset was created by using the function <code>cttr_dist()</code>, which returns the author, average word count, and std. dev. of CTTR of each texts. Similar to the creation of <a href="#tbl-authors-word-count-distribution">Table&nbsp;3</a>, <code>data/analysis_data/cttr_all.csv</code> were passed into the function to generate the values.</p>
-<p><a href="#tbl-multi-lev-model">Table&nbsp;5</a> and <a href="#fig-multi-lev-model-by-author">Figure&nbsp;1</a> were created using the imports from <code>models/author_cttr_model_multi.rds</code> and <code>models/author_cttr_model.rds</code>. These <code>.rds</code> files were created in <code>scripts/03-models.R</code> using functions such as <code>stan_glm()</code> from R libraries <span class="citation" data-cites="citetidyverse">Goodrich et al. (<a href="#ref-citerstanarm" role="doc-biblioref">2020</a>)</span>. Moreover, the <code>corrected_type_token_ratio</code> from <code>data/analysis_data/cttr_all.csv</code> were rounded to integers in order to use Negative Binomial regression.</p>
+<p><a href="#tbl-multi-lev-model">Table&nbsp;5</a> and <a href="#fig-multi-lev-model-by-author">Figure&nbsp;1</a> were created using the imports from <code>models/author_cttr_model_multi.rds</code> and <code>models/author_cttr_model.rds</code>. These <code>.rds</code> files were created in <code>scripts/03-models.R</code> using functions such as <code>stan_glm()</code> from R libraries <span class="citation" data-cites="citetidyverse citerstanarm">(<a href="#ref-citetidyverse" role="doc-biblioref">Wickham et al. 2019</a>; <a href="#ref-citerstanarm" role="doc-biblioref">Goodrich et al. 2020</a>)</span>. Moreover, the <code>corrected_type_token_ratio</code> from <code>data/analysis_data/cttr_all.csv</code> were rounded to integers in order to use Negative Binomial regression.</p>
 <p><a href="#fig-hugh-cttr-vs-wordcount">Figure&nbsp;2</a> were created using the imports from <code>data/analysis_data/cttr_all.csv</code>. Which has the same creation process as <a href="#tbl-authors-cttr">Table&nbsp;2</a>.</p>
+</section>
+<section id="sec-appendixB" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Referenced Writings</h1>
+<p><span class="citation" data-cites="mitford2011penguin mitford2015don mitford2001madame mitford1970frederick mitford2010love mitford2012sun mitford2010pursuit powell1977kindly powell1988buyer powell1968military powell2011temporary powell2010hearing powell1994valley powell1957lady powell1955acceptance powell2011books powell1966soldier powell2011casanova lawrence1992virgin lawrence2005rainbow lawrence2022plumed lawrence2012sons lawrence2013odour lawrence2007lady lawrence2002kangaroo lawrence2015england garner2003hugh garner2014waste">(<a href="#ref-mitford2011penguin" role="doc-biblioref">Mitford 2011</a>, <a href="#ref-mitford2015don" role="doc-biblioref">2015</a>, <a href="#ref-mitford1970frederick" role="doc-biblioref">1970</a>, <a href="#ref-mitford2010love" role="doc-biblioref">2010a</a>, <a href="#ref-mitford2010pursuit" role="doc-biblioref">2010b</a>; <a href="#ref-mitford2001madame" role="doc-biblioref">Mitford and Foreman 2001</a>; <a href="#ref-mitford2012sun" role="doc-biblioref">Mitford and Mansel 2012</a>; <a href="#ref-powell1977kindly" role="doc-biblioref">Powell 1977</a>, <a href="#ref-powell1988buyer" role="doc-biblioref">1988</a>, <a href="#ref-powell1968military" role="doc-biblioref">1968</a>, <a href="#ref-powell2011temporary" role="doc-biblioref">2011c</a>, <a href="#ref-powell2010hearing" role="doc-biblioref">2010</a>, <a href="#ref-powell1994valley" role="doc-biblioref">1994</a>, <a href="#ref-powell1957lady" role="doc-biblioref">1957</a>, <a href="#ref-powell1955acceptance" role="doc-biblioref">1955</a>, <a href="#ref-powell2011books" role="doc-biblioref">2011a</a>, <a href="#ref-powell1966soldier" role="doc-biblioref">1966</a>, <a href="#ref-powell2011casanova" role="doc-biblioref">2011b</a>; <a href="#ref-lawrence1992virgin" role="doc-biblioref">Lawrence 1992</a>, <a href="#ref-lawrence2005rainbow" role="doc-biblioref">2005</a>, <a href="#ref-lawrence2022plumed" role="doc-biblioref">2022</a>, <a href="#ref-lawrence2012sons" role="doc-biblioref">2012</a>, <a href="#ref-lawrence2013odour" role="doc-biblioref">2013</a>, <a href="#ref-lawrence2007lady" role="doc-biblioref">2007</a>, <a href="#ref-lawrence2015england" role="doc-biblioref">2015</a>; <a href="#ref-lawrence2002kangaroo" role="doc-biblioref">Lawrence and Steele 2002</a>; <a href="#ref-garner2003hugh" role="doc-biblioref"><em>Hugh Garner’s Best Stories</em> 2003</a>; <a href="#ref-garner2014waste" role="doc-biblioref">Garner 2014</a>)</span></p>
 <div style="page-break-after: always;"></div>
 </section>
-<section id="references" class="level1 unnumbered" data-number="6">
+<section id="references" class="level1 unnumbered" data-number="8">
 
 
 </section>
 
-<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">6 References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">8 References</h2><div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-garner2014waste" class="csl-entry" role="listitem">
+Garner, H. 2014. <em>Waste No Tears</em>. Ricochet Series. Vehicule Press. <a href="https://books.google.ca/books?id=Kn26mwEACAAJ">https://books.google.ca/books?id=Kn26mwEACAAJ</a>.
+</div>
 <div id="ref-citerstanarm" class="csl-entry" role="listitem">
 Goodrich, Ben, Jonah Gabry, Imad Ali, and Sam Brilleman. 2020. <span>“Rstanarm: <span>Bayesian</span> Applied Regression Modeling via <span>Stan</span>.”</span> <a href="https://mc-stan.org/rstanarm">https://mc-stan.org/rstanarm</a>.
+</div>
+<div id="ref-garner2003hugh" class="csl-entry" role="listitem">
+<em>Hugh Garner’s Best Stories</em>. 2003. Canadian National Institute for the Blind. <a href="https://books.google.ca/books?id=vlr7xAEACAAJ">https://books.google.ca/books?id=vlr7xAEACAAJ</a>.
 </div>
 <div id="ref-cite2014you" class="csl-entry" role="listitem">
 Jaworski, Taylor. 2014. <span>“<span>‘You’re in the Army Now:’</span> The Impact of World War II on Women’s Education, Work, and Family.”</span> <em>The Journal of Economic History</em> 74 (1): 169–95.
 </div>
+<div id="ref-lawrence1992virgin" class="csl-entry" role="listitem">
+Lawrence, D. H. 1992. <em>The Virgin and the Gipsy</em>. Vintage International. Knopf Doubleday Publishing Group. <a href="https://books.google.ca/books?id=dEI7gTC-GI8C">https://books.google.ca/books?id=dEI7gTC-GI8C</a>.
+</div>
+<div id="ref-lawrence2005rainbow" class="csl-entry" role="listitem">
+———. 2005. <em>The Rainbow</em>. Collector’s Library. CRW Publishing Limited. <a href="https://books.google.ca/books?id=f6leiqFvgTsC">https://books.google.ca/books?id=f6leiqFvgTsC</a>.
+</div>
+<div id="ref-lawrence2007lady" class="csl-entry" role="listitem">
+———. 2007. <em>Lady Chatterley’s Lover</em>. Bantam Classic. Random House Publishing Group. <a href="https://books.google.ca/books?id=K9KbYvVN3xUC">https://books.google.ca/books?id=K9KbYvVN3xUC</a>.
+</div>
+<div id="ref-lawrence2012sons" class="csl-entry" role="listitem">
+———. 2012. <em>Sons and Lovers</em>. Dover Thrift Editions: Classic Novels. Dover Publications. <a href="https://books.google.ca/books?id=bDnCAgAAQBAJ">https://books.google.ca/books?id=bDnCAgAAQBAJ</a>.
+</div>
+<div id="ref-lawrence2013odour" class="csl-entry" role="listitem">
+———. 2013. <em>Odour of Chrysanthemums: Short Story</em>. HarperCollins Canada. <a href="https://books.google.ca/books?id=Mrn3llY-IgcC">https://books.google.ca/books?id=Mrn3llY-IgcC</a>.
+</div>
+<div id="ref-lawrence2015england" class="csl-entry" role="listitem">
+———. 2015. <em>England, My England</em>. Start Classics. <a href="https://books.google.ca/books?id=-DaaDAAAQBAJ">https://books.google.ca/books?id=-DaaDAAAQBAJ</a>.
+</div>
+<div id="ref-lawrence2022plumed" class="csl-entry" role="listitem">
+———. 2022. <em>The Plumed Serpent</em>. Aegitas. <a href="https://books.google.ca/books?id=01ZhEAAAQBAJ">https://books.google.ca/books?id=01ZhEAAAQBAJ</a>.
+</div>
+<div id="ref-lawrence2002kangaroo" class="csl-entry" role="listitem">
+Lawrence, D. H., and B. Steele. 2002. <em>Kangaroo</em>. Cambridge Edition of the Letters and Works of d. H. Lawrence: Works of d. H. Lawrence / General Ed. James t. Boulton. Cambridge University Press. <a href="https://books.google.ca/books?id=qd4wPBvd7FEC">https://books.google.ca/books?id=qd4wPBvd7FEC</a>.
+</div>
+<div id="ref-mitford1970frederick" class="csl-entry" role="listitem">
+Mitford, N. 1970. <em>Frederick the Great</em>. Harper &amp; Row. <a href="https://books.google.ca/books?id=geWAIRf1wccC">https://books.google.ca/books?id=geWAIRf1wccC</a>.
+</div>
+<div id="ref-mitford2010love" class="csl-entry" role="listitem">
+———. 2010a. <em>Love in a Cold Climate</em>. Penguin Books Limited. <a href="https://books.google.ca/books?id=JoV9E82ecxQC">https://books.google.ca/books?id=JoV9E82ecxQC</a>.
+</div>
+<div id="ref-mitford2010pursuit" class="csl-entry" role="listitem">
+———. 2010b. <em>The Pursuit of Love</em>. Radlett and Montdore. Knopf Doubleday Publishing Group. <a href="https://books.google.ca/books?id=m631JM1stCcC">https://books.google.ca/books?id=m631JM1stCcC</a>.
+</div>
+<div id="ref-mitford2011penguin" class="csl-entry" role="listitem">
+———. 2011. <em>The Penguin Complete Novels of Nancy Mitford</em>. Penguin Books Limited. <a href="https://books.google.ca/books?id=klMHD8saMVgC">https://books.google.ca/books?id=klMHD8saMVgC</a>.
+</div>
+<div id="ref-mitford2015don" class="csl-entry" role="listitem">
+———. 2015. <em>Don’t Tell Alfred: The Wickedly Funny Sequel to the Pursuit of Love</em>. Penguin Books Limited. <a href="https://books.google.ca/books?id=ZyanCgAAQBAJ">https://books.google.ca/books?id=ZyanCgAAQBAJ</a>.
+</div>
+<div id="ref-mitford2001madame" class="csl-entry" role="listitem">
+Mitford, N., and A. Foreman. 2001. <em>Madame de Pompadour</em>. New York Review Books. <a href="https://books.google.ca/books?id=ke7H2dcy2jMC">https://books.google.ca/books?id=ke7H2dcy2jMC</a>.
+</div>
+<div id="ref-mitford2012sun" class="csl-entry" role="listitem">
+Mitford, N., and P. Mansel. 2012. <em>The Sun King</em>. New York Review Books Classics. New York Review Books. <a href="https://books.google.ca/books?id=X7ines7ITAkC">https://books.google.ca/books?id=X7ines7ITAkC</a>.
+</div>
 <div id="ref-citehere" class="csl-entry" role="listitem">
 Müller, Kirill. 2020. <em>Here: A Simpler Way to Find Your Files</em>. <a href="https://CRAN.R-project.org/package=here">https://CRAN.R-project.org/package=here</a>.
+</div>
+<div id="ref-powell1955acceptance" class="csl-entry" role="listitem">
+Powell, A. 1955. <em>The Acceptance World: A Novel</em>. Dance to the Music of Time. Penguin Random House. <a href="https://books.google.ca/books?id=3UEFAQAAIAAJ">https://books.google.ca/books?id=3UEFAQAAIAAJ</a>.
+</div>
+<div id="ref-powell1957lady" class="csl-entry" role="listitem">
+———. 1957. <em>At Lady Molly’s: A Novel</em>. Dance to the Music of Time. Fontana. <a href="https://books.google.ca/books?id=DmdJAAAAMAAJ">https://books.google.ca/books?id=DmdJAAAAMAAJ</a>.
+</div>
+<div id="ref-powell1966soldier" class="csl-entry" role="listitem">
+———. 1966. <em>The Soldier’s Art</em>. Dance to the Music of Time. Little, Brown. <a href="https://books.google.ca/books?id=blwaAAAAMAAJ">https://books.google.ca/books?id=blwaAAAAMAAJ</a>.
+</div>
+<div id="ref-powell1968military" class="csl-entry" role="listitem">
+———. 1968. <em>The Military Philosophers: A Novel</em>. Dance to the Music of Time. Flamingo. <a href="https://books.google.ca/books?id=ajxbAAAAMAAJ">https://books.google.ca/books?id=ajxbAAAAMAAJ</a>.
+</div>
+<div id="ref-powell1977kindly" class="csl-entry" role="listitem">
+———. 1977. <em>The Kindly Ones: A Novel</em>. Dance to the Music of Time. Fontana. <a href="https://books.google.ca/books?id=1Y9wzgEACAAJ">https://books.google.ca/books?id=1Y9wzgEACAAJ</a>.
+</div>
+<div id="ref-powell1988buyer" class="csl-entry" role="listitem">
+———. 1988. <em>A Buyer’s Market</em>. Flamingo. <a href="https://books.google.ca/books?id=fkZMnQEACAAJ">https://books.google.ca/books?id=fkZMnQEACAAJ</a>.
+</div>
+<div id="ref-powell1994valley" class="csl-entry" role="listitem">
+———. 1994. <em>The Valley of Bones</em>. <a href="https://books.google.ca/books?id=5VbZzQEACAAJ">https://books.google.ca/books?id=5VbZzQEACAAJ</a>.
+</div>
+<div id="ref-powell2010hearing" class="csl-entry" role="listitem">
+———. 2010. <em>Hearing Secret Harmonies</em>. Random House. <a href="https://books.google.ca/books?id=F85ta9y6t-UC">https://books.google.ca/books?id=F85ta9y6t-UC</a>.
+</div>
+<div id="ref-powell2011books" class="csl-entry" role="listitem">
+———. 2011a. <em>Books Do Furnish a Room</em>. Random House. <a href="https://books.google.ca/books?id=B4Oy3Klb3gYC">https://books.google.ca/books?id=B4Oy3Klb3gYC</a>.
+</div>
+<div id="ref-powell2011casanova" class="csl-entry" role="listitem">
+———. 2011b. <em>Casanova’s Chinese Restaurant</em>. Random House. <a href="https://books.google.ca/books?id=wIuVMvWuI4QC">https://books.google.ca/books?id=wIuVMvWuI4QC</a>.
+</div>
+<div id="ref-powell2011temporary" class="csl-entry" role="listitem">
+———. 2011c. <em>Temporary Kings</em>. Random House. <a href="https://books.google.ca/books?id=1vHrhepiZ7MC">https://books.google.ca/books?id=1vHrhepiZ7MC</a>.
 </div>
 <div id="ref-citeR" class="csl-entry" role="listitem">
 R Core Team. 2020. <em>R: A Language and Environment for Statistical Computing</em>. Vienna, Austria: R Foundation for Statistical Computing. <a href="https://www.R-project.org/">https://www.R-project.org/</a>.

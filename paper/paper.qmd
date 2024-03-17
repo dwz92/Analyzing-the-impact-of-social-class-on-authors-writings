@@ -9,7 +9,7 @@ thanks: "Code and data are available at: https://github.com/dwz92/Analyzing-the-
 date: today
 date-format: long
 abstract: "In this study, we explore the influence of social class on lexical richness in the works of authors  after the Great Depression, utilizing a comprehensive analysis of lexical data from literary works and social context of authors. Our findings reveal upper-class authors exhibiting a higher Corrected Type-Token Ratio which indicates greater lexical richness, and reflecting their social milieu. This study employs a thorough lexical analysis, aiming to elucidate the complex interplay between class background and language use in literature. This research contributes to our understanding of how social class background shapes language use in literature, offering insights into the broader cultural forces that drive linguistic creativity."
-format: html
+format: pdf
 toc: true
 number-sections: true
 bibliography: references.bib

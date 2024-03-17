@@ -415,6 +415,9 @@ logit(\pi_i) &amp;= \beta_0 + \alpha_a\\
 <section id="model-visualization" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="model-visualization"><span class="header-section-number">4.2</span> Model Visualization</h2>
 <p><a href="#tbl-multi-lev-model">Table&nbsp;5</a> provides coefficients from a negative binomial regression and a multilevel negative binomial regression, indicating how each author’s work differs from the intercept in terms of Corrected Type-Token Ratio (CTTR).</p>
+<p>Hugh Garners shows a negative coefficient (-0.658 in Neg Binom and -1.308 in Multilevel Neg Binom), suggesting his CTTR is significantly lower than the baseline set by the intercept, which is consistent with the shortest average word count observed in the previous analysis.</p>
+<p>Nancy Mitford’s coefficient is slightly above zero (0.021 in Neg Binom and 0.152 in Multilevel Neg Binom), indicating her CTTR is almost at the baseline level. This aligns with her position as neither the lowest nor the highest in terms of lexical richness. Powell Anthony’s positive coefficient (0.107 in Neg Binom and 0.153 in Multilevel Neg Binom) implies his CTTR is above the baseline, though not as high as David Herbert Lawrence’s. David Herbert Lawrence does not have a coefficient listed here but is included in the distribution figure below.</p>
+<div style="page-break-after: always;"></div>
 <div class="cell">
 <div class="cell-output-display">
 <div id="tbl-multi-lev-model" class="anchored">
@@ -515,9 +518,10 @@ logit(\pi_i) &amp;= \beta_0 + \alpha_a\\
 
 </div>
 </div>
-<p>Hugh Garners shows a negative coefficient (-0.658 in Neg Binom and -1.308 in Multilevel Neg Binom), suggesting his CTTR is significantly lower than the baseline set by the intercept, which is consistent with the shortest average word count observed in the previous analysis.</p>
-<p>Nancy Mitford’s coefficient is slightly above zero (0.021 in Neg Binom and 0.152 in Multilevel Neg Binom), indicating her CTTR is almost at the baseline level. This aligns with her position as neither the lowest nor the highest in terms of lexical richness. Powell Anthony’s positive coefficient (0.107 in Neg Binom and 0.153 in Multilevel Neg Binom) implies his CTTR is above the baseline, though not as high as David Herbert Lawrence’s. David Herbert Lawrence does not have a coefficient listed here but is included in the distribution figure below.</p>
 <div style="page-break-after: always;"></div>
+<p>To gain a more intuitive understanding of the model, we visualized the coefficients from <a href="#tbl-multi-lev-model">Table&nbsp;5</a> in the form of a distribution figure. <a href="#fig-multi-lev-model-by-author">Figure&nbsp;1</a>, presents the distribution of CTTR estimates for each author, providing a visual representation of the variance around the mean estimate. Powell Anthony’s distribution is relatively narrow and centered around the mean, suggesting his lexical richness is consistently above the baseline with less variation in CTTR scores. Nancy Mitford’s distribution also clusters closely around the mean but shows a slight skew towards higher values in the multilevel negative binomial regression, indicating a modest variability with a tendency for higher CTTR scores.</p>
+<p>Hugh Garners’ distribution is broader and notably shifted to the left of the baseline in both models, implying a lower CTTR and greater variability in lexical richness compared to the others. David Herbert Lawrence, while not explicitly compared against a coefficient in the table, is represented in the figure with the broadest distribution. This suggests that his CTTR is highly variable, confirming the previous analysis which indicated his works are both lengthy and diverse in terms of lexical richness.</p>
+<p>Overall, the <a href="#fig-multi-lev-model-by-author">Figure&nbsp;1</a> corroborates the numerical findings of <a href="#tbl-multi-lev-model">Table&nbsp;5</a>, offering a visual confirmation of the differences in lexical richness and variability among the authors. It highlights the significant spread in the lexical diversity of Lawrence’s works, as well as the relative consistency observed in the writings of Powell Anthony and Nancy Mitford, with Garners’ works showing both a lower mean and a higher dispersion.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-multi-lev-model-by-author" class="quarto-figure quarto-figure-center anchored">
@@ -528,9 +532,6 @@ logit(\pi_i) &amp;= \beta_0 + \alpha_a\\
 </div>
 </div>
 </div>
-<p>To gain a more intuitive understanding of the model, we visualized the coefficients from <a href="#tbl-multi-lev-model">Table&nbsp;5</a> in the form of a distribution figure. <a href="#fig-multi-lev-model-by-author">Figure&nbsp;1</a>, presents the distribution of CTTR estimates for each author, providing a visual representation of the variance around the mean estimate. Powell Anthony’s distribution is relatively narrow and centered around the mean, suggesting his lexical richness is consistently above the baseline with less variation in CTTR scores. Nancy Mitford’s distribution also clusters closely around the mean but shows a slight skew towards higher values in the multilevel negative binomial regression, indicating a modest variability with a tendency for higher CTTR scores.</p>
-<p>Hugh Garners’ distribution is broader and notably shifted to the left of the baseline in both models, implying a lower CTTR and greater variability in lexical richness compared to the others. David Herbert Lawrence, while not explicitly compared against a coefficient in the table, is represented in the figure with the broadest distribution. This suggests that his CTTR is highly variable, confirming the previous analysis which indicated his works are both lengthy and diverse in terms of lexical richness.</p>
-<p>Overall, the <a href="#fig-multi-lev-model-by-author">Figure&nbsp;1</a> corroborates the numerical findings of <a href="#tbl-multi-lev-model">Table&nbsp;5</a>, offering a visual confirmation of the differences in lexical richness and variability among the authors. It highlights the significant spread in the lexical diversity of Lawrence’s works, as well as the relative consistency observed in the writings of Powell Anthony and Nancy Mitford, with Garners’ works showing both a lower mean and a higher dispersion.</p>
 <div style="page-break-after: always;"></div>
 </section>
 <section id="word-count-vs.-cttr" class="level2" data-number="4.3">

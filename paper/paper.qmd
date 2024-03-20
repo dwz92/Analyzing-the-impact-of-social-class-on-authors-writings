@@ -127,6 +127,64 @@ In our study, ten books published by each of the four authors between 1900-1990 
 
 For each published book, CTTR is calculated by dividing the number of words in the text that are not repeated (number of types) by the square root of the total number of words (number of tokens) multiplied by two. The type count refers to the number of unique words in the text, i.e. words that are not repeated. The number of tokens, on the other hand, refers to the total number of words in the text, including repeated words. This method allows for a reasonable comparison by knowing the vocabulary richness of each book of the four authors chosen. This calculation method allows for a fairer comparison ignoring the length of the text to each other.The value of CTTR quantitatively responds to the diversity and richness of the text's vocabulary.
 
+## Average CTTR From Data
+```{r}
+#| label: tbl-author-cttr-dist
+#| tbl-cap: Authors CTTR Average and Standard Deviation
+#| echo: false
+
+cttr_distribution <- read.csv(here::here("data/analysis_data/cttr_dist.csv"))
+
+cttr_distribution |>
+  select(author, average, stddev) |>
+  kable(
+    col.names = c("Author", "Average", "Standard Deviation"),
+    digits = 2
+  )
+
+```
+
+
+
+
+
+@tbl-author-cttr-dist shows the average Corrected Type-Token Ratio (CTTR) and the associated standard deviation for each of the four studied authors. 
+David Herbert Lawrence and Nancy Mitford both have high average CTTRs at 31.61 and 31.97 respectively, indicating a greater lexical richness in their works. However, Lawrence's works show more variability with a standard deviation of 7.37, as opposed to Mitford's 1.49, suggesting her use of vocabulary is more consistent.
+Hugh Garners has a notably lower average CTTR of 16.31, paired with a standard deviation of 2.31, which is indicative of a consistently narrower range of vocabulary. Powell Anthony tops the average CTTR at 34.67 with a standard deviation of 1.64, demonstrating not only the highest lexical richness but also a high consistency in vocabulary usage across his works. 
+These figures collectively offer a quantitative insight into the diversity and consistency of language used by authors from different social backgrounds.
+
+
+## Word Count vs. CTTR
+
+
+```{r}
+#| label: fig-cttr-vs-wordcount
+#| fig-cap: Comparison Between CTTR and Word Count by Authors
+#| echo: false
+
+cttr_all <- read.csv(here::here("data/analysis_data/cttr_all.csv"))
+
+ggplot(cttr_all, aes(x = corrected_type_token_ratio, y = word_count, color = author)) +
+  geom_point() +
+  labs(x = "CTTR", y = "Word Count") +
+  theme(panel.background = element_rect(fill = "white"),
+              panel.grid.major = element_line(colour = "grey"),
+              plot.title = element_text(color = "black", size = 14, face = "bold"),
+              axis.title = element_text(color = "black"))
+```
+
+
+@fig-cttr-vs-wordcount presents a scatter plot comparing the CTTR and word count for works by David Herbert Lawrence, Hugh Garners, Nancy Mitford, and Powell Anthony. The plot reveals a pattern that suggests a correlation between the lexical richness of an author's work, as measured by CTTR, and the length of the text, as indicated by word count.
+David Herbert Lawrence is a conspicuous outlier in this analysis. His works are scattered across a wide range of both CTTR and word counts, showing that while he has a propensity for longer works, the lexical richness within those works is quite variable. Hugh Garners’ points cluster at the lower end of both word count and CTTR scales, suggesting that his works are shorter and less lexically rich. This could reflect the impact of social and educational limitations on his writing style. 
+
+Nancy Mitford's works are positioned in the middle range of the word counts but show a higher CTTR, similar to that of Lawrence, indicating a richer vocabulary that is not necessarily dependent on the length of the text. Powell Anthony stands out with a group of works that not only have high CTTR values but also fall into a moderate range of word counts. His data points suggest a strong consistency in lexical richness that does not fluctuate widely with the length of the text.
+Overall, @fig-cttr-vs-wordcount points to a general trend where longer works tend to have higher CTTRs, but also highlights individual variations among authors. David Herbert Lawrence's variability points to a unique stylistic approach, while the other authors demonstrate a more predictable relationship between the volume of text and lexical diversity, aligning with the anticipated influence of their social class and educational experiences on literary production.
+
+
+
+
+\newpage
+
 
 
 # Model {#sec-model}
@@ -171,32 +229,6 @@ The goal of this model is to understand how authors' lexical richness, as measur
 
 @sec-result presents the core findings on the relationship between authors' word count and CTTR, specifically focusing on the influence of social class and educational background on literary vocabulary richness.
 
-
-## Average CTTR From Data
-```{r}
-#| label: tbl-author-cttr-dist
-#| tbl-cap: Authors CTTR Average and Standard Deviation
-#| echo: false
-
-cttr_distribution <- read.csv(here::here("data/analysis_data/cttr_dist.csv"))
-
-cttr_distribution |>
-  select(author, average, stddev) |>
-  kable(
-    col.names = c("Author", "Average", "Standard Deviation"),
-    digits = 2
-  )
-
-```
-
-
-
-
-
-@tbl-author-cttr-dist shows the average Corrected Type-Token Ratio (CTTR) and the associated standard deviation for each of the four studied authors. 
-David Herbert Lawrence and Nancy Mitford both have high average CTTRs at 31.61 and 31.97 respectively, indicating a greater lexical richness in their works. However, Lawrence's works show more variability with a standard deviation of 7.37, as opposed to Mitford's 1.49, suggesting her use of vocabulary is more consistent.
-Hugh Garners has a notably lower average CTTR of 16.31, paired with a standard deviation of 2.31, which is indicative of a consistently narrower range of vocabulary. Powell Anthony tops the average CTTR at 34.67 with a standard deviation of 1.64, demonstrating not only the highest lexical richness but also a high consistency in vocabulary usage across his works. 
-These figures collectively offer a quantitative insight into the diversity and consistency of language used by authors from different social backgrounds.
 
 
 ## Model Visualization
@@ -264,36 +296,6 @@ author_CTTR_rstanarm_multilevel |>
 
 \newpage
 
-## Word Count vs. CTTR
-
-
-```{r}
-#| label: fig-cttr-vs-wordcount
-#| fig-cap: Comparison Between CTTR and Word Count by Authors
-#| echo: false
-
-cttr_all <- read.csv(here::here("data/analysis_data/cttr_all.csv"))
-
-ggplot(cttr_all, aes(x = corrected_type_token_ratio, y = word_count, color = author)) +
-  geom_point() +
-  labs(x = "CTTR", y = "Word Count") +
-  theme(panel.background = element_rect(fill = "white"),
-              panel.grid.major = element_line(colour = "grey"),
-              plot.title = element_text(color = "black", size = 14, face = "bold"),
-              axis.title = element_text(color = "black"))
-```
-
-
-@fig-cttr-vs-wordcount presents a scatter plot comparing the CTTR and word count for works by David Herbert Lawrence, Hugh Garners, Nancy Mitford, and Powell Anthony. The plot reveals a pattern that suggests a correlation between the lexical richness of an author's work, as measured by CTTR, and the length of the text, as indicated by word count.
-David Herbert Lawrence is a conspicuous outlier in this analysis. His works are scattered across a wide range of both CTTR and word counts, showing that while he has a propensity for longer works, the lexical richness within those works is quite variable. Hugh Garners’ points cluster at the lower end of both word count and CTTR scales, suggesting that his works are shorter and less lexically rich. This could reflect the impact of social and educational limitations on his writing style. 
-
-Nancy Mitford's works are positioned in the middle range of the word counts but show a higher CTTR, similar to that of Lawrence, indicating a richer vocabulary that is not necessarily dependent on the length of the text. Powell Anthony stands out with a group of works that not only have high CTTR values but also fall into a moderate range of word counts. His data points suggest a strong consistency in lexical richness that does not fluctuate widely with the length of the text.
-Overall, @fig-cttr-vs-wordcount points to a general trend where longer works tend to have higher CTTRs, but also highlights individual variations among authors. David Herbert Lawrence's variability points to a unique stylistic approach, while the other authors demonstrate a more predictable relationship between the volume of text and lexical diversity, aligning with the anticipated influence of their social class and educational experiences on literary production.
-
-
-
-
-\newpage
 
 # Discussion {#sec-discussion}
 
